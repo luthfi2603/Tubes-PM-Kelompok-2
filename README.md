@@ -27,10 +27,10 @@ Bookjas (Book Journal System) adalah  aplikasi berbasis mobile yang dirancang un
 ### Guest
 
 - Melihat daftar post.
-  - Daftar semua post
-  - Daftar post berdasarkan kategori
-  - Daftar post berdasarkan pengguna
-  - Daftar post berdasarkan kata kunci judul
+    - Daftar semua post
+    - Daftar post berdasarkan kategori
+    - Daftar post berdasarkan pengguna
+    - Daftar post berdasarkan kata kunci judul
 - Melihat tulisan post
 - Login & register
 - Verifikasi email & lupa sandi
@@ -50,24 +50,24 @@ Bookjas (Book Journal System) adalah  aplikasi berbasis mobile yang dirancang un
 
 - Halaman dashboard
 - Daftar post.
-  - Mencari post sendiri
-  - Membuat, menghapus, memperbarui post
-  - Mengubah status post (published/draft)
+    - Mencari post sendiri
+    - Membuat, menghapus, memperbarui post
+    - Mengubah status post (published/draft)
 - Daftar comment.
-  - Melihat komentar dari post sendiri
+   - Melihat komentar dari post sendiri
 - Fitur search di halaman posts & comments
 
- ### Admin (Dashboard)
+### Admin (Dashboard)
 
- - Halaman dashboard
- - Kelola user
- - Kelola postingan
- - Kelola komentar
- - Kelola kategori (CRUD)
- - Kelola jenis report (CRUD)
- - Kelola laporan post
- - Kelola laporan komentar
- - Fitur di masing-masing pengelolaan
+- Halaman dashboard
+- Kelola user
+- Kelola postingan
+- Kelola komentar
+- Kelola kategori (CRUD)
+- Kelola jenis report (CRUD)
+- Kelola laporan post
+- Kelola laporan komentar
+- Fitur di masing-masing pengelolaan
 
 Beberapa sumber daya luar yang dipakai dalam aplikasi ini:
 
