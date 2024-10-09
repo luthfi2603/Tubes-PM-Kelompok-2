@@ -12,7 +12,7 @@ Tim pengembang: Kelompok 2
 - Muhammad Luthfi - 221402050  
   Back-End *()*
 - Andy Septiawan Saragih - 221402053  
-  Role *()*
+  UI/UX Design, Tim Hore *()*
 - Ceycylia Dear Amizafatel - 221402059  
   Role *()*
 - Serafim Edgar Pandamei SItorus - 221402133 (Project Manager)  
@@ -35,46 +35,43 @@ Bookjas (Book Journal System) adalah  aplikasi berbasis mobile yang dirancang un
 - Login & register
 - Verifikasi email & lupa sandi
 
+- Melihat buku-buku yang tersedia
+    - Daftar semua buku
+    - Daftar buku berdasarkan judul
+    - Daftar buku berdasarkan kategori
+- Melakukan login apabila seorang pustakawan
+
 ### User
 
-#### Blog
-
-- Mengirim komentar ke postingan
-- Melaporkan postingan
-- Melaporkan komentar
-- Edit profile
-- Ganti password dan email
-- Logout
-
 #### Dashboard
+- Melihat statistik dari buku dan peminjaman
+- Melihat daftar buku yang baru dipinjam
+- Melihat daftar buku dengan tenggat terdekat
 
-- Halaman dashboard
-- Daftar post.
-    - Mencari post sendiri
-    - Membuat, menghapus, memperbarui post
-    - Mengubah status post (published/draft)
-- Daftar comment.
-    - Melihat komentar dari post sendiri
-- Fitur search di halaman posts & comments
+#### Profile
+- Melihat profile
 
-### Admin (Dashboard)
+#### Buku
+- Melihat buku-buku yang tersedia
+    - Daftar semua buku
+    - Daftar buku berdasarkan judul
+    - Daftar buku berdasarkan kategori
+- Menambahkan buku
+- Memperbarui buku
+- Menghapus buku
 
-- Halaman dashboard
-- Kelola user
-- Kelola postingan
-- Kelola komentar
-- Kelola kategori (CRUD)
-- Kelola jenis report (CRUD)
-- Kelola laporan post
-- Kelola laporan komentar
-- Fitur di masing-masing pengelolaan
+#### Riwayat Buku
+- Melihat riwayat peminjaman
+    - Melihat peminjam buku dan tenggatnya
+    - Melihat buku-buku yang dipinjam
 
-Beberapa sumber daya luar yang dipakai dalam aplikasi ini:
+## Library
 
-- [Trix Editor](https://github.com/basecamp/trix) untuk membuat tulisan.
-- [Eloquent-Sluggable](https://github.com/cviebrock/eloquent-sluggable) untuk membuat slug.
-- [Mailtrap](https://mailtrap.io/) untuk mengirim email dalam mode pengembangan.
-- [Sweetalert](https://sweetalert2.github.io/) untuk memberi notifikasi di bagian create dan edit post.
+TBA
+
+## Permission
+
+TBA
 
 ## Environment
 
