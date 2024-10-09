@@ -98,10 +98,10 @@ Beberapa syarat environment untuk menjalankan aplikasi ini:
 2. **Install JDK**
     - Download dan install JDK versi 11 dari [Oracle JDK](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html) atau [OpenJDK](https://openjdk.java.net/install/).
 3. **Clone Repository**
-    - Clone repository ini ke lokal komputer:  
-      ```bash
+    - Clone repository ini ke lokal komputer:
+      ```
       git clone https://github.com/kelompok2/bookjas.git
-      ```  
+      ```
       ```
       cd bookjas
       ```
