@@ -6,17 +6,17 @@ Nama aplikasi: Bookjas
 Tim pengembang: Kelompok 2
 
 - Ruth Grace Arlyana Manurung - 221402015  
-  Role *()*
+  Front-End *()*
 - Rifqi Jabrah Rhae - 221402031  
   Back-End *()*
 - Muhammad Luthfi - 221402050  
   Back-End *()*
 - Andy Septiawan Saragih - 221402053  
-  UI/UX Design, Tim Hore *()*
+  UI/UX Design *()*
 - Ceycylia Dear Amizafatel - 221402059  
-  Role *()*
+  Documentation, Front-End *()*
 - Serafim Edgar Pandamei SItorus - 221402133 (Project Manager)  
-  Role *()*
+  Back-End *()*
 
 ## Desc
 
