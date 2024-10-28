@@ -26,32 +26,60 @@ Bookjas (Book Journal System) adalah  aplikasi berbasis mobile yang dirancang un
 
 ### Guest
 
-- Melihat daftar post.
-    - Daftar semua post
-    - Daftar post berdasarkan kategori
-    - Daftar post berdasarkan pengguna
-    - Daftar post berdasarkan kata kunci judul
-- Melihat tulisan post
-- Login & register
-- Verifikasi email & lupa sandi
+- Melakukan pendaftaran akun
+- Verifikasi email
+- Melihat buku-buku yang tersedia
+    - Daftar semua buku
+    - Daftar buku berdasarkan judul
+    - Daftar buku berdasarkan kategori
+
+### User (Anggota)
+
+#### Autentikasi
+
+- Melakukan login
+- Melakukan lupa kata sandi
+
+#### Dashboard
+
+- Melihat daftar buku yang dipinjam
+- Melihat daftar riwayat peminjaman
+- Melihat rekomendasi buku
+
+#### Buku
 
 - Melihat buku-buku yang tersedia
     - Daftar semua buku
     - Daftar buku berdasarkan judul
     - Daftar buku berdasarkan kategori
-- Melakukan login apabila seorang pustakawan
 
-### User
+#### Profile
+
+- Melihat profile
+- Mengubah profile
+- Melihat kartu anggota
+- Mengganti password
+- Log out
+
+### Admin (Pustakawan)
+
+#### Autentikasi
+
+- Melakukan login
+- Melakukan lupa kata sandi
 
 #### Dashboard
+
 - Melihat statistik dari buku dan peminjaman
 - Melihat daftar buku yang baru dipinjam
 - Melihat daftar buku dengan tenggat terdekat
-
-#### Profile
-- Melihat profile
+- Melihat daftar peminjaman
+    - Menambahkan peminjaman
+    - Memperbarui peminjaman
+    - Menghapus peminjaman 
 
 #### Buku
+
 - Melihat buku-buku yang tersedia
     - Daftar semua buku
     - Daftar buku berdasarkan judul
@@ -60,10 +88,12 @@ Bookjas (Book Journal System) adalah  aplikasi berbasis mobile yang dirancang un
 - Memperbarui buku
 - Menghapus buku
 
-#### Riwayat Buku
-- Melihat riwayat peminjaman
-    - Melihat peminjam buku dan tenggatnya
-    - Melihat buku-buku yang dipinjam
+#### Profile
+
+- Melihat profile
+- Mengubah profile 
+- Mengganti ganti password
+- Log out
 
 ## Library
 
