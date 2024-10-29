@@ -127,8 +127,8 @@ Beberapa syarat environment untuk menjalankan aplikasi ini:
 3. **Clone Repository**
     - Clone repository ini ke lokal komputer:
       ```
-      git clone https://github.com/kelompok2/bookjas.git
+      git clone https://github.com/luthfi2603/Tubes-PM-Kelompok-2.git
       ```
       ```
-      cd bookjas
+      cd Tubes-PM-Kelompok-2
       ```
