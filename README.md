@@ -22,6 +22,10 @@ Tim pengembang: Kelompok 2
 
 Bookjas (Book Journal System) adalah  aplikasi berbasis mobile yang dirancang untuk mempermudah pustakwan dalam pengelolaan inventaris buku di perpustakaan. Dengan basis mobile dapat mempermudah pustakawan dalam melacak, mengelola, dan mengoptimalkan buku-buku secara efisien. Selain itu, aplikasi ini juga berguna sebagai direktori perpustakaan untuk para pengunjung perpustakaan untuk mencari tahu informasi dari buku-buku yang ada di perpustakaan. 
 
+## UI Design
+
+[Link Figma](https://www.figma.com/design/xNDVeDLdNdsU6jKidOBbfW/BookJas---Mobile?node-id=0-1&t=p7ytFbfWdCg9IHS5-1)
+
 ## Features
 
 ### Guest
