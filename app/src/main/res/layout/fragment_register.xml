@@ -9,50 +9,65 @@
     android:paddingTop="@dimen/fragment_vertical_margin"
     android:paddingRight="@dimen/fragment_horizontal_margin"
     android:paddingBottom="@dimen/fragment_vertical_margin"
-    tools:context=".ui.login.ui.login.LoginFragment">
+    tools:context=".ui.register.ui.login.RegisterFragment">
 
     <ImageView
-        android:id="@+id/grafik_login"
+        android:id="@+id/grafik_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:contentDescription="@string/grafik_login"
-        android:src="@drawable/grafik_login"
-        app:layout_constraintBottom_toTopOf="@+id/text_login"
+        android:contentDescription="@string/grafik_register"
+        android:src="@drawable/grafik_register"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.50" />
 
     <TextView
-        android:id="@+id/text_login"
+        android:id="@+id/text_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="40dp"
-        android:text="@string/text_login"
+        android:text="@string/text_register"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/grafik_login"
+        app:layout_constraintTop_toBottomOf="@+id/grafik_register"
         android:textColor="@color/navy_blue"
         android:textSize="48sp"
         android:textStyle="bold"
         />
 
     <TextView
-        android:id="@+id/ucapan_selamat_datang_di_login"
+        android:id="@+id/text_register_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:text="@string/ucapan_selamat_datang_di_login"
+        android:text="@string/text_register_2"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_login" />
+        app:layout_constraintTop_toBottomOf="@+id/text_register"
+        />
+
+    <EditText
+        android:id="@+id/nama"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:autofillHints=""
+        android:hint="@string/text_nama"
+        android:inputType="text"
+        android:selectAllOnFocus="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_register_2" />
 
     <EditText
         android:id="@+id/username"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:autofillHints=""
         android:hint="@string/prompt_email"
@@ -60,7 +75,7 @@
         android:selectAllOnFocus="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ucapan_selamat_datang_di_login" />
+        app:layout_constraintTop_toBottomOf="@+id/nama" />
 
     <EditText
         android:id="@+id/password"
@@ -80,8 +95,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/username" />
 
+    <EditText
+        android:id="@+id/konfirmasi_password"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:autofillHints=""
+        android:hint="@string/prompt_password"
+        android:imeActionLabel="@string/action_sign_in_short"
+        android:imeOptions="actionDone"
+        android:inputType="textPassword"
+        android:selectAllOnFocus="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password" />
+
     <Button
-        android:id="@+id/login"
+        android:id="@+id/register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
@@ -89,10 +122,10 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
         android:enabled="false"
-        android:text="@string/text_login"
+        android:text="@string/text_register_3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
+        app:layout_constraintTop_toBottomOf="@+id/konfirmasi_password" />
 
     <ProgressBar
         android:id="@+id/loading"
@@ -111,25 +144,27 @@
         app:layout_constraintVertical_bias="0.3" />
 
     <TextView
-        android:id="@+id/text_pengguna_baru"
+        android:id="@+id/text_sudah_punya_akun"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="@string/text_pengguna_baru"
-        app:layout_constraintEnd_toStartOf="@id/text_daftar"
-        app:layout_constraintHorizontal_chainStyle="packed"
+        android:layout_marginBottom="32dp"
+        android:text="@string/text_sudah_punya_akun"
+        app:layout_constraintEnd_toStartOf="@id/text_masuk"
+        app:layout_constraintHorizontal_bias="0.41"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login" />
+        app:layout_constraintTop_toBottomOf="@+id/register"
+        app:layout_constraintHorizontal_chainStyle="packed" />
 
     <TextView
-        android:id="@+id/text_daftar"
+        android:id="@+id/text_masuk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="@string/text_daftar"
+        android:text="@string/text_masuk"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/text_pengguna_baru"
-        app:layout_constraintTop_toTopOf="@+id/text_pengguna_baru"
+        app:layout_constraintStart_toEndOf="@+id/text_sudah_punya_akun"
+        app:layout_constraintTop_toTopOf="@+id/text_sudah_punya_akun"
         android:textStyle="bold"
         android:textColor="@color/navy_blue" />
 

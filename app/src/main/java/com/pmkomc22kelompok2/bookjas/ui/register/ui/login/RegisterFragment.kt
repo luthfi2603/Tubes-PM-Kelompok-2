@@ -1,4 +1,4 @@
-package com.pmkomc22kelompok2.bookjas.ui.login.ui.login
+package com.pmkomc22kelompok2.bookjas.ui.register.ui.login
 
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -17,12 +17,12 @@ import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.navigation.Navigation
 import com.pmkomc22kelompok2.bookjas.R
-import com.pmkomc22kelompok2.bookjas.databinding.FragmentLoginBinding
+import com.pmkomc22kelompok2.bookjas.databinding.FragmentRegisterBinding
 
-class LoginFragment : Fragment() {
+class RegisterFragment : Fragment() {
 
     private lateinit var loginViewModel: LoginViewModel
-    private var _binding: FragmentLoginBinding? = null
+    private var _binding: FragmentRegisterBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -34,7 +34,7 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentLoginBinding.inflate(inflater, container, false)
+        _binding = FragmentRegisterBinding.inflate(inflater, container, false)
         return binding.root
 
     }
@@ -46,7 +46,7 @@ class LoginFragment : Fragment() {
 
         val usernameEditText = binding.username
         val passwordEditText = binding.password
-        val loginButton = binding.login
+        val registerButton = binding.register
         val loadingProgressBar = binding.loading
 
         loginViewModel.loginFormState.observe(viewLifecycleOwner,
@@ -54,7 +54,7 @@ class LoginFragment : Fragment() {
                 if (loginFormState == null) {
                     return@Observer
                 }
-                loginButton.isEnabled = loginFormState.isDataValid
+                registerButton.isEnabled = loginFormState.isDataValid
                 loginFormState.usernameError?.let {
                     usernameEditText.error = getString(it)
                 }
@@ -103,17 +103,20 @@ class LoginFragment : Fragment() {
             false
         }
 
-        loginButton.setOnClickListener {
-            loadingProgressBar.visibility = View.VISIBLE
+        registerButton.setOnClickListener {
+            /*loadingProgressBar.visibility = View.VISIBLE
             loginViewModel.login(
                 usernameEditText.text.toString(),
                 passwordEditText.text.toString()
-            )
+            )*/
+            Navigation.findNavController(view).apply {
+                navigate(R.id.action_navigation_register_to_navigation_start)
+            }
         }
 
-        binding.textDaftar.setOnClickListener {
+        binding.textMasuk.setOnClickListener {
             Navigation.findNavController(view).apply {
-                navigate(R.id.action_navigation_login_to_navigation_register)
+                navigate(R.id.action_navigation_register_to_navigation_login)
             }
         }
     }

@@ -1,12 +1,12 @@
-package com.pmkomc22kelompok2.bookjas.ui.login.ui.login
+package com.pmkomc22kelompok2.bookjas.ui.register.ui.login
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import android.util.Patterns
 import com.pmkomc22kelompok2.bookjas.R
-import com.pmkomc22kelompok2.bookjas.ui.login.data.LoginRepository
-import com.pmkomc22kelompok2.bookjas.ui.login.data.Result
+import com.pmkomc22kelompok2.bookjas.ui.register.data.LoginRepository
+import com.pmkomc22kelompok2.bookjas.ui.register.data.Result
 
 class LoginViewModel(private val loginRepository: LoginRepository) : ViewModel() {
 
