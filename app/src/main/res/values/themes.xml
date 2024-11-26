@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Bookjas" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/navy_blue</item>
+        <item name="colorPrimaryVariant">@color/steel_blue</item>
+        <item name="colorOnPrimary">@color/alabaster_white</item>
+        <item name="android:colorBackground">@color/alabaster_white</item>
+    </style>
+</resources>
