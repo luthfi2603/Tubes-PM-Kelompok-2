@@ -118,7 +118,7 @@ Beberapa syarat environment untuk menjalankan aplikasi ini:
   VGA : Intel® Iris® Xᵉ Graphics  
 - **Kotlin**: Versi terbaru (>= 1.6.0)
 - **Android Studio**: Versi terbaru dengan Android SDK 31 atau lebih tinggi.
-- **JDK**: Java Development Kit versi 11.
+- **JDK**: Java Development Kit versi 21.
 - **Gradle**: Versi yang sesuai dengan Android Studio terbaru.
 
 ### Instalasi dan Setup
@@ -127,7 +127,7 @@ Beberapa syarat environment untuk menjalankan aplikasi ini:
     - Download dan install Android Studio dari [Android Studio Official Website](https://developer.android.com/studio).
     - Pastikan Android SDK 31 atau lebih tinggi terinstal melalui SDK Manager.
 2. **Install JDK**
-    - Download dan install JDK versi 11 dari [Oracle JDK](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html) atau [OpenJDK](https://openjdk.java.net/install/).
+    - Download dan install JDK versi 21 dari [Oracle JDK](https://www.oracle.com/java/technologies/javase/jdk21-archive-downloads.html).
 3. **Clone Repository**
     - Clone repository ini ke lokal komputer:
       ```

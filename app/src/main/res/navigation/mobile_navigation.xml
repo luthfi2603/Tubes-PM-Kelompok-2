@@ -9,7 +9,11 @@
         android:id="@+id/navigation_home"
         android:name="com.pmkomc22kelompok2.bookjas.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_detailBukuFragment"
+            app:destination="@id/detailBukuFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_dashboard"
@@ -48,7 +52,14 @@
         <action
             android:id="@+id/action_navigation_start_to_navigation_home"
             app:destination="@id/navigation_home"
-            app:popUpTo="@id/navigation_start"
+            app:popUpTo="@id/navigation_home"
             app:popUpToInclusive="true" />
     </fragment>
+
+    <fragment
+        android:id="@+id/detailBukuFragment"
+        android:name="com.pmkomc22kelompok2.bookjas.ui.buku.DetailBukuFragment"
+        android:label="fragment_detail_buku"
+        tools:layout="@layout/fragment_detail_buku" />
+
 </navigation>

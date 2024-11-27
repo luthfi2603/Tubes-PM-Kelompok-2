@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
+import com.pmkomc22kelompok2.bookjas.R
 import com.pmkomc22kelompok2.bookjas.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -33,6 +35,16 @@ class HomeFragment : Fragment() {
             textView.text = it
         }*/
         return root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.view7.setOnClickListener {
+            Navigation.findNavController(view).apply {
+                navigate(R.id.action_navigation_home_to_detailBukuFragment)
+            }
+        }
     }
 
     override fun onDestroyView() {
