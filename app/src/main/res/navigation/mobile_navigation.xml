@@ -42,7 +42,8 @@
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_navigation_register_to_navigation_start"
-            app:destination="@id/navigation_start" />
+            app:destination="@id/navigation_start"
+            app:popUpTo="@id/navigation_home" />
     </fragment>
 
     <fragment
@@ -61,5 +62,19 @@
         android:name="com.pmkomc22kelompok2.bookjas.ui.buku.DetailBukuFragment"
         android:label="fragment_detail_buku"
         tools:layout="@layout/fragment_detail_buku" />
+
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.pmkomc22kelompok2.bookjas.ui.settings.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_navigation_settings_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.pmkomc22kelompok2.bookjas.ui.edit.profile.EditProfileFragment"
+        android:label="EditProfileFragment" />
 
 </navigation>
