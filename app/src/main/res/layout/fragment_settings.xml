@@ -80,16 +80,16 @@
         android:layout_marginTop="16dp"
         android:contentDescription="@string/welcome"
         android:src="@drawable/grafik_ganti_password"
-        app:layout_constraintEnd_toStartOf="@id/ganti_password"
+        app:layout_constraintEnd_toStartOf="@id/tv_ganti_password"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_ubah_profile" />
 
     <TextView
-        android:id="@+id/ganti_password"
+        android:id="@+id/tv_ganti_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="16dp"
         android:layout_marginEnd="64dp"
         android:text="@string/ganti_password"
         android:textColor="@color/navy_blue"
@@ -108,7 +108,7 @@
         android:src="@drawable/grafik_ganti_password_2"
         app:layout_constraintBottom_toBottomOf="@id/grafik_ganti_password"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/ganti_password"
+        app:layout_constraintStart_toEndOf="@id/tv_ganti_password"
         app:layout_constraintTop_toTopOf="@+id/grafik_ganti_password" />
 
     <ImageView
@@ -126,8 +126,7 @@
         android:id="@+id/logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="64dp"
+        android:layout_marginStart="16dp"
         android:text="@string/logout"
         android:textColor="@color/design_default_color_error"
         android:textSize="20sp"

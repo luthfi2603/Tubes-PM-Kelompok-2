@@ -28,5 +28,9 @@ class SettingsFragment : Fragment() {
         binding.btnUbahProfile.setOnClickListener {
             Navigation.findNavController(view).navigate(R.id.action_navigation_settings_to_editProfileFragment)
         }
+
+        binding.tvGantiPassword.setOnClickListener {
+            Navigation.findNavController(view).navigate(R.id.action_navigation_settings_to_navigation_edit_password)
+        }
     }
 }

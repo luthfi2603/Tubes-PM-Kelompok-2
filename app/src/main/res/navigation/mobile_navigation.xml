@@ -71,10 +71,19 @@
         <action
             android:id="@+id/action_navigation_settings_to_editProfileFragment"
             app:destination="@id/editProfileFragment" />
+        <action
+            android:id="@+id/action_navigation_settings_to_navigation_edit_password"
+            app:destination="@id/navigation_edit_password" />
     </fragment>
+
     <fragment
         android:id="@+id/editProfileFragment"
         android:name="com.pmkomc22kelompok2.bookjas.ui.edit.profile.EditProfileFragment"
         android:label="EditProfileFragment" />
+
+    <fragment
+        android:id="@+id/navigation_edit_password"
+        android:name="com.pmkomc22kelompok2.bookjas.ui.edit.password.EditPasswordFragment"
+        android:label="Edit Password" />
 
 </navigation>
