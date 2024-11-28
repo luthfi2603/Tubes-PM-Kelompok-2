@@ -72,18 +72,28 @@
             android:id="@+id/action_navigation_settings_to_editProfileFragment"
             app:destination="@id/editProfileFragment" />
         <action
-            android:id="@+id/action_navigation_settings_to_navigation_edit_password"
-            app:destination="@id/navigation_edit_password" />
+            android:id="@+id/action_navigation_settings_to_editPasswordFragment"
+            app:destination="@id/editPasswordFragment" />
     </fragment>
 
     <fragment
+        android:id="@+id/editFotoProfileFragment"
+        android:name="com.pmkomc22kelompok2.bookjas.ui.edit.fotoprofile.EditFotoProfileFragment"
+        android:label="fragment_edit_foto_profile"
+        tools:layout="@layout/fragment_edit_foto_profile" />
+    <fragment
         android:id="@+id/editProfileFragment"
         android:name="com.pmkomc22kelompok2.bookjas.ui.edit.profile.EditProfileFragment"
-        android:label="EditProfileFragment" />
-
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_profile" >
+        <action
+            android:id="@+id/action_editProfileFragment_to_editFotoProfileFragment"
+            app:destination="@id/editFotoProfileFragment" />
+    </fragment>
     <fragment
-        android:id="@+id/navigation_edit_password"
+        android:id="@+id/editPasswordFragment"
         android:name="com.pmkomc22kelompok2.bookjas.ui.edit.password.EditPasswordFragment"
-        android:label="Edit Password" />
+        android:label="fragment_edit_password"
+        tools:layout="@layout/fragment_edit_password" />
 
 </navigation>

@@ -30,7 +30,7 @@ class SettingsFragment : Fragment() {
         }
 
         binding.tvGantiPassword.setOnClickListener {
-            Navigation.findNavController(view).navigate(R.id.action_navigation_settings_to_navigation_edit_password)
+            Navigation.findNavController(view).navigate(R.id.action_navigation_settings_to_editPasswordFragment)
         }
     }
 }
