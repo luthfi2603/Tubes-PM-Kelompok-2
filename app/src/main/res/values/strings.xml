@@ -160,6 +160,15 @@
     <string name="kategori">Fiksi</string>
     <string name="et_search">Apa yang kamu cari?</string>
     <string name="iv_icon_search">Search bar</string>
+    <string name="luthfi">Muhammad Luthfi</string>
+    <string name="tv_pustakawan">Pustakawan</string>
+    <string name="label_buku_yang_baru_ditambah">Buku yang Baru Ditambah</string>
+    <string name="dashboard_admin">Dashboard Admin</string>
+    <string name="jumlah_buku_satuan">Jumlah Buku</string>
+    <string name="peminjam_bulan_ini">Peminjaman Bulan Ini</string>
+    <string name="jumlah_peminjam">500</string>
+    <string name="jumlah_pembaca">10</string>
+    <string name="pembaca">Pembaca</string>
 
     <!-- data dummy untuk rv -->
     <integer-array name="foto">

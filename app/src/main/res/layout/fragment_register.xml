@@ -5,7 +5,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.register.ui.login.RegisterFragment">
+    tools:context=".ui.user.register.ui.login.RegisterFragment">
 <!--    android:paddingLeft="@dimen/fragment_horizontal_margin"-->
 <!--    android:paddingTop="@dimen/fragment_vertical_margin"-->
 <!--    android:paddingRight="@dimen/fragment_horizontal_margin"-->
