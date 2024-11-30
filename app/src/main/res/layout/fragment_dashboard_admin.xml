@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.admin.dashboard.DashboardAdminFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/fragment_horizontal_margin"
+        android:paddingTop="@dimen/fragment_vertical_margin"
+        android:paddingRight="@dimen/fragment_horizontal_margin"
+        android:paddingBottom="96dp">
+
+        <TextView
+            android:id="@+id/tv_label_welcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_selamat_datang"
+            android:textColor="@color/navy_blue"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/v_hero"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rounded_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_label_welcome" />
+
+        <TextView
+            android:id="@+id/tv_nama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/luthfi"
+            android:textColor="@color/alabaster_white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/v_hero"
+            app:layout_constraintTop_toTopOf="@+id/v_hero" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageView2"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="@string/welcome"
+            android:src="@drawable/x_chan"
+            app:layout_constraintBottom_toBottomOf="@+id/v_hero"
+            app:layout_constraintEnd_toEndOf="@+id/v_hero"
+            app:layout_constraintTop_toTopOf="@+id/v_hero" />
+
+        <TextView
+            android:id="@+id/tv_pustakawan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/rounded_view_putih"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="4dp"
+            android:text="@string/tv_pustakawan"
+            android:textColor="@color/navy_blue"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/v_hero"
+            app:layout_constraintStart_toStartOf="@id/v_hero" />
+
+        <View
+            android:id="@+id/v_data"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginBottom="-16dp"
+            android:background="@drawable/rounded_view_steel_blue"
+            app:layout_constraintBottom_toBottomOf="@id/tv_jumlah_buku"
+            app:layout_constraintEnd_toStartOf="@id/v_data_2"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/v_hero" />
+
+        <ImageView
+            android:id="@+id/iv_ic_buku_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_view"
+            android:contentDescription="@string/text_judul_buku"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp"
+            android:src="@drawable/ic_buku_2"
+            app:layout_constraintBottom_toTopOf="@id/v_data"
+            app:layout_constraintEnd_toEndOf="@id/v_data"
+            app:layout_constraintTop_toTopOf="@id/v_data" />
+
+        <TextView
+            android:id="@+id/tv_jumlah_buku_nilai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/jumlah_buku"
+            android:textColor="@color/alabaster_white"
+            android:textSize="48sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/v_data"
+            app:layout_constraintTop_toTopOf="@id/v_data" />
+
+        <TextView
+            android:id="@+id/tv_jumlah_buku"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="-8dp"
+            android:text="@string/jumlah_buku_satuan"
+            android:textColor="@color/alabaster_white"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@id/v_data"
+            app:layout_constraintTop_toBottomOf="@id/tv_jumlah_buku_nilai" />
+
+        <View
+            android:id="@+id/v_data_2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="-16dp"
+            android:background="@drawable/rounded_view_steel_blue"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_peminjam"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/v_data"
+            app:layout_constraintTop_toTopOf="@+id/v_data" />
+
+        <ImageView
+            android:id="@+id/iv_ic_buku_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_view"
+            android:contentDescription="@string/text_judul_buku"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp"
+            android:src="@drawable/ic_buku_3"
+            app:layout_constraintBottom_toTopOf="@id/v_data_2"
+            app:layout_constraintEnd_toEndOf="@id/v_data_2"
+            app:layout_constraintTop_toTopOf="@id/v_data_2" />
+
+        <TextView
+            android:id="@+id/tv_peminjam_nilai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/jumlah_peminjam"
+            android:textColor="@color/alabaster_white"
+            android:textSize="48sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/v_data_2"
+            app:layout_constraintTop_toTopOf="@id/v_data_2" />
+
+        <TextView
+            android:id="@+id/tv_peminjam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="-8dp"
+            android:text="@string/peminjam_bulan_ini"
+            android:textColor="@color/alabaster_white"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@id/v_data_2"
+            app:layout_constraintTop_toBottomOf="@id/tv_peminjam_nilai" />
+
+        <View
+            android:id="@+id/v_data_3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="-16dp"
+            android:background="@drawable/rounded_view_steel_blue"
+            app:layout_constraintBottom_toBottomOf="@id/tv_pembaca"
+            app:layout_constraintEnd_toStartOf="@id/v_data_4"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/v_data_2" />
+
+        <ImageView
+            android:id="@+id/iv_ic_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_view"
+            android:contentDescription="@string/text_judul_buku"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp"
+            android:src="@drawable/ic_user_2"
+            app:layout_constraintBottom_toTopOf="@id/v_data_3"
+            app:layout_constraintEnd_toEndOf="@id/v_data_3"
+            app:layout_constraintTop_toTopOf="@id/v_data_3" />
+
+        <TextView
+            android:id="@+id/tv_pembaca_nilai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/jumlah_pembaca"
+            android:textColor="@color/alabaster_white"
+            android:textSize="48sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/v_data_3"
+            app:layout_constraintTop_toTopOf="@id/v_data_3" />
+
+        <TextView
+            android:id="@+id/tv_pembaca"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="-8dp"
+            android:text="@string/pembaca"
+            android:textColor="@color/alabaster_white"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@id/v_data_3"
+            app:layout_constraintTop_toBottomOf="@id/tv_pembaca_nilai" />
+
+        <View
+            android:id="@+id/v_data_4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="-16dp"
+            android:background="@drawable/rounded_view_steel_blue"
+            app:layout_constraintBottom_toBottomOf="@id/tv_pustakawan_2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/v_data_3"
+            app:layout_constraintTop_toTopOf="@+id/v_data_3" />
+
+        <ImageView
+            android:id="@+id/iv_ic_user_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_view"
+            android:contentDescription="@string/text_judul_buku"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp"
+            android:src="@drawable/ic_user_3"
+            app:layout_constraintBottom_toTopOf="@id/v_data_4"
+            app:layout_constraintEnd_toEndOf="@id/v_data_4"
+            app:layout_constraintTop_toTopOf="@id/v_data_4" />
+
+        <TextView
+            android:id="@+id/tv_pustakawan_nilai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/jumlah_pembaca"
+            android:textColor="@color/alabaster_white"
+            android:textSize="48sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/v_data_4"
+            app:layout_constraintTop_toTopOf="@id/v_data_4" />
+
+        <TextView
+            android:id="@+id/tv_pustakawan_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="-8dp"
+            android:text="@string/tv_pustakawan"
+            android:textColor="@color/alabaster_white"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@id/v_data_4"
+            app:layout_constraintTop_toBottomOf="@id/tv_pustakawan_nilai" />
+
+        <ImageView
+            android:id="@+id/iv_ic_buku"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:contentDescription="@string/text_judul_buku"
+            android:src="@drawable/baseline_book_24_navy"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/v_data_4" />
+
+        <TextView
+            android:id="@+id/tv_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/label_buku_yang_baru_ditambah"
+            android:textColor="@color/navy_blue"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/iv_ic_buku"
+            app:layout_constraintStart_toEndOf="@id/iv_ic_buku"
+            app:layout_constraintTop_toTopOf="@id/iv_ic_buku" />
+
+        <HorizontalScrollView
+            android:id="@+id/sv_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_label">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:id="@+id/view3"
+                    android:layout_width="130dp"
+                    android:layout_height="200dp"
+                    android:background="@drawable/rounded_view_putih_border_navy"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/view4"
+                    android:layout_width="130dp"
+                    android:layout_height="200dp"
+                    android:layout_marginStart="16dp"
+                    android:background="@drawable/rounded_view_putih_border_navy"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/view3"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/view5"
+                    android:layout_width="130dp"
+                    android:layout_height="200dp"
+                    android:layout_marginStart="16dp"
+                    android:background="@drawable/rounded_view_putih_border_navy"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/view4"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/view6"
+                    android:layout_width="130dp"
+                    android:layout_height="200dp"
+                    android:layout_marginStart="16dp"
+                    android:background="@drawable/rounded_view_putih_border_navy"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/view5"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </HorizontalScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

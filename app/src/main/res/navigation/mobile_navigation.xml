@@ -7,17 +7,20 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.pmkomc22kelompok2.bookjas.ui.home.HomeFragment"
+        android:name="com.pmkomc22kelompok2.bookjas.ui.user.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_navigation_home_to_detailBukuFragment"
             app:destination="@id/detailBukuFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_dashboardAdminFragment"
+            app:destination="@id/dashboardAdminFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.pmkomc22kelompok2.bookjas.ui.dashboard.DashboardFragment"
+        android:name="com.pmkomc22kelompok2.bookjas.ui.user.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_dashboard" />
 
@@ -33,7 +36,7 @@
 
     <fragment
         android:id="@+id/navigation_register"
-        android:name="com.pmkomc22kelompok2.bookjas.ui.register.ui.login.RegisterFragment"
+        android:name="com.pmkomc22kelompok2.bookjas.ui.user.register.ui.login.RegisterFragment"
         tools:layout="@layout/fragment_register" >
         <action
             android:id="@+id/action_navigation_register_to_navigation_login"
@@ -48,7 +51,7 @@
 
     <fragment
         android:id="@+id/navigation_start"
-        android:name="com.pmkomc22kelompok2.bookjas.ui.start.StartFragment"
+        android:name="com.pmkomc22kelompok2.bookjas.ui.user.start.StartFragment"
         tools:layout="@layout/fragment_start" >
         <action
             android:id="@+id/action_navigation_start_to_navigation_home"
@@ -59,13 +62,13 @@
 
     <fragment
         android:id="@+id/detailBukuFragment"
-        android:name="com.pmkomc22kelompok2.bookjas.ui.buku.DetailBukuFragment"
+        android:name="com.pmkomc22kelompok2.bookjas.ui.user.buku.DetailBukuFragment"
         android:label="fragment_detail_buku"
         tools:layout="@layout/fragment_detail_buku" />
 
     <fragment
         android:id="@+id/navigation_settings"
-        android:name="com.pmkomc22kelompok2.bookjas.ui.settings.SettingsFragment"
+        android:name="com.pmkomc22kelompok2.bookjas.ui.user.settings.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" >
         <action
@@ -78,12 +81,12 @@
 
     <fragment
         android:id="@+id/editFotoProfileFragment"
-        android:name="com.pmkomc22kelompok2.bookjas.ui.edit.fotoprofile.EditFotoProfileFragment"
+        android:name="com.pmkomc22kelompok2.bookjas.ui.user.edit.fotoprofile.EditFotoProfileFragment"
         android:label="fragment_edit_foto_profile"
         tools:layout="@layout/fragment_edit_foto_profile" />
     <fragment
         android:id="@+id/editProfileFragment"
-        android:name="com.pmkomc22kelompok2.bookjas.ui.edit.profile.EditProfileFragment"
+        android:name="com.pmkomc22kelompok2.bookjas.ui.user.edit.profile.EditProfileFragment"
         android:label="fragment_edit_profile"
         tools:layout="@layout/fragment_edit_profile" >
         <action
@@ -92,8 +95,14 @@
     </fragment>
     <fragment
         android:id="@+id/editPasswordFragment"
-        android:name="com.pmkomc22kelompok2.bookjas.ui.edit.password.EditPasswordFragment"
+        android:name="com.pmkomc22kelompok2.bookjas.ui.user.edit.password.EditPasswordFragment"
         android:label="fragment_edit_password"
         tools:layout="@layout/fragment_edit_password" />
+
+    <fragment
+        android:id="@+id/dashboardAdminFragment"
+        android:name="com.pmkomc22kelompok2.bookjas.ui.admin.dashboard.DashboardAdminFragment"
+        android:label="fragment_dashboard_admin"
+        tools:layout="@layout/fragment_dashboard_admin" />
 
 </navigation>
