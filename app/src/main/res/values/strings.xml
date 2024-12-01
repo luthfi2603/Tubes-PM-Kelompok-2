@@ -180,6 +180,13 @@
     <string name="jumlah_buku_lengkap">16 unit</string>
     <string name="titik_dua">:</string>
     <string name="tanda_tambah">+</string>
+    <string name="tv_label_tambah_peminjaman">Tambah Peminjaman</string>
+    <string name="tv_tanggal_peminjaman">Tanggal Peminjaman</string>
+    <string name="et_tanggal_peminjaman">Masukkan tanggal peminjaman</string>
+    <string name="tv_nama_buku">Nama Buku</string>
+    <string name="et_nama_buku">Masukkan nama buku</string>
+    <string name="tv_email_peminjam">Email Peminjam</string>
+    <string name="et_email_peminjam">Masukkan email peminjam</string>
 
     <!-- data dummy untuk rv -->
     <integer-array name="foto">

@@ -115,11 +115,20 @@
         android:id="@+id/riwayatPeminjamanAdminFragment"
         android:name="com.pmkomc22kelompok2.bookjas.ui.admin.riwayatpeminjaman.RiwayatPeminjamanAdminFragment"
         android:label="fragment_riwayat_peminjaman_admin"
-        tools:layout="@layout/fragment_riwayat_peminjaman_admin" />
+        tools:layout="@layout/fragment_riwayat_peminjaman_admin" >
+        <action
+            android:id="@+id/action_riwayatPeminjamanAdminFragment_to_tambahPeminjamanFragment"
+            app:destination="@id/tambahPeminjamanFragment" />
+    </fragment>
     <fragment
         android:id="@+id/bukuAdminFragment"
         android:name="com.pmkomc22kelompok2.bookjas.ui.admin.buku.BukuAdminFragment"
         android:label="fragment_buku_admin"
         tools:layout="@layout/fragment_buku_admin" />
+    <fragment
+        android:id="@+id/tambahPeminjamanFragment"
+        android:name="com.pmkomc22kelompok2.bookjas.ui.admin.tambahpeminjaman.TambahPeminjamanFragment"
+        android:label="fragment_tambah_peminjaman"
+        tools:layout="@layout/fragment_tambah_peminjaman" />
 
 </navigation>

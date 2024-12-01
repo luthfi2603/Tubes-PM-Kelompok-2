@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pmkomc22kelompok2.bookjas.R
 import com.pmkomc22kelompok2.bookjas.databinding.FragmentRiwayatPeminjamanAdminBinding
@@ -29,6 +30,10 @@ class RiwayatPeminjamanAdminFragment : Fragment() {
         binding.rvRiwayatPeminjaman.setHasFixedSize(true)
         listPeminjam.addAll(getListRiwayatPeminjam())
         showRecyclerList()
+
+        binding.btnTambahBuku.setOnClickListener {
+            Navigation.findNavController(view).navigate(R.id.action_riwayatPeminjamanAdminFragment_to_tambahPeminjamanFragment)
+        }
     }
 
     private fun getListRiwayatPeminjam(): ArrayList<RiwayatPeminjam> {

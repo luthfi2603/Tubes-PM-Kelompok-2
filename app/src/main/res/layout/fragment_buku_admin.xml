@@ -188,17 +188,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ll_search" />
 
-    <TextView
+    <Button
         android:id="@+id/btn_tambah_buku"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/rounded_view_steel_blue"
-        android:lineHeight="0sp"
-        android:paddingHorizontal="16dp"
+        android:backgroundTint="@color/steel_blue"
         android:text="@string/tanda_tambah"
-        android:textColor="@color/alabaster_white"
         android:textSize="52sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:targetApi="p" />
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
