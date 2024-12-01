@@ -103,6 +103,15 @@
         android:id="@+id/dashboardAdminFragment"
         android:name="com.pmkomc22kelompok2.bookjas.ui.admin.dashboard.DashboardAdminFragment"
         android:label="fragment_dashboard_admin"
-        tools:layout="@layout/fragment_dashboard_admin" />
+        tools:layout="@layout/fragment_dashboard_admin" >
+        <action
+            android:id="@+id/action_dashboardAdminFragment_to_riwayatPeminjamanAdminFragment"
+            app:destination="@id/riwayatPeminjamanAdminFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/riwayatPeminjamanAdminFragment"
+        android:name="com.pmkomc22kelompok2.bookjas.ui.admin.riwayatpeminjaman.RiwayatPeminjamanAdminFragment"
+        android:label="fragment_riwayat_peminjaman_admin"
+        tools:layout="@layout/fragment_riwayat_peminjaman_admin" />
 
 </navigation>

@@ -169,6 +169,12 @@
     <string name="jumlah_peminjam">500</string>
     <string name="jumlah_pembaca">10</string>
     <string name="pembaca">Pembaca</string>
+    <string name="riwayat_peminjaman">Riwayat Peminjaman</string>
+    <string name="tanggal">12 November 2024</string>
+    <string name="tenggat">21 November 2024</string>
+    <string name="tenggat_hitung_mundur">(9 Hari Lagi)</string>
+    <string name="btn_edit">Edit</string>
+    <string name="btn_delete">Delete</string>
 
     <!-- data dummy untuk rv -->
     <integer-array name="foto">
@@ -218,5 +224,41 @@
         <item>Perwira Satira Taufik Q.D.</item>
         <item>Perwira Satira Taufik Q.D.</item>
         <item>Perwira Satira Taufik Q.D.</item>
+    </string-array>
+    <string-array name="peminjam">
+        <item>Rifqi Jabrah Rhae</item>
+        <item>Rifqi Jabrah Rhae</item>
+        <item>Rifqi Jabrah Rhae</item>
+        <item>Rifqi Jabrah Rhae</item>
+        <item>Rifqi Jabrah Rhae</item>
+        <item>Rifqi Jabrah Rhae</item>
+        <item>Rifqi Jabrah Rhae</item>
+        <item>Rifqi Jabrah Rhae</item>
+        <item>Rifqi Jabrah Rhae</item>
+        <item>Rifqi Jabrah Rhae</item>
+    </string-array>
+    <string-array name="tanggal_peminjaman">
+        <item>12 November 2024</item>
+        <item>12 November 2024</item>
+        <item>12 November 2024</item>
+        <item>12 November 2024</item>
+        <item>12 November 2024</item>
+        <item>12 November 2024</item>
+        <item>12 November 2024</item>
+        <item>12 November 2024</item>
+        <item>12 November 2024</item>
+        <item>12 November 2024</item>
+    </string-array>
+    <string-array name="tanggal_pengembalian">
+        <item>21 November 2024</item>
+        <item>21 November 2024</item>
+        <item>21 November 2024</item>
+        <item>21 November 2024</item>
+        <item>21 November 2024</item>
+        <item>21 November 2024</item>
+        <item>21 November 2024</item>
+        <item>21 November 2024</item>
+        <item>21 November 2024</item>
+        <item>21 November 2024</item>
     </string-array>
 </resources>

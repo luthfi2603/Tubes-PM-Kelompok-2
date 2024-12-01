@@ -296,7 +296,7 @@
             app:layout_constraintTop_toTopOf="@id/iv_ic_buku" />
 
         <HorizontalScrollView
-            android:id="@+id/sv_1"
+            android:id="@+id/hsv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -350,6 +350,16 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </HorizontalScrollView>
+
+        <Button
+            android:id="@+id/btn_to_riwayat_peminjaman"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/riwayat_peminjaman"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/hsv" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
