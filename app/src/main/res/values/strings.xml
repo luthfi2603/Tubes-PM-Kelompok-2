@@ -175,6 +175,11 @@
     <string name="tenggat_hitung_mundur">(9 Hari Lagi)</string>
     <string name="btn_edit">Edit</string>
     <string name="btn_delete">Delete</string>
+    <string name="tambah">Tambah</string>
+    <string name="deskripsi_buku">Ut duis esse non ea dolor cupidatat qui exercitation anim duis. Sit officia excepteur sint laboris eiusmod aliqua ad in Lorem enim. Nostrud deserunt commodo occaecat nostrud non cillum proident ea laborum amet deserunt ex excepteur.</string>
+    <string name="jumlah_buku_lengkap">16 unit</string>
+    <string name="titik_dua">:</string>
+    <string name="tanda_tambah">+</string>
 
     <!-- data dummy untuk rv -->
     <integer-array name="foto">
@@ -260,5 +265,41 @@
         <item>21 November 2024</item>
         <item>21 November 2024</item>
         <item>21 November 2024</item>
+    </string-array>
+    <string-array name="tahun_terbit">
+        <item>2024</item>
+        <item>2024</item>
+        <item>2024</item>
+        <item>2024</item>
+        <item>2024</item>
+        <item>2024</item>
+        <item>2024</item>
+        <item>2024</item>
+        <item>2024</item>
+        <item>2024</item>
+    </string-array>
+    <string-array name="penerbit">
+        <item>Shueisha</item>
+        <item>Shueisha</item>
+        <item>Shueisha</item>
+        <item>Shueisha</item>
+        <item>Shueisha</item>
+        <item>Shueisha</item>
+        <item>Shueisha</item>
+        <item>Shueisha</item>
+        <item>Shueisha</item>
+        <item>Shueisha</item>
+    </string-array>
+    <string-array name="deskripsi">
+        <item>Lorem ipsum dolor sit amet. Ut duis esse non ea dolor cupidatat qui exercitation anim duis. Sit officia excepteur sint laboris eiusmod aliqua ad in Lorem enim.</item>
+        <item>Lorem ipsum dolor sit amet. Ut duis esse non ea dolor cupidatat qui exercitation anim duis. Sit officia excepteur sint laboris eiusmod aliqua ad in Lorem enim.</item>
+        <item>Lorem ipsum dolor sit amet. Ut duis esse non ea dolor cupidatat qui exercitation anim duis. Sit officia excepteur sint laboris eiusmod aliqua ad in Lorem enim.</item>
+        <item>Lorem ipsum dolor sit amet. Ut duis esse non ea dolor cupidatat qui exercitation anim duis. Sit officia excepteur sint laboris eiusmod aliqua ad in Lorem enim.</item>
+        <item>Lorem ipsum dolor sit amet. Ut duis esse non ea dolor cupidatat qui exercitation anim duis. Sit officia excepteur sint laboris eiusmod aliqua ad in Lorem enim.</item>
+        <item>Lorem ipsum dolor sit amet. Ut duis esse non ea dolor cupidatat qui exercitation anim duis. Sit officia excepteur sint laboris eiusmod aliqua ad in Lorem enim.</item>
+        <item>Lorem ipsum dolor sit amet. Ut duis esse non ea dolor cupidatat qui exercitation anim duis. Sit officia excepteur sint laboris eiusmod aliqua ad in Lorem enim.</item>
+        <item>Lorem ipsum dolor sit amet. Ut duis esse non ea dolor cupidatat qui exercitation anim duis. Sit officia excepteur sint laboris eiusmod aliqua ad in Lorem enim.</item>
+        <item>Lorem ipsum dolor sit amet. Ut duis esse non ea dolor cupidatat qui exercitation anim duis. Sit officia excepteur sint laboris eiusmod aliqua ad in Lorem enim.</item>
+        <item>Lorem ipsum dolor sit amet. Ut duis esse non ea dolor cupidatat qui exercitation anim duis. Sit officia excepteur sint laboris eiusmod aliqua ad in Lorem enim.</item>
     </string-array>
 </resources>

@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.pmkomc22kelompok2.bookjas.databinding.ItemRiwayatPeminjamBinding
-import java.util.Locale
 
 class ListRiwayatPeminjamAdapter(private val listPeminjam: ArrayList<RiwayatPeminjam>) : RecyclerView.Adapter<ListRiwayatPeminjamAdapter.ListViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {

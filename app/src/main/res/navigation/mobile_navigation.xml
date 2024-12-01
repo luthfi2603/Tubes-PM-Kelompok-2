@@ -107,11 +107,19 @@
         <action
             android:id="@+id/action_dashboardAdminFragment_to_riwayatPeminjamanAdminFragment"
             app:destination="@id/riwayatPeminjamanAdminFragment" />
+        <action
+            android:id="@+id/action_dashboardAdminFragment_to_bukuAdminFragment"
+            app:destination="@id/bukuAdminFragment" />
     </fragment>
     <fragment
         android:id="@+id/riwayatPeminjamanAdminFragment"
         android:name="com.pmkomc22kelompok2.bookjas.ui.admin.riwayatpeminjaman.RiwayatPeminjamanAdminFragment"
         android:label="fragment_riwayat_peminjaman_admin"
         tools:layout="@layout/fragment_riwayat_peminjaman_admin" />
+    <fragment
+        android:id="@+id/bukuAdminFragment"
+        android:name="com.pmkomc22kelompok2.bookjas.ui.admin.buku.BukuAdminFragment"
+        android:label="fragment_buku_admin"
+        tools:layout="@layout/fragment_buku_admin" />
 
 </navigation>

@@ -28,5 +28,8 @@ class DashboardAdminFragment : Fragment() {
         binding.btnToRiwayatPeminjaman.setOnClickListener {
             Navigation.findNavController(view).navigate(R.id.action_dashboardAdminFragment_to_riwayatPeminjamanAdminFragment)
         }
+        binding.btnToBukuAdmin.setOnClickListener {
+            Navigation.findNavController(view).navigate(R.id.action_dashboardAdminFragment_to_bukuAdminFragment)
+        }
     }
 }
