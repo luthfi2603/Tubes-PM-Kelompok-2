@@ -5,7 +5,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.pmkomc22kelompok2.bookjas.databinding.ItemRiwayatPeminjamBinding
 
-class ListRiwayatPeminjamAdapter(private val listPeminjam: ArrayList<RiwayatPeminjam>) : RecyclerView.Adapter<ListRiwayatPeminjamAdapter.ListViewHolder>() {
+class ListRiwayatPeminjamAdapter(
+    private val listPeminjam: ArrayList<RiwayatPeminjam>,
+    private val onButtonClick: (RiwayatPeminjam) -> Unit
+) : RecyclerView.Adapter<ListRiwayatPeminjamAdapter.ListViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
         return ListViewHolder(ItemRiwayatPeminjamBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     }
@@ -13,13 +16,19 @@ class ListRiwayatPeminjamAdapter(private val listPeminjam: ArrayList<RiwayatPemi
     override fun getItemCount(): Int = listPeminjam.size
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-        val (foto, judulBuku, author, peminjam, tanggalPeminjaman, tanggalPengembalian) = listPeminjam[position]
-        holder.binding.ivFotoBuku.setImageResource(foto)
-        holder.binding.tvJudulBuku.text = judulBuku
-        holder.binding.tvAuthor.text = author
-        holder.binding.tvPeminjam.text = peminjam
-        holder.binding.tvTanggalPeminjaman.text = tanggalPeminjaman
-        holder.binding.tvTanggalPengembalian.text = tanggalPengembalian
+        val item = listPeminjam[position]
+        with(holder.binding) {
+            ivFotoBuku.setImageResource(item.foto)
+            tvJudulBuku.text = item.judulBuku
+            tvAuthor.text = item.author
+            tvPeminjam.text = item.peminjam
+            tvTanggalPeminjaman.text = item.tanggalPeminjaman
+            tvTanggalPengembalian.text = item.tanggalPengembalian
+
+            btnEdit.setOnClickListener {
+                onButtonClick(item)
+            }
+        }
     }
 
     inner class ListViewHolder(val binding: ItemRiwayatPeminjamBinding) : RecyclerView.ViewHolder(binding.root)

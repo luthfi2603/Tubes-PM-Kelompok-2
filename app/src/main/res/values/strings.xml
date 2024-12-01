@@ -187,6 +187,7 @@
     <string name="et_nama_buku">Masukkan nama buku</string>
     <string name="tv_email_peminjam">Email Peminjam</string>
     <string name="et_email_peminjam">Masukkan email peminjam</string>
+    <string name="tv_label_edit_peminjaman">Edit Peminjaman</string>
 
     <!-- data dummy untuk rv -->
     <integer-array name="foto">

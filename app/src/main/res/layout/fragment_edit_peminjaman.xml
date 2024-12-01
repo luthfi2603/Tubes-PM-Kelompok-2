@@ -1,0 +1,204 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.admin.editpeminjaman.EditPeminjamanFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="96dp">
+
+        <View
+            android:id="@+id/v"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="-40dp"
+            android:background="@color/navy_blue"
+            app:layout_constraintBottom_toBottomOf="@id/iv_ic_buku"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_ic_buku"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="40dp"
+            android:contentDescription="@string/welcome"
+            android:src="@drawable/baseline_book_24_putih"
+            app:layout_constraintStart_toStartOf="@+id/v"
+            app:layout_constraintTop_toTopOf="@+id/v" />
+
+        <TextView
+            android:id="@+id/tv_label_edit_peminjaman"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/tv_label_edit_peminjaman"
+            android:textColor="@color/alabaster_white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/iv_ic_buku"
+            app:layout_constraintStart_toEndOf="@id/iv_ic_buku"
+            app:layout_constraintTop_toTopOf="@id/iv_ic_buku" />
+
+        <ImageView
+            android:id="@+id/iv_ic_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/rounded_view_putih_border_navy"
+            android:contentDescription="@string/deskripsi"
+            android:paddingHorizontal="64dp"
+            android:paddingVertical="88dp"
+            android:src="@drawable/ic_camera_2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/v" />
+
+        <!-- Tanggal Peminjaman -->
+        <TextView
+            android:id="@+id/tv_tanggal_peminjaman"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:text="@string/tv_tanggal_peminjaman"
+            android:textColor="@color/navy_blue"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_ic_camera" />
+
+        <LinearLayout
+            android:id="@+id/ll_tanggal_peminjaman"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_border"
+            android:orientation="horizontal"
+            android:paddingHorizontal="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_tanggal_peminjaman">
+
+            <EditText
+                android:id="@+id/et_tanggal_peminjaman"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:autofillHints="name"
+                android:background="@android:color/transparent"
+                android:hint="@string/et_tanggal_peminjaman"
+                android:inputType="text"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/iv_icon_password_saat_ini"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center_vertical"
+                android:contentDescription="@string/deskripsi"
+                android:src="@drawable/ic_calendar"
+                app:tint="@color/navy_blue" />
+
+        </LinearLayout>
+
+        <!-- Nama Buku -->
+        <TextView
+            android:id="@+id/tv_nama_buku"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/tv_nama_buku"
+            android:textColor="@color/navy_blue"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_tanggal_peminjaman" />
+
+        <LinearLayout
+            android:id="@+id/ll_nama_buku"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_border"
+            android:orientation="horizontal"
+            android:paddingHorizontal="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_nama_buku">
+
+            <EditText
+                android:id="@+id/et_nama_buku"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:autofillHints="name"
+                android:background="@android:color/transparent"
+                android:hint="@string/et_nama_buku"
+                android:inputType="text"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <!-- Email Peminjam -->
+        <TextView
+            android:id="@+id/tv_email_peminjam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/tv_email_peminjam"
+            android:textColor="@color/navy_blue"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_nama_buku" />
+
+        <LinearLayout
+            android:id="@+id/ll_email_peminjam"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_border"
+            android:orientation="horizontal"
+            android:paddingHorizontal="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_email_peminjam">
+
+            <EditText
+                android:id="@+id/et_email_peminjam"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:autofillHints="name"
+                android:background="@android:color/transparent"
+                android:hint="@string/et_email_peminjam"
+                android:inputType="textEmailAddress"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_tambah_peminjaman"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="32dp"
+            android:text="@string/btn_edit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_email_peminjam" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

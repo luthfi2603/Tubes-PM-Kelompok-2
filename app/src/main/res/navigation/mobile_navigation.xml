@@ -119,6 +119,9 @@
         <action
             android:id="@+id/action_riwayatPeminjamanAdminFragment_to_tambahPeminjamanFragment"
             app:destination="@id/tambahPeminjamanFragment" />
+        <action
+            android:id="@+id/action_riwayatPeminjamanAdminFragment_to_editPeminjamanFragment"
+            app:destination="@id/editPeminjamanFragment" />
     </fragment>
     <fragment
         android:id="@+id/bukuAdminFragment"
@@ -130,5 +133,10 @@
         android:name="com.pmkomc22kelompok2.bookjas.ui.admin.tambahpeminjaman.TambahPeminjamanFragment"
         android:label="fragment_tambah_peminjaman"
         tools:layout="@layout/fragment_tambah_peminjaman" />
+    <fragment
+        android:id="@+id/editPeminjamanFragment"
+        android:name="com.pmkomc22kelompok2.bookjas.ui.admin.editpeminjaman.EditPeminjamanFragment"
+        android:label="fragment_edit_peminjaman"
+        tools:layout="@layout/fragment_edit_peminjaman" />
 
 </navigation>
