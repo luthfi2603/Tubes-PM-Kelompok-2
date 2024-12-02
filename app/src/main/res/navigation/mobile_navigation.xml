@@ -127,7 +127,14 @@
         android:id="@+id/bukuAdminFragment"
         android:name="com.pmkomc22kelompok2.bookjas.ui.admin.buku.BukuAdminFragment"
         android:label="fragment_buku_admin"
-        tools:layout="@layout/fragment_buku_admin" />
+        tools:layout="@layout/fragment_buku_admin" >
+        <action
+            android:id="@+id/action_bukuAdminFragment_to_tambahBukuFragment"
+            app:destination="@id/tambahBukuFragment" />
+        <action
+            android:id="@+id/action_bukuAdminFragment_to_editBukuFragment"
+            app:destination="@id/editBukuFragment" />
+    </fragment>
     <fragment
         android:id="@+id/tambahPeminjamanFragment"
         android:name="com.pmkomc22kelompok2.bookjas.ui.admin.tambahpeminjaman.TambahPeminjamanFragment"
@@ -138,5 +145,15 @@
         android:name="com.pmkomc22kelompok2.bookjas.ui.admin.editpeminjaman.EditPeminjamanFragment"
         android:label="fragment_edit_peminjaman"
         tools:layout="@layout/fragment_edit_peminjaman" />
+    <fragment
+        android:id="@+id/tambahBukuFragment"
+        android:name="com.pmkomc22kelompok2.bookjas.ui.admin.tambahbuku.TambahBukuFragment"
+        android:label="fragment_tambah_buku"
+        tools:layout="@layout/fragment_tambah_buku" />
+    <fragment
+        android:id="@+id/editBukuFragment"
+        android:name="com.pmkomc22kelompok2.bookjas.ui.admin.editbuku.EditBukuFragment"
+        android:label="fragment_edit_buku"
+        tools:layout="@layout/fragment_edit_buku" />
 
 </navigation>

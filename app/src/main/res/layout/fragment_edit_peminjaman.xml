@@ -115,7 +115,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginTop="16dp"
-            android:text="@string/tv_nama_buku"
+            android:text="@string/tv_judul_buku"
             android:textColor="@color/navy_blue"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -142,7 +142,7 @@
                 android:layout_weight="1"
                 android:autofillHints="name"
                 android:background="@android:color/transparent"
-                android:hint="@string/et_nama_buku"
+                android:hint="@string/et_judul_buku"
                 android:inputType="text"
                 android:textSize="16sp" />
 

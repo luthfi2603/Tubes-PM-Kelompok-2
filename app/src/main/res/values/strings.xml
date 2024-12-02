@@ -183,11 +183,24 @@
     <string name="tv_label_tambah_peminjaman">Tambah Peminjaman</string>
     <string name="tv_tanggal_peminjaman">Tanggal Peminjaman</string>
     <string name="et_tanggal_peminjaman">Masukkan tanggal peminjaman</string>
-    <string name="tv_nama_buku">Nama Buku</string>
-    <string name="et_nama_buku">Masukkan nama buku</string>
+    <string name="tv_judul_buku">Judul Buku</string>
+    <string name="et_judul_buku">Masukkan judul buku</string>
     <string name="tv_email_peminjam">Email Peminjam</string>
     <string name="et_email_peminjam">Masukkan email peminjam</string>
     <string name="tv_label_edit_peminjaman">Edit Peminjaman</string>
+    <string name="tv_label_tambah_buku">Tambah Buku</string>
+    <string name="tv_isbn">ISBN</string>
+    <string name="et_isbn">Masukkan ISBN buku</string>
+    <string name="tv_penulis">Penulis</string>
+    <string name="et_penulis_buku">Masukkan penulis buku</string>
+    <string name="et_penerbit_buku">Masukkan penerbit buku</string>
+    <string name="tv_kategori_buku">Kategori</string>
+    <string name="et_kategori_buku">Masukkan kategori buku</string>
+    <string name="et_tahun_terbit_buku">Masukkan tahun terbit buku</string>
+    <string name="tv_jumlah_tersedia_buku">Jumlah Tersedia</string>
+    <string name="et_jumlah_tersedia_buku">Masukkan jumlah tersedia buku</string>
+    <string name="et_deskripsi">Masukkan deskripsi buku</string>
+    <string name="tv_label_edit_buku">Edit Buku</string>
 
     <!-- data dummy untuk rv -->
     <integer-array name="foto">

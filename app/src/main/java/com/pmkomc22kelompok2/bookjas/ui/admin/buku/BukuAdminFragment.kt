@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pmkomc22kelompok2.bookjas.R
 import com.pmkomc22kelompok2.bookjas.databinding.FragmentBukuAdminBinding
@@ -29,6 +30,10 @@ class BukuAdminFragment : Fragment() {
         binding.rvBooks.setHasFixedSize(true)
         list.addAll(getList())
         showRecyclerList()
+
+        binding.btnTambahBuku.setOnClickListener {
+            Navigation.findNavController(view).navigate(R.id.action_bukuAdminFragment_to_tambahBukuFragment)
+        }
     }
 
     private fun getList(): ArrayList<BukuAdmin> {
@@ -64,7 +69,9 @@ class BukuAdminFragment : Fragment() {
 
     private fun showRecyclerList() {
         binding.rvBooks.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-        val listAdapter = ListBukuAdminAdapter(list)
+        val listAdapter = ListBukuAdminAdapter(list) { item ->
+            Navigation.findNavController(binding.root).navigate(R.id.action_bukuAdminFragment_to_editBukuFragment)
+        }
         binding.rvBooks.adapter = listAdapter
     }
 }
