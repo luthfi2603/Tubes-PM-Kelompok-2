@@ -34,6 +34,10 @@ class BukuAdminFragment : Fragment() {
         binding.btnTambahBuku.setOnClickListener {
             Navigation.findNavController(view).navigate(R.id.action_bukuAdminFragment_to_tambahBukuFragment)
         }
+
+        binding.btnKelolaKategori.setOnClickListener {
+            Navigation.findNavController(view).navigate(R.id.action_bukuAdminFragment_to_kelolaKategoriFragment)
+        }
     }
 
     private fun getList(): ArrayList<BukuAdmin> {

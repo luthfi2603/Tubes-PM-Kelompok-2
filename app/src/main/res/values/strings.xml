@@ -201,6 +201,10 @@
     <string name="et_jumlah_tersedia_buku">Masukkan jumlah tersedia buku</string>
     <string name="et_deskripsi">Masukkan deskripsi buku</string>
     <string name="tv_label_edit_buku">Edit Buku</string>
+    <string name="kelola_kategori">Kelola Kategori</string>
+    <string name="tv_kategori">Kategori Buku</string>
+    <string name="tv_label_tambah_kategori">Tambah Kategori</string>
+    <string name="tv_label_edit_kategori">Edit Kategori</string>
 
     <!-- data dummy untuk rv -->
     <integer-array name="foto">
@@ -322,5 +326,41 @@
         <item>Lorem ipsum dolor sit amet. Ut duis esse non ea dolor cupidatat qui exercitation anim duis. Sit officia excepteur sint laboris eiusmod aliqua ad in Lorem enim.</item>
         <item>Lorem ipsum dolor sit amet. Ut duis esse non ea dolor cupidatat qui exercitation anim duis. Sit officia excepteur sint laboris eiusmod aliqua ad in Lorem enim.</item>
         <item>Lorem ipsum dolor sit amet. Ut duis esse non ea dolor cupidatat qui exercitation anim duis. Sit officia excepteur sint laboris eiusmod aliqua ad in Lorem enim.</item>
+    </string-array>
+    <string-array name="kategori">
+        <item>Fiksi</item>
+        <item>Non Fiksi</item>
+        <item>The quick brown fox jumps over the lazy dog</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
     </string-array>
 </resources>

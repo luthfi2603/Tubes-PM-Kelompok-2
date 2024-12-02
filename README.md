@@ -92,11 +92,18 @@ Bookjas (Book Journal System) adalah  aplikasi berbasis mobile yang dirancang un
 - Memperbarui buku
 - Menghapus buku
 
+#### Kategori
+
+- Melihat kategori
+- Menambahkan kategori
+- Memperbarui kategori
+- Menghapus kategori
+
 #### Profile
 
 - Melihat profile
 - Mengubah profile 
-- Mengganti ganti password
+- Mengganti password
 - Log out
 
 ## Library
