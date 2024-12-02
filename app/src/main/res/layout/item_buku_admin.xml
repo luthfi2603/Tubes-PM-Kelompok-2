@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    android:padding="8dp">
+
+    <ImageView
+        android:id="@+id/iv_foto_buku"
+        android:layout_width="100dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/deskripsi"
+        android:scaleType="centerCrop"
+        card_view:layout_constraintDimensionRatio="3:4"
+        card_view:layout_constraintStart_toStartOf="parent"
+        card_view:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tv_judul_buku"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/text_judul_buku"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        card_view:layout_constraintEnd_toEndOf="parent"
+        card_view:layout_constraintStart_toEndOf="@id/iv_foto_buku"
+        card_view:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_author"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/text_author"
+        android:textColor="@color/grey"
+        android:textSize="16sp"
+        card_view:layout_constraintEnd_toEndOf="parent"
+        card_view:layout_constraintStart_toEndOf="@+id/iv_foto_buku"
+        card_view:layout_constraintTop_toBottomOf="@+id/tv_judul_buku" />
+
+    <TextView
+        android:id="@+id/tv_deskripsi"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/deskripsi_buku"
+        android:textColor="@color/navy_blue"
+        android:textSize="16sp"
+        card_view:layout_constraintEnd_toEndOf="parent"
+        card_view:layout_constraintStart_toEndOf="@id/iv_foto_buku"
+        card_view:layout_constraintTop_toBottomOf="@id/tv_author" />
+
+    <TableLayout
+        android:id="@+id/tl_deskripsi"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/rounded_view_steel_blue"
+        android:padding="8dp"
+        card_view:layout_constraintEnd_toEndOf="parent"
+        card_view:layout_constraintStart_toEndOf="@id/iv_foto_buku"
+        card_view:layout_constraintTop_toBottomOf="@id/tv_deskripsi">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:text="@string/tersedia"
+                android:textColor="@color/alabaster_white"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/titik_dua"
+                android:layout_marginEnd="4dp"
+                android:textColor="@color/alabaster_white"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_jumlah_buku"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/jumlah_buku_lengkap"
+                android:textColor="@color/alabaster_white"
+                android:textSize="16sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:text="@string/tahun_terbit"
+                android:textColor="@color/alabaster_white"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/titik_dua"
+                android:layout_marginEnd="4dp"
+                android:textColor="@color/alabaster_white"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_tahun_terbit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/nilai_tahun_terbit"
+                android:textColor="@color/alabaster_white"
+                android:textSize="16sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:text="@string/penerbit"
+                android:textColor="@color/alabaster_white"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/titik_dua"
+                android:layout_marginEnd="4dp"
+                android:textColor="@color/alabaster_white"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_penerbit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/nilai_terbit"
+                android:textColor="@color/alabaster_white"
+                android:textSize="16sp" />
+
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:id="@+id/btn_edit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/btn_edit"
+        android:textStyle="bold"
+        card_view:layout_constraintEnd_toStartOf="@id/btn_delete"
+        card_view:layout_constraintHorizontal_chainStyle="spread"
+        card_view:layout_constraintStart_toStartOf="parent"
+        card_view:layout_constraintTop_toBottomOf="@id/tl_deskripsi" />
+
+    <Button
+        android:id="@+id/btn_delete"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:backgroundTint="@color/red"
+        android:text="@string/btn_delete"
+        android:textStyle="bold"
+        card_view:layout_constraintBottom_toBottomOf="@id/btn_edit"
+        card_view:layout_constraintEnd_toEndOf="parent"
+        card_view:layout_constraintStart_toEndOf="@id/btn_edit"
+        card_view:layout_constraintTop_toTopOf="@id/btn_edit" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

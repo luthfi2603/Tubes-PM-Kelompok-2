@@ -3,7 +3,6 @@ package com.pmkomc22kelompok2.bookjas.ui.user.dashboard
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.pmkomc22kelompok2.bookjas.R
 import com.pmkomc22kelompok2.bookjas.databinding.ItemRowBookBinding
 import java.util.Locale
 

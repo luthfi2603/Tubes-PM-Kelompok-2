@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
+import com.pmkomc22kelompok2.bookjas.R
 import com.pmkomc22kelompok2.bookjas.databinding.FragmentDashboardAdminBinding
 
 class DashboardAdminFragment : Fragment() {
@@ -23,6 +25,11 @@ class DashboardAdminFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
+        binding.btnToRiwayatPeminjaman.setOnClickListener {
+            Navigation.findNavController(view).navigate(R.id.action_dashboardAdminFragment_to_riwayatPeminjamanAdminFragment)
+        }
+        binding.btnToBukuAdmin.setOnClickListener {
+            Navigation.findNavController(view).navigate(R.id.action_dashboardAdminFragment_to_bukuAdminFragment)
+        }
     }
 }

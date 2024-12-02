@@ -169,6 +169,42 @@
     <string name="jumlah_peminjam">500</string>
     <string name="jumlah_pembaca">10</string>
     <string name="pembaca">Pembaca</string>
+    <string name="riwayat_peminjaman">Riwayat Peminjaman</string>
+    <string name="tanggal">12 November 2024</string>
+    <string name="tenggat">21 November 2024</string>
+    <string name="tenggat_hitung_mundur">(9 Hari Lagi)</string>
+    <string name="btn_edit">Edit</string>
+    <string name="btn_delete">Delete</string>
+    <string name="tambah">Tambah</string>
+    <string name="deskripsi_buku">Ut duis esse non ea dolor cupidatat qui exercitation anim duis. Sit officia excepteur sint laboris eiusmod aliqua ad in Lorem enim. Nostrud deserunt commodo occaecat nostrud non cillum proident ea laborum amet deserunt ex excepteur.</string>
+    <string name="jumlah_buku_lengkap">16 unit</string>
+    <string name="titik_dua">:</string>
+    <string name="tanda_tambah">+</string>
+    <string name="tv_label_tambah_peminjaman">Tambah Peminjaman</string>
+    <string name="tv_tanggal_peminjaman">Tanggal Peminjaman</string>
+    <string name="et_tanggal_peminjaman">Masukkan tanggal peminjaman</string>
+    <string name="tv_judul_buku">Judul Buku</string>
+    <string name="et_judul_buku">Masukkan judul buku</string>
+    <string name="tv_email_peminjam">Email Peminjam</string>
+    <string name="et_email_peminjam">Masukkan email peminjam</string>
+    <string name="tv_label_edit_peminjaman">Edit Peminjaman</string>
+    <string name="tv_label_tambah_buku">Tambah Buku</string>
+    <string name="tv_isbn">ISBN</string>
+    <string name="et_isbn">Masukkan ISBN buku</string>
+    <string name="tv_penulis">Penulis</string>
+    <string name="et_penulis_buku">Masukkan penulis buku</string>
+    <string name="et_penerbit_buku">Masukkan penerbit buku</string>
+    <string name="tv_kategori_buku">Kategori</string>
+    <string name="et_kategori_buku">Masukkan kategori buku</string>
+    <string name="et_tahun_terbit_buku">Masukkan tahun terbit buku</string>
+    <string name="tv_jumlah_tersedia_buku">Jumlah Tersedia</string>
+    <string name="et_jumlah_tersedia_buku">Masukkan jumlah tersedia buku</string>
+    <string name="et_deskripsi">Masukkan deskripsi buku</string>
+    <string name="tv_label_edit_buku">Edit Buku</string>
+    <string name="kelola_kategori">Kelola Kategori</string>
+    <string name="tv_kategori">Kategori Buku</string>
+    <string name="tv_label_tambah_kategori">Tambah Kategori</string>
+    <string name="tv_label_edit_kategori">Edit Kategori</string>
 
     <!-- data dummy untuk rv -->
     <integer-array name="foto">
@@ -218,5 +254,113 @@
         <item>Perwira Satira Taufik Q.D.</item>
         <item>Perwira Satira Taufik Q.D.</item>
         <item>Perwira Satira Taufik Q.D.</item>
+    </string-array>
+    <string-array name="peminjam">
+        <item>Rifqi Jabrah Rhae</item>
+        <item>Rifqi Jabrah Rhae</item>
+        <item>Rifqi Jabrah Rhae</item>
+        <item>Rifqi Jabrah Rhae</item>
+        <item>Rifqi Jabrah Rhae</item>
+        <item>Rifqi Jabrah Rhae</item>
+        <item>Rifqi Jabrah Rhae</item>
+        <item>Rifqi Jabrah Rhae</item>
+        <item>Rifqi Jabrah Rhae</item>
+        <item>Rifqi Jabrah Rhae</item>
+    </string-array>
+    <string-array name="tanggal_peminjaman">
+        <item>12 November 2024</item>
+        <item>12 November 2024</item>
+        <item>12 November 2024</item>
+        <item>12 November 2024</item>
+        <item>12 November 2024</item>
+        <item>12 November 2024</item>
+        <item>12 November 2024</item>
+        <item>12 November 2024</item>
+        <item>12 November 2024</item>
+        <item>12 November 2024</item>
+    </string-array>
+    <string-array name="tanggal_pengembalian">
+        <item>21 November 2024</item>
+        <item>21 November 2024</item>
+        <item>21 November 2024</item>
+        <item>21 November 2024</item>
+        <item>21 November 2024</item>
+        <item>21 November 2024</item>
+        <item>21 November 2024</item>
+        <item>21 November 2024</item>
+        <item>21 November 2024</item>
+        <item>21 November 2024</item>
+    </string-array>
+    <string-array name="tahun_terbit">
+        <item>2024</item>
+        <item>2024</item>
+        <item>2024</item>
+        <item>2024</item>
+        <item>2024</item>
+        <item>2024</item>
+        <item>2024</item>
+        <item>2024</item>
+        <item>2024</item>
+        <item>2024</item>
+    </string-array>
+    <string-array name="penerbit">
+        <item>Shueisha</item>
+        <item>Shueisha</item>
+        <item>Shueisha</item>
+        <item>Shueisha</item>
+        <item>Shueisha</item>
+        <item>Shueisha</item>
+        <item>Shueisha</item>
+        <item>Shueisha</item>
+        <item>Shueisha</item>
+        <item>Shueisha</item>
+    </string-array>
+    <string-array name="deskripsi">
+        <item>Lorem ipsum dolor sit amet. Ut duis esse non ea dolor cupidatat qui exercitation anim duis. Sit officia excepteur sint laboris eiusmod aliqua ad in Lorem enim.</item>
+        <item>Lorem ipsum dolor sit amet. Ut duis esse non ea dolor cupidatat qui exercitation anim duis. Sit officia excepteur sint laboris eiusmod aliqua ad in Lorem enim.</item>
+        <item>Lorem ipsum dolor sit amet. Ut duis esse non ea dolor cupidatat qui exercitation anim duis. Sit officia excepteur sint laboris eiusmod aliqua ad in Lorem enim.</item>
+        <item>Lorem ipsum dolor sit amet. Ut duis esse non ea dolor cupidatat qui exercitation anim duis. Sit officia excepteur sint laboris eiusmod aliqua ad in Lorem enim.</item>
+        <item>Lorem ipsum dolor sit amet. Ut duis esse non ea dolor cupidatat qui exercitation anim duis. Sit officia excepteur sint laboris eiusmod aliqua ad in Lorem enim.</item>
+        <item>Lorem ipsum dolor sit amet. Ut duis esse non ea dolor cupidatat qui exercitation anim duis. Sit officia excepteur sint laboris eiusmod aliqua ad in Lorem enim.</item>
+        <item>Lorem ipsum dolor sit amet. Ut duis esse non ea dolor cupidatat qui exercitation anim duis. Sit officia excepteur sint laboris eiusmod aliqua ad in Lorem enim.</item>
+        <item>Lorem ipsum dolor sit amet. Ut duis esse non ea dolor cupidatat qui exercitation anim duis. Sit officia excepteur sint laboris eiusmod aliqua ad in Lorem enim.</item>
+        <item>Lorem ipsum dolor sit amet. Ut duis esse non ea dolor cupidatat qui exercitation anim duis. Sit officia excepteur sint laboris eiusmod aliqua ad in Lorem enim.</item>
+        <item>Lorem ipsum dolor sit amet. Ut duis esse non ea dolor cupidatat qui exercitation anim duis. Sit officia excepteur sint laboris eiusmod aliqua ad in Lorem enim.</item>
+    </string-array>
+    <string-array name="kategori">
+        <item>Fiksi</item>
+        <item>Non Fiksi</item>
+        <item>The quick brown fox jumps over the lazy dog</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
+        <item>Fiksi</item>
     </string-array>
 </resources>

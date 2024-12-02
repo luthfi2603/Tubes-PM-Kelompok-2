@@ -37,8 +37,8 @@ class DashboardFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.rvBooks.setHasFixedSize(true)
 
+        binding.rvBooks.setHasFixedSize(true)
         list.addAll(getListBooks())
         showRecyclerList()
     }

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginBottom="16dp"
+    android:backgroundTint="@color/alabaster_white"
+    card_view:cardCornerRadius="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/iv_foto_buku"
+            android:layout_width="100dp"
+            android:layout_height="0dp"
+            android:contentDescription="@string/deskripsi"
+            android:scaleType="centerCrop"
+            card_view:layout_constraintDimensionRatio="3:4"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/tv_judul_buku"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/text_judul_buku"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintStart_toEndOf="@id/iv_foto_buku"
+            card_view:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_author"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/text_author"
+            android:textColor="@color/grey"
+            android:textSize="16sp"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintStart_toEndOf="@+id/iv_foto_buku"
+            card_view:layout_constraintTop_toBottomOf="@+id/tv_judul_buku" />
+
+        <ImageView
+            android:id="@+id/iv_ic_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:contentDescription="@string/deskripsi"
+            android:src="@drawable/ic_user_4"
+            card_view:layout_constraintStart_toEndOf="@+id/iv_foto_buku"
+            card_view:layout_constraintTop_toBottomOf="@id/tv_author" />
+
+        <TextView
+            android:id="@+id/tv_peminjam"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/nama"
+            android:textColor="@color/young_blue"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            card_view:layout_constraintBottom_toBottomOf="@id/iv_ic_user"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintStart_toEndOf="@+id/iv_ic_user"
+            card_view:layout_constraintTop_toTopOf="@+id/iv_ic_user" />
+
+        <ImageView
+            android:id="@+id/iv_ic_calendar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:contentDescription="@string/deskripsi"
+            android:src="@drawable/ic_calendar"
+            card_view:layout_constraintStart_toEndOf="@+id/iv_foto_buku"
+            card_view:layout_constraintTop_toBottomOf="@id/iv_ic_user" />
+
+        <TextView
+            android:id="@+id/tv_tanggal_peminjaman"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/tanggal"
+            android:textColor="@color/steel_blue"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            card_view:layout_constraintBottom_toBottomOf="@+id/iv_ic_calendar"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintStart_toEndOf="@+id/iv_ic_calendar"
+            card_view:layout_constraintTop_toTopOf="@+id/iv_ic_calendar" />
+
+        <ImageView
+            android:id="@+id/iv_ic_clock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:contentDescription="@string/deskripsi"
+            android:src="@drawable/ic_clock"
+            card_view:layout_constraintStart_toEndOf="@+id/iv_foto_buku"
+            card_view:layout_constraintTop_toBottomOf="@id/iv_ic_calendar" />
+
+        <TextView
+            android:id="@+id/tv_tanggal_pengembalian"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/tenggat"
+            android:textColor="@color/navy_blue"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            card_view:layout_constraintBottom_toBottomOf="@+id/iv_ic_clock"
+            card_view:layout_constraintStart_toEndOf="@+id/iv_ic_clock"
+            card_view:layout_constraintTop_toTopOf="@+id/iv_ic_clock" />
+
+        <TextView
+            android:id="@+id/tv_tenggat_hitung_mundur"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/tenggat_hitung_mundur"
+            android:textColor="@color/grey"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            card_view:layout_constraintStart_toStartOf="@+id/tv_tanggal_pengembalian"
+            card_view:layout_constraintTop_toBottomOf="@+id/tv_tanggal_pengembalian" />
+
+        <Button
+            android:id="@+id/btn_edit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/btn_edit"
+            android:textStyle="bold"
+            card_view:layout_constraintEnd_toStartOf="@id/btn_delete"
+            card_view:layout_constraintHorizontal_chainStyle="spread"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toBottomOf="@id/tv_tenggat_hitung_mundur" />
+
+        <Button
+            android:id="@+id/btn_delete"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:backgroundTint="@color/red"
+            android:text="@string/btn_delete"
+            android:textStyle="bold"
+            card_view:layout_constraintBottom_toBottomOf="@id/btn_edit"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintStart_toEndOf="@id/btn_edit"
+            card_view:layout_constraintTop_toTopOf="@id/btn_edit" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
