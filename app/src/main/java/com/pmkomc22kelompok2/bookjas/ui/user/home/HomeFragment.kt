@@ -4,20 +4,21 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.pmkomc22kelompok2.bookjas.R
 import com.pmkomc22kelompok2.bookjas.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
-
     private var _binding: FragmentHomeBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+    private val listBukuBaruDipinjam = ArrayList<BukuBaruDiPinjam>()
+    private val listRekomendasiBuku = ArrayList<RekomendasiBuku>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -40,11 +41,11 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.view7.setOnClickListener {
-            Navigation.findNavController(view).apply {
-                navigate(R.id.action_navigation_home_to_detailBukuFragment)
-            }
-        }
+        binding.rvBukuYangBaruDipinjam.setHasFixedSize(true)
+        binding.rvRekomendasiBuku.setHasFixedSize(true)
+        listBukuBaruDipinjam.addAll(getListBukuBaruDipinjam())
+        listRekomendasiBuku.addAll(getListRekomendasiBuku())
+        showRecyclerList()
 
         binding.btnToDashboardAdmin.setOnClickListener {
             Navigation.findNavController(view).apply {
@@ -55,6 +56,53 @@ class HomeFragment : Fragment() {
         binding.btnToRiwayatPeminjaman.setOnClickListener {
             Navigation.findNavController(view).navigate(R.id.action_navigation_home_to_riwayatPeminjamanFragment)
         }
+    }
+
+    private fun getListBukuBaruDipinjam(): ArrayList<BukuBaruDiPinjam> {
+        val foto = resources.obtainTypedArray(R.array.foto)
+        val judulBuku = resources.getStringArray(R.array.judul_buku)
+        val author = resources.getStringArray(R.array.author)
+        val tenggat = resources.getStringArray(R.array.tanggal_pengembalian)
+        val listItem = ArrayList<BukuBaruDiPinjam>()
+
+        try {
+            for (i in judulBuku.indices) {
+                val item = BukuBaruDiPinjam(foto.getResourceId(i, -1), judulBuku[i], author[i], tenggat[i])
+                listItem.add(item)
+            }
+        } finally {
+            foto.recycle()
+        }
+
+        return listItem
+    }
+
+    private fun getListRekomendasiBuku(): ArrayList<RekomendasiBuku> {
+        val foto = resources.obtainTypedArray(R.array.foto)
+        val judulBuku = resources.getStringArray(R.array.judul_buku)
+        val author = resources.getStringArray(R.array.author)
+        val listItem = ArrayList<RekomendasiBuku>()
+
+        try {
+            for (i in judulBuku.indices) {
+                val item = RekomendasiBuku(foto.getResourceId(i, -1), judulBuku[i], author[i])
+                listItem.add(item)
+            }
+        } finally {
+            foto.recycle()
+        }
+
+        return listItem
+    }
+
+    private fun showRecyclerList() {
+        binding.rvBukuYangBaruDipinjam.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        val listBukuBaruDipinjamAdapter = ListBukuBaruDiPinjamAdapter(listBukuBaruDipinjam)
+        binding.rvBukuYangBaruDipinjam.adapter = listBukuBaruDipinjamAdapter
+
+        binding.rvRekomendasiBuku.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        val listRekomendasiBukuAdapter = ListRekomendasiBukuAdapter(listRekomendasiBuku)
+        binding.rvRekomendasiBuku.adapter = listRekomendasiBukuAdapter
     }
 
     override fun onDestroyView() {

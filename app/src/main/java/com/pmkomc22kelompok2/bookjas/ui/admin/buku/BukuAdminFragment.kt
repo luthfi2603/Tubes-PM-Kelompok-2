@@ -9,10 +9,13 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pmkomc22kelompok2.bookjas.R
 import com.pmkomc22kelompok2.bookjas.databinding.FragmentBukuAdminBinding
+import com.pmkomc22kelompok2.bookjas.ui.user.dashboard.Kategori
+import com.pmkomc22kelompok2.bookjas.ui.user.dashboard.ListKategoriAdapter
 
 class BukuAdminFragment : Fragment() {
     private lateinit var binding: FragmentBukuAdminBinding
     private val list = ArrayList<BukuAdmin>()
+    private val listKategori = ArrayList<Kategori>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,6 +32,10 @@ class BukuAdminFragment : Fragment() {
 
         binding.rvBooks.setHasFixedSize(true)
         list.addAll(getList())
+
+        binding.rvKategoriBuku.setHasFixedSize(true)
+        listKategori.addAll(getListKategori())
+
         showRecyclerList()
 
         binding.btnTambahBuku.setOnClickListener {
@@ -71,11 +78,28 @@ class BukuAdminFragment : Fragment() {
         return listItem
     }
 
+    private fun getListKategori(): ArrayList<Kategori> {
+        val kategori = resources.getStringArray(R.array.kategori)
+        val listItem = ArrayList<Kategori>()
+
+        for (i in kategori.indices) {
+            val item = Kategori(kategori[i])
+            listItem.add(item)
+        }
+
+        return listItem
+    }
+
     private fun showRecyclerList() {
         binding.rvBooks.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         val listAdapter = ListBukuAdminAdapter(list) { item ->
             Navigation.findNavController(binding.root).navigate(R.id.action_bukuAdminFragment_to_editBukuFragment)
         }
+
+        binding.rvKategoriBuku.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        val listKategoriAdapter = ListKategoriAdapter(listKategori)
+        binding.rvKategoriBuku.adapter = listKategoriAdapter
+
         binding.rvBooks.adapter = listAdapter
     }
 }
