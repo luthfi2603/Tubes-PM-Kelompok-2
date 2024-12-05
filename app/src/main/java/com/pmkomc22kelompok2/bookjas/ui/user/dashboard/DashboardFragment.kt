@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.pmkomc22kelompok2.bookjas.R
 import com.pmkomc22kelompok2.bookjas.databinding.FragmentDashboardBinding
 
@@ -16,6 +17,7 @@ class DashboardFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
     private val list = ArrayList<Book>()
+    private val listKategori = ArrayList<Kategori>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -40,6 +42,10 @@ class DashboardFragment : Fragment() {
 
         binding.rvBooks.setHasFixedSize(true)
         list.addAll(getListBooks())
+
+        binding.rvKategoriBuku.setHasFixedSize(true)
+        listKategori.addAll(getListKategori())
+
         showRecyclerList()
     }
 
@@ -62,10 +68,26 @@ class DashboardFragment : Fragment() {
         return listBook
     }
 
+    private fun getListKategori(): ArrayList<Kategori> {
+        val kategori = resources.getStringArray(R.array.kategori)
+        val listItem = ArrayList<Kategori>()
+
+        for (i in kategori.indices) {
+            val item = Kategori(kategori[i])
+            listItem.add(item)
+        }
+
+        return listItem
+    }
+
     private fun showRecyclerList() {
         binding.rvBooks.layoutManager = GridLayoutManager(context, 3)
-        val listHeroAdapter = ListBookAdapter(list)
-        binding.rvBooks.adapter = listHeroAdapter
+        val listBukuAdapter = ListBookAdapter(list)
+        binding.rvBooks.adapter = listBukuAdapter
+
+        binding.rvKategoriBuku.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        val listKategoriAdapter = ListKategoriAdapter(listKategori)
+        binding.rvKategoriBuku.adapter = listKategoriAdapter
     }
 
     override fun onDestroyView() {

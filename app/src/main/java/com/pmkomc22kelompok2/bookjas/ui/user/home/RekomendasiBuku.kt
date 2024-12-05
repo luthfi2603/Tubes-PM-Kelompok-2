@@ -4,9 +4,8 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class BukuBaruDiPinjam(
+data class RekomendasiBuku(
     val foto: Int,
     val judulBuku: String,
     val author: String,
-    val tenggat: String,
 ) : Parcelable

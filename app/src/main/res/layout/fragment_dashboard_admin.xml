@@ -295,61 +295,14 @@
             app:layout_constraintStart_toEndOf="@id/iv_ic_buku"
             app:layout_constraintTop_toTopOf="@id/iv_ic_buku" />
 
-        <HorizontalScrollView
-            android:id="@+id/hsv"
-            android:layout_width="match_parent"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_buku_baru_ditambah"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_label">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <View
-                    android:id="@+id/view3"
-                    android:layout_width="130dp"
-                    android:layout_height="200dp"
-                    android:background="@drawable/rounded_view_putih_border_navy"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <View
-                    android:id="@+id/view4"
-                    android:layout_width="130dp"
-                    android:layout_height="200dp"
-                    android:layout_marginStart="16dp"
-                    android:background="@drawable/rounded_view_putih_border_navy"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/view3"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <View
-                    android:id="@+id/view5"
-                    android:layout_width="130dp"
-                    android:layout_height="200dp"
-                    android:layout_marginStart="16dp"
-                    android:background="@drawable/rounded_view_putih_border_navy"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/view4"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <View
-                    android:id="@+id/view6"
-                    android:layout_width="130dp"
-                    android:layout_height="200dp"
-                    android:layout_marginStart="16dp"
-                    android:background="@drawable/rounded_view_putih_border_navy"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/view5"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </HorizontalScrollView>
+            app:layout_constraintTop_toBottomOf="@+id/tv_label" />
 
         <Button
             android:id="@+id/btn_to_riwayat_peminjaman"
@@ -359,7 +312,7 @@
             android:text="@string/riwayat_peminjaman"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/hsv" />
+            app:layout_constraintTop_toBottomOf="@+id/rv_buku_baru_ditambah" />
 
         <Button
             android:id="@+id/btn_to_buku_admin"

@@ -33,7 +33,7 @@
     <string name="nama">Edgar Peacemaker</string>
     <string name="title_buku_yang_baru_dipinjam">Buku yang Baru Dipinjam</string>
     <string name="text_jumlah">2 Buku</string>
-    <string name="title_rekomendasi_buku">Ingin baca buku apa syg?</string>
+    <string name="title_rekomendasi_buku">Ingin Baca Buku Apa Sayang?</string>
     <string name="text_author">Perwira Satria</string>
     <string name="text_judul_buku">Lorem Ipsum</string>
     <string name="tv_perpustakaan">Perpustakaan</string>
@@ -232,16 +232,16 @@
         <item>123</item>
     </integer-array>
     <string-array name="judul_buku">
-        <item>Lorem Ipsum Dolor Sit Amet</item>
-        <item>Lorem Ipsum Dolor Sit Amet</item>
-        <item>Lorem Ipsum Dolor Sit Amet</item>
-        <item>Lorem Ipsum Dolor Sit Amet</item>
-        <item>Lorem Ipsum Dolor Sit Amet</item>
-        <item>Lorem Ipsum Dolor Sit Amet</item>
-        <item>Lorem Ipsum Dolor Sit Amet</item>
-        <item>Lorem Ipsum Dolor Sit Amet</item>
-        <item>Lorem Ipsum Dolor Sit Amet</item>
-        <item>Lorem Ipsum Dolor Sit Amet</item>
+        <item>Lorem Ipsum Dolor Sit Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</item>
+        <item>Lorem Ipsum Dolor Sit Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</item>
+        <item>Lorem Ipsum Dolor Sit Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</item>
+        <item>Lorem Ipsum Dolor Sit Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</item>
+        <item>Lorem Ipsum Dolor Sit Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</item>
+        <item>Lorem Ipsum Dolor Sit Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</item>
+        <item>Lorem Ipsum Dolor Sit Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</item>
+        <item>Lorem Ipsum Dolor Sit Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</item>
+        <item>Lorem Ipsum Dolor Sit Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</item>
+        <item>Lorem Ipsum Dolor Sit Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</item>
     </string-array>
     <string-array name="author">
         <item>Perwira Satira Taufik Q.D.</item>

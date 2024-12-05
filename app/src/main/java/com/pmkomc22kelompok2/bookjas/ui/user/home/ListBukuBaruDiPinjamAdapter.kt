@@ -13,10 +13,11 @@ class ListBukuBaruDiPinjamAdapter(private val list: ArrayList<BukuBaruDiPinjam>)
     override fun getItemCount(): Int = list.size
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-        val (foto, judulBuku, author) = list[position]
+        val (foto, judulBuku, author, tenggat) = list[position]
         holder.binding.ivFotoBuku.setImageResource(foto)
         holder.binding.tvJudulBuku.text = judulBuku
         holder.binding.tvAuthor.text = author
+        holder.binding.tvTenggat.text = tenggat
     }
 
     inner class ListViewHolder(val binding: ItemBukuBaruDipinjamBinding) : RecyclerView.ViewHolder(binding.root)
