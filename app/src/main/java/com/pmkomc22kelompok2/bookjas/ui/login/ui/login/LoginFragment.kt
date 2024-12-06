@@ -32,11 +32,10 @@ class LoginFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-
+    ): View {
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
-        return binding.root
 
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -44,8 +43,8 @@ class LoginFragment : Fragment() {
         loginViewModel = ViewModelProvider(this, LoginViewModelFactory())
             .get(LoginViewModel::class.java)
 
-        val usernameEditText = binding.username
-        val passwordEditText = binding.password
+        val emailEditText = binding.etEmail
+        val passwordEditText = binding.etPassword
         val loginButton = binding.login
         val loadingProgressBar = binding.loading
 
@@ -56,7 +55,7 @@ class LoginFragment : Fragment() {
                 }
                 loginButton.isEnabled = loginFormState.isDataValid
                 loginFormState.usernameError?.let {
-                    usernameEditText.error = getString(it)
+                    emailEditText.error = getString(it)
                 }
                 loginFormState.passwordError?.let {
                     passwordEditText.error = getString(it)
@@ -86,17 +85,17 @@ class LoginFragment : Fragment() {
 
             override fun afterTextChanged(s: Editable) {
                 loginViewModel.loginDataChanged(
-                    usernameEditText.text.toString(),
+                    emailEditText.text.toString(),
                     passwordEditText.text.toString()
                 )
             }
         }
-        usernameEditText.addTextChangedListener(afterTextChangedListener)
+        emailEditText.addTextChangedListener(afterTextChangedListener)
         passwordEditText.addTextChangedListener(afterTextChangedListener)
         passwordEditText.setOnEditorActionListener { _, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_DONE) {
                 loginViewModel.login(
-                    usernameEditText.text.toString(),
+                    emailEditText.text.toString(),
                     passwordEditText.text.toString()
                 )
             }
@@ -106,7 +105,7 @@ class LoginFragment : Fragment() {
         loginButton.setOnClickListener {
             loadingProgressBar.visibility = View.VISIBLE
             loginViewModel.login(
-                usernameEditText.text.toString(),
+                emailEditText.text.toString(),
                 passwordEditText.text.toString()
             )
         }
@@ -115,6 +114,22 @@ class LoginFragment : Fragment() {
             Navigation.findNavController(view).apply {
                 navigate(R.id.action_navigation_login_to_navigation_register)
             }
+        }
+
+
+        // logika untuk toggle show dan hide password
+        binding.ivIcShowPassword.setOnClickListener {
+            binding.etPassword.inputType = android.text.InputType.TYPE_CLASS_TEXT or android.text.InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+            binding.ivIcShowPassword.visibility = View.GONE
+            binding.ivIcHidePassword.visibility = View.VISIBLE
+            binding.etPassword.setSelection(binding.etPassword.text?.length ?: 0) // Atur ulang posisi kursor
+        }
+
+        binding.ivIcHidePassword.setOnClickListener {
+            binding.etPassword.inputType = android.text.InputType.TYPE_CLASS_TEXT or android.text.InputType.TYPE_TEXT_VARIATION_PASSWORD
+            binding.ivIcShowPassword.visibility = View.VISIBLE
+            binding.ivIcHidePassword.visibility = View.GONE
+            binding.etPassword.setSelection(binding.etPassword.text?.length ?: 0) // Atur ulang posisi kursor
         }
     }
 
