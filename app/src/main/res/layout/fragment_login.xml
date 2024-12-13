@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="96dp">
+        android:paddingBottom="16dp">
 
         <ImageView
             android:id="@+id/grafik_login"
