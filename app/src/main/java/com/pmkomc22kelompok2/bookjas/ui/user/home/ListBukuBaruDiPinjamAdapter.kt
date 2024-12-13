@@ -5,7 +5,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.pmkomc22kelompok2.bookjas.databinding.ItemBukuBaruDipinjamBinding
 
-class ListBukuBaruDiPinjamAdapter(private val list: ArrayList<BukuBaruDiPinjam>) : RecyclerView.Adapter<ListBukuBaruDiPinjamAdapter.ListViewHolder>() {
+class ListBukuBaruDiPinjamAdapter(
+    private val list: ArrayList<BukuBaruDiPinjam>,
+    private val onButtonClick: (BukuBaruDiPinjam) -> Unit
+) : RecyclerView.Adapter<ListBukuBaruDiPinjamAdapter.ListViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
         return ListViewHolder(ItemBukuBaruDipinjamBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     }
@@ -14,10 +17,16 @@ class ListBukuBaruDiPinjamAdapter(private val list: ArrayList<BukuBaruDiPinjam>)
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         val (foto, judulBuku, author, tenggat) = list[position]
-        holder.binding.ivFotoBuku.setImageResource(foto)
-        holder.binding.tvJudulBuku.text = judulBuku
-        holder.binding.tvAuthor.text = author
-        holder.binding.tvTenggat.text = tenggat
+        with(holder.binding) {
+            ivFotoBuku.setImageResource(foto)
+            tvJudulBuku.text = judulBuku
+            tvAuthor.text = author
+            tvTenggat.text = tenggat
+
+            root.setOnClickListener {
+                onButtonClick(list[position])
+            }
+        }
     }
 
     inner class ListViewHolder(val binding: ItemBukuBaruDipinjamBinding) : RecyclerView.ViewHolder(binding.root)

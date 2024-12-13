@@ -6,7 +6,7 @@
     android:paddingLeft="@dimen/fragment_horizontal_margin"
     android:paddingTop="@dimen/fragment_vertical_margin"
     android:paddingRight="@dimen/fragment_horizontal_margin"
-    android:paddingBottom="96dp"
+    android:paddingBottom="16dp"
     tools:context=".ui.admin.buku.BukuAdminFragment">
 
     <TextView

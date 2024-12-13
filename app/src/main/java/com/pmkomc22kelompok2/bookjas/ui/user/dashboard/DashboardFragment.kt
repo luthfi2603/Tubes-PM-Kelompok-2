@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pmkomc22kelompok2.bookjas.R
@@ -82,7 +83,9 @@ class DashboardFragment : Fragment() {
 
     private fun showRecyclerList() {
         binding.rvBooks.layoutManager = GridLayoutManager(context, 3)
-        val listBukuAdapter = ListBookAdapter(list)
+        val listBukuAdapter = ListBookAdapter(list) { item ->
+            Navigation.findNavController(binding.root).navigate(R.id.action_navigation_dashboard_to_detailBukuFragment)
+        }
         binding.rvBooks.adapter = listBukuAdapter
 
         binding.rvKategoriBuku.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)

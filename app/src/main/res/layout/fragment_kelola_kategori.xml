@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:paddingHorizontal="16dp"
     android:paddingTop="16dp"
-    android:paddingBottom="96dp"
+    android:paddingBottom="16dp"
     tools:context=".ui.admin.kelolakategori.KelolaKategoriFragment">
 
     <TextView
