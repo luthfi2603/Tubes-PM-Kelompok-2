@@ -6,15 +6,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.user.register.ui.login.RegisterFragment">
-<!--    android:paddingLeft="@dimen/fragment_horizontal_margin"-->
-<!--    android:paddingTop="@dimen/fragment_vertical_margin"-->
-<!--    android:paddingRight="@dimen/fragment_horizontal_margin"-->
-<!--    android:paddingBottom="@dimen/fragment_vertical_margin"-->
+    <!--    android:paddingLeft="@dimen/fragment_horizontal_margin"-->
+    <!--    android:paddingTop="@dimen/fragment_vertical_margin"-->
+    <!--    android:paddingRight="@dimen/fragment_horizontal_margin"-->
+    <!--    android:paddingBottom="@dimen/fragment_vertical_margin"-->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="96dp">
+        android:paddingBottom="16dp">
 
         <ImageView
             android:id="@+id/grafik_register"
@@ -35,12 +35,11 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="40dp"
             android:text="@string/text_register"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/grafik_register"
             android:textColor="@color/navy_blue"
             android:textSize="48sp"
             android:textStyle="bold"
-            />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/grafik_register" />
 
         <TextView
             android:id="@+id/text_register_2"
@@ -49,74 +48,209 @@
             android:layout_marginStart="16dp"
             android:text="@string/text_register_2"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_register"
-            />
+            app:layout_constraintTop_toBottomOf="@+id/text_register" />
 
-        <EditText
-            android:id="@+id/nama"
-            android:layout_width="0dp"
+        <!-- Nama -->
+        <TextView
+            android:id="@+id/tv_nama"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:autofillHints=""
-            android:hint="@string/text_nama"
-            android:inputType="text"
-            android:selectAllOnFocus="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/prompt_email"
+            android:textColor="@color/navy_blue"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_register_2" />
+
+        <LinearLayout
+            android:id="@+id/ll_nama"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_border"
+            android:orientation="horizontal"
+            android:paddingHorizontal="24dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_register_2" />
+            app:layout_constraintTop_toBottomOf="@id/tv_nama">
 
-        <EditText
-            android:id="@+id/username"
-            android:layout_width="0dp"
+            <EditText
+                android:id="@+id/et_nama"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:autofillHints=""
+                android:background="@android:color/transparent"
+                android:hint="@string/et_nama_lengkap"
+                android:inputType="textEmailAddress"
+                android:selectAllOnFocus="true"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <!-- Email -->
+        <TextView
+            android:id="@+id/tv_email"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:autofillHints=""
-            android:hint="@string/prompt_email"
-            android:inputType="textEmailAddress"
-            android:selectAllOnFocus="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/prompt_email"
+            android:textColor="@color/navy_blue"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_nama" />
+
+        <LinearLayout
+            android:id="@+id/ll_email"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_border"
+            android:orientation="horizontal"
+            android:paddingHorizontal="24dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/nama" />
+            app:layout_constraintTop_toBottomOf="@id/tv_email">
 
-        <EditText
-            android:id="@+id/password"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="16dp"
-            android:autofillHints=""
-            android:hint="@string/prompt_password"
-            android:imeActionLabel="@string/action_sign_in_short"
-            android:imeOptions="actionDone"
-            android:inputType="textPassword"
-            android:selectAllOnFocus="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/username" />
+            <EditText
+                android:id="@+id/et_email"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:autofillHints=""
+                android:background="@android:color/transparent"
+                android:hint="@string/et_email"
+                android:inputType="textEmailAddress"
+                android:selectAllOnFocus="true"
+                android:textSize="16sp" />
 
-        <EditText
-            android:id="@+id/konfirmasi_password"
-            android:layout_width="0dp"
+        </LinearLayout>
+
+        <!-- Password -->
+        <TextView
+            android:id="@+id/tv_password"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="16dp"
-            android:autofillHints=""
-            android:hint="@string/prompt_password"
-            android:imeActionLabel="@string/action_sign_in_short"
-            android:imeOptions="actionDone"
-            android:inputType="textPassword"
-            android:selectAllOnFocus="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/prompt_password"
+            android:textColor="@color/navy_blue"
+            android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/password" />
+            app:layout_constraintTop_toBottomOf="@id/ll_email" />
+
+        <LinearLayout
+            android:id="@+id/ll_password"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_border"
+            android:orientation="horizontal"
+            android:paddingHorizontal="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_password">
+
+            <EditText
+                android:id="@+id/et_password"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:autofillHints=""
+                android:background="@android:color/transparent"
+                android:hint="@string/et_password"
+                android:imeActionLabel="@string/action_sign_in_short"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword"
+                android:selectAllOnFocus="true"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/iv_ic_show_password"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center_vertical"
+                android:contentDescription="@string/deskripsi"
+                android:src="@drawable/ic_show_password"
+                app:tint="@color/navy_blue" />
+
+            <ImageView
+                android:id="@+id/iv_ic_hide_password"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center_vertical"
+                android:contentDescription="@string/deskripsi"
+                android:src="@drawable/ic_hide_password"
+                android:visibility="gone"
+                app:tint="@color/navy_blue" />
+
+        </LinearLayout>
+
+        <!-- Konfirmasi Password -->
+        <TextView
+            android:id="@+id/tv_konfirmasi_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/tv_konfirmasi_password"
+            android:textColor="@color/navy_blue"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_password" />
+
+        <LinearLayout
+            android:id="@+id/ll_konfirmasi_password"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_border"
+            android:orientation="horizontal"
+            android:paddingHorizontal="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_konfirmasi_password">
+
+            <EditText
+                android:id="@+id/et_konfirmasi_password"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:autofillHints=""
+                android:background="@android:color/transparent"
+                android:hint="@string/et_konfirmasi_password"
+                android:imeActionLabel="@string/action_sign_in_short"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword"
+                android:selectAllOnFocus="true"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/iv_ic_show_konfirmasi_password"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center_vertical"
+                android:contentDescription="@string/deskripsi"
+                android:src="@drawable/ic_show_password"
+                app:tint="@color/navy_blue" />
+
+            <ImageView
+                android:id="@+id/iv_ic_hide_konfirmasi_password"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center_vertical"
+                android:contentDescription="@string/deskripsi"
+                android:src="@drawable/ic_hide_password"
+                android:visibility="gone"
+                app:tint="@color/navy_blue" />
+
+        </LinearLayout>
 
         <Button
             android:id="@+id/register"
@@ -130,7 +264,7 @@
             android:text="@string/text_register_3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/konfirmasi_password" />
+            app:layout_constraintTop_toBottomOf="@id/ll_konfirmasi_password" />
 
         <ProgressBar
             android:id="@+id/loading"
@@ -143,8 +277,8 @@
             android:layout_marginBottom="64dp"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/password"
-            app:layout_constraintStart_toStartOf="@+id/password"
+            app:layout_constraintEnd_toEndOf="@id/ll_konfirmasi_password"
+            app:layout_constraintStart_toStartOf="@id/ll_konfirmasi_password"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.3" />
 
@@ -157,9 +291,9 @@
             android:text="@string/text_sudah_punya_akun"
             app:layout_constraintEnd_toStartOf="@id/text_masuk"
             app:layout_constraintHorizontal_bias="0.41"
+            app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/register"
-            app:layout_constraintHorizontal_chainStyle="packed" />
+            app:layout_constraintTop_toBottomOf="@+id/register" />
 
         <TextView
             android:id="@+id/text_masuk"
@@ -167,11 +301,11 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:text="@string/text_masuk"
+            android:textColor="@color/navy_blue"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/text_sudah_punya_akun"
-            app:layout_constraintTop_toTopOf="@+id/text_sudah_punya_akun"
-            android:textStyle="bold"
-            android:textColor="@color/navy_blue" />
+            app:layout_constraintTop_toTopOf="@+id/text_sudah_punya_akun" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

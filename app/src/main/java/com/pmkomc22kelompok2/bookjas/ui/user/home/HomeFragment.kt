@@ -42,9 +42,11 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.rvBukuYangBaruDipinjam.setHasFixedSize(true)
-        binding.rvRekomendasiBuku.setHasFixedSize(true)
         listBukuBaruDipinjam.addAll(getListBukuBaruDipinjam())
+
+        binding.rvRekomendasiBuku.setHasFixedSize(true)
         listRekomendasiBuku.addAll(getListRekomendasiBuku())
+
         showRecyclerList()
 
         binding.btnToDashboardAdmin.setOnClickListener {
@@ -97,11 +99,15 @@ class HomeFragment : Fragment() {
 
     private fun showRecyclerList() {
         binding.rvBukuYangBaruDipinjam.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        val listBukuBaruDipinjamAdapter = ListBukuBaruDiPinjamAdapter(listBukuBaruDipinjam)
+        val listBukuBaruDipinjamAdapter = ListBukuBaruDiPinjamAdapter(listBukuBaruDipinjam) { item ->
+            Navigation.findNavController(binding.root).navigate(R.id.action_navigation_home_to_detailBukuFragment)
+        }
         binding.rvBukuYangBaruDipinjam.adapter = listBukuBaruDipinjamAdapter
 
         binding.rvRekomendasiBuku.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        val listRekomendasiBukuAdapter = ListRekomendasiBukuAdapter(listRekomendasiBuku)
+        val listRekomendasiBukuAdapter = ListRekomendasiBukuAdapter(listRekomendasiBuku) { item ->
+            Navigation.findNavController(binding.root).navigate(R.id.action_navigation_home_to_detailBukuFragment)
+        }
         binding.rvRekomendasiBuku.adapter = listRekomendasiBukuAdapter
     }
 

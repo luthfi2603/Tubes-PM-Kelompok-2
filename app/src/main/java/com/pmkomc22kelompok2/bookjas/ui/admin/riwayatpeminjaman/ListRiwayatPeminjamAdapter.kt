@@ -24,10 +24,6 @@ class ListRiwayatPeminjamAdapter(
             tvPeminjam.text = item.peminjam
             tvTanggalPeminjaman.text = item.tanggalPeminjaman
             tvTanggalPengembalian.text = item.tanggalPengembalian
-
-            btnEdit.setOnClickListener {
-                onButtonClick(item)
-            }
         }
     }
 

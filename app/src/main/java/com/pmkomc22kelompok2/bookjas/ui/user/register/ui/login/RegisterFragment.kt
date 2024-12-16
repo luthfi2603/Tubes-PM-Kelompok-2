@@ -107,6 +107,35 @@ class RegisterFragment : Fragment() {
         binding.textMasuk.setOnClickListener {
             Navigation.findNavController(view).navigate(R.id.action_navigation_register_to_navigation_login)
         }
+
+        // logika untuk toggle show dan hide password
+        binding.ivIcShowPassword.setOnClickListener {
+            binding.etPassword.inputType = android.text.InputType.TYPE_CLASS_TEXT or android.text.InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+            binding.ivIcShowPassword.visibility = View.GONE
+            binding.ivIcHidePassword.visibility = View.VISIBLE
+            binding.etPassword.setSelection(binding.etPassword.text?.length ?: 0)
+        }
+
+        binding.ivIcHidePassword.setOnClickListener {
+            binding.etPassword.inputType = android.text.InputType.TYPE_CLASS_TEXT or android.text.InputType.TYPE_TEXT_VARIATION_PASSWORD
+            binding.ivIcShowPassword.visibility = View.VISIBLE
+            binding.ivIcHidePassword.visibility = View.GONE
+            binding.etPassword.setSelection(binding.etPassword.text?.length ?: 0)
+        }
+
+        binding.ivIcShowKonfirmasiPassword.setOnClickListener {
+            binding.etKonfirmasiPassword.inputType = android.text.InputType.TYPE_CLASS_TEXT or android.text.InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+            binding.ivIcShowKonfirmasiPassword.visibility = View.GONE
+            binding.ivIcHideKonfirmasiPassword.visibility = View.VISIBLE
+            binding.etKonfirmasiPassword.setSelection(binding.etKonfirmasiPassword.text?.length ?: 0)
+        }
+
+        binding.ivIcHideKonfirmasiPassword.setOnClickListener {
+            binding.etKonfirmasiPassword.inputType = android.text.InputType.TYPE_CLASS_TEXT or android.text.InputType.TYPE_TEXT_VARIATION_PASSWORD
+            binding.ivIcShowKonfirmasiPassword.visibility = View.VISIBLE
+            binding.ivIcHideKonfirmasiPassword.visibility = View.GONE
+            binding.etKonfirmasiPassword.setSelection(binding.etKonfirmasiPassword.text?.length ?: 0)
+        }
     }
 
     override fun onDestroyView() {

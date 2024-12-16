@@ -50,6 +50,19 @@
             card_view:layout_constraintStart_toEndOf="@+id/iv_foto_buku"
             card_view:layout_constraintTop_toBottomOf="@+id/tv_judul_buku" />
 
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/tv_status"
+            android:textColor="@color/red"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintStart_toEndOf="@id/iv_foto_buku"
+            card_view:layout_constraintTop_toBottomOf="@id/tv_author" />
+
         <ImageView
             android:id="@+id/iv_ic_user"
             android:layout_width="wrap_content"
@@ -58,8 +71,8 @@
             android:layout_marginTop="24dp"
             android:contentDescription="@string/deskripsi"
             android:src="@drawable/ic_user_4"
-            card_view:layout_constraintStart_toEndOf="@+id/iv_foto_buku"
-            card_view:layout_constraintTop_toBottomOf="@id/tv_author" />
+            card_view:layout_constraintStart_toEndOf="@id/iv_foto_buku"
+            card_view:layout_constraintTop_toBottomOf="@id/tv_status" />
 
         <TextView
             android:id="@+id/tv_peminjam"
@@ -136,18 +149,18 @@
             card_view:layout_constraintTop_toBottomOf="@+id/tv_tanggal_pengembalian" />
 
         <Button
-            android:id="@+id/btn_edit"
+            android:id="@+id/btn_ubah_status_peminjaman"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/btn_edit"
+            android:text="@string/btn_ubah_status_peminjaman"
             android:textStyle="bold"
-            card_view:layout_constraintEnd_toStartOf="@id/btn_delete"
-            card_view:layout_constraintHorizontal_chainStyle="spread"
+            card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintStart_toStartOf="parent"
             card_view:layout_constraintTop_toBottomOf="@id/tv_tenggat_hitung_mundur" />
 
-        <Button
+        <!--<Button
+            card_view:layout_constraintHorizontal_chainStyle="spread"
             android:id="@+id/btn_delete"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -155,10 +168,10 @@
             android:backgroundTint="@color/red"
             android:text="@string/btn_delete"
             android:textStyle="bold"
-            card_view:layout_constraintBottom_toBottomOf="@id/btn_edit"
+            card_view:layout_constraintBottom_toBottomOf="@id/btn_ubah_status_peminjaman"
             card_view:layout_constraintEnd_toEndOf="parent"
-            card_view:layout_constraintStart_toEndOf="@id/btn_edit"
-            card_view:layout_constraintTop_toTopOf="@id/btn_edit" />
+            card_view:layout_constraintStart_toEndOf="@id/btn_ubah_status_peminjaman"
+            card_view:layout_constraintTop_toTopOf="@id/btn_ubah_status_peminjaman" />-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

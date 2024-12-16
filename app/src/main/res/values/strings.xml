@@ -205,6 +205,11 @@
     <string name="tv_kategori">Kategori Buku</string>
     <string name="tv_label_tambah_kategori">Tambah Kategori</string>
     <string name="tv_label_edit_kategori">Edit Kategori</string>
+    <string name="et_password">Masukkan password anda</string>
+    <string name="et_konfirmasi_password">Masukkan konfirmasi password anda</string>
+    <string name="tv_konfirmasi_password">Konfirmasi Password</string>
+    <string name="btn_ubah_status_peminjaman">Selesaikan Peminjaman</string>
+    <string name="tv_status">Dipinjam</string>
 
     <!-- data dummy untuk rv -->
     <integer-array name="foto">
