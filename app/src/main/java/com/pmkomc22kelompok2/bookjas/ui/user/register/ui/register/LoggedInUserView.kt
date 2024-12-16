@@ -1,4 +1,4 @@
-package com.pmkomc22kelompok2.bookjas.ui.user.register.ui.login
+package com.pmkomc22kelompok2.bookjas.ui.user.register.ui.register
 
 /**
  * User details post authentication that is exposed to the UI

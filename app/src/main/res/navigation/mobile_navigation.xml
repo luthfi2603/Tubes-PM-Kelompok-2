@@ -43,7 +43,7 @@
 
     <fragment
         android:id="@+id/navigation_register"
-        android:name="com.pmkomc22kelompok2.bookjas.ui.user.register.ui.login.RegisterFragment"
+        android:name="com.pmkomc22kelompok2.bookjas.ui.user.register.ui.register.RegisterFragment"
         tools:layout="@layout/fragment_register">
         <action
             android:id="@+id/action_navigation_register_to_navigation_login"

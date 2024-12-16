@@ -5,7 +5,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.user.register.ui.login.RegisterFragment">
+    tools:context=".ui.user.register.ui.register.RegisterFragment">
     <!--    android:paddingLeft="@dimen/fragment_horizontal_margin"-->
     <!--    android:paddingTop="@dimen/fragment_vertical_margin"-->
     <!--    android:paddingRight="@dimen/fragment_horizontal_margin"-->
@@ -13,8 +13,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="16dp">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/grafik_register"
@@ -57,7 +56,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
             android:layout_marginTop="24dp"
-            android:text="@string/prompt_email"
+            android:text="@string/text_nama"
             android:textColor="@color/navy_blue"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -260,11 +259,22 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
-            android:enabled="true"
+            android:enabled="false"
             android:text="@string/text_register_3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ll_konfirmasi_password" />
+
+        <View
+            android:id="@+id/v_overlay"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/blur_background"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ProgressBar
             android:id="@+id/loading"
@@ -277,10 +287,9 @@
             android:layout_marginBottom="64dp"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/ll_konfirmasi_password"
-            app:layout_constraintStart_toStartOf="@id/ll_konfirmasi_password"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.3" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/text_sudah_punya_akun"
@@ -303,9 +312,16 @@
             android:text="@string/text_masuk"
             android:textColor="@color/navy_blue"
             android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/v_pb"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/text_sudah_punya_akun"
             app:layout_constraintTop_toTopOf="@+id/text_sudah_punya_akun" />
+
+        <View
+            android:id="@+id/v_pb"
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
