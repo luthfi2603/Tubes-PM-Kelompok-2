@@ -9,13 +9,13 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pmkomc22kelompok2.bookjas.R
 import com.pmkomc22kelompok2.bookjas.databinding.FragmentBukuAdminBinding
-import com.pmkomc22kelompok2.bookjas.ui.user.dashboard.Kategori
+import com.pmkomc22kelompok2.bookjas.ui.user.dashboard.KategoriData
 import com.pmkomc22kelompok2.bookjas.ui.user.dashboard.ListKategoriAdapter
 
 class BukuAdminFragment : Fragment() {
     private lateinit var binding: FragmentBukuAdminBinding
     private val list = ArrayList<BukuAdmin>()
-    private val listKategori = ArrayList<Kategori>()
+    private val listKategori = ArrayList<KategoriData>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -78,12 +78,12 @@ class BukuAdminFragment : Fragment() {
         return listItem
     }
 
-    private fun getListKategori(): ArrayList<Kategori> {
+    private fun getListKategori(): ArrayList<KategoriData> {
         val kategori = resources.getStringArray(R.array.kategori)
-        val listItem = ArrayList<Kategori>()
+        val listItem = ArrayList<KategoriData>()
 
         for (i in kategori.indices) {
-            val item = Kategori(kategori[i])
+            val item = KategoriData(kategori[i])
             listItem.add(item)
         }
 
