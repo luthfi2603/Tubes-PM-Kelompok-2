@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import android.util.Patterns
 import com.pmkomc22kelompok2.bookjas.R
-import com.pmkomc22kelompok2.bookjas.ui.user.register.data.Result
+import com.pmkomc22kelompok2.bookjas.ui.login.ui.login.LoginFormState
 
 class RegisterViewModel() : ViewModel() {
 
@@ -13,36 +13,22 @@ class RegisterViewModel() : ViewModel() {
     val registerFormState: LiveData<RegisterFormState> = _registerForm
 
     fun registerDataChanged(nama: String, email: String, password: String, konfirmasiPassword: String) {
-        if (!isNamaValid(nama)) {
+        if (nama.length > 255) {
             _registerForm.value = RegisterFormState(namaError = R.string.invalid_nama)
-        } else if (!isEmailValid(email)) {
+        } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) { // Kalau emailnya tidak dalam bentuk example@gmail.com
             _registerForm.value = RegisterFormState(emailError = R.string.invalid_email)
-        } else if (!isPasswordValid(password)) {
-            _registerForm.value = RegisterFormState(passwordError = R.string.invalid_password)
-        } else if (!isKonfirmasiPasswordValid(konfirmasiPassword)) {
-            _registerForm.value = RegisterFormState(konfirmasiPasswordError = R.string.invalid_konfirmasi_password)
+        } else if (email.length > 255) {
+            _registerForm.value = RegisterFormState(passwordError = R.string.invalid_email_max_length)
+        } else if (password.length < 8) {
+            _registerForm.value = RegisterFormState(passwordError = R.string.invalid_password_min_length)
+        } else if (password.length > 255) {
+            _registerForm.value = RegisterFormState(passwordError = R.string.invalid_password_max_length)
+        } else if (konfirmasiPassword.length < 8) {
+            _registerForm.value = RegisterFormState(passwordError = R.string.invalid_konfirmasi_password_min_length)
+        } else if (konfirmasiPassword.length > 255) {
+            _registerForm.value = RegisterFormState(passwordError = R.string.invalid_konfirmasi_password_max_length)
         } else {
             _registerForm.value = RegisterFormState(isDataValid = true)
         }
-    }
-
-    // validasi nama
-    private fun isNamaValid(nama: String): Boolean {
-        return nama.length <= 255
-    }
-
-    // validasi email
-    private fun isEmailValid(email: String): Boolean {
-        return Patterns.EMAIL_ADDRESS.matcher(email).matches()
-    }
-
-    // validasi password
-    private fun isPasswordValid(password: String): Boolean {
-        return password.length in 8..255
-    }
-
-    // validasi konfirmasi password
-    private fun isKonfirmasiPasswordValid(password: String): Boolean {
-        return password.length in 8..255
     }
 }

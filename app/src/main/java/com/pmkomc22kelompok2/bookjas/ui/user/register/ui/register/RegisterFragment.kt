@@ -118,36 +118,35 @@ class RegisterFragment : Fragment() {
             )
 
             // Panggil API melalui ApiClient
-            ApiClient.apiService.registerUser(request)
-                .enqueue(object : Callback<UserRegisterResponse> {
-                    override fun onResponse(
-                        call: Call<UserRegisterResponse>,
-                        response: Response<UserRegisterResponse>
-                    ) {
-                        loadingProgressBar.visibility = View.GONE
-                        binding.vOverlay.visibility = View.GONE
-                        if (response.isSuccessful) {
-                            Toast.makeText(
-                                context,
-                                "Registrasi berhasil, selamat datang ${response.body()?.data?.nama}!",
-                                Toast.LENGTH_SHORT
-                            ).show()
-                            Navigation.findNavController(view).navigate(R.id.action_navigation_register_to_navigation_start)
-                        } else {
-                            Toast.makeText(
-                                context,
-                                "Registrasi gagal: ${response.message()}",
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        }
+            ApiClient.apiService.registerUser(request).enqueue(object : Callback<UserRegisterResponse> {
+                override fun onResponse(
+                    call: Call<UserRegisterResponse>,
+                    response: Response<UserRegisterResponse>
+                ) {
+                    loadingProgressBar.visibility = View.GONE
+                    binding.vOverlay.visibility = View.GONE
+                    if (response.isSuccessful) {
+                        Toast.makeText(
+                            context,
+                            "Registrasi berhasil, selamat datang ${response.body()?.data?.nama}!",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        Navigation.findNavController(view).navigate(R.id.action_navigation_register_to_navigation_start)
+                    } else {
+                        Toast.makeText(
+                            context,
+                            "Registrasi gagal: ${response.message()}",
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }
+                }
 
-                    override fun onFailure(call: Call<UserRegisterResponse>, t: Throwable) {
-                        loadingProgressBar.visibility = View.GONE
-                        binding.vOverlay.visibility = View.GONE
-                        Toast.makeText(context, "Error: ${t.message}", Toast.LENGTH_SHORT).show()
-                    }
-                })
+                override fun onFailure(call: Call<UserRegisterResponse>, t: Throwable) {
+                    loadingProgressBar.visibility = View.GONE
+                    binding.vOverlay.visibility = View.GONE
+                    Toast.makeText(context, "Error: ${t.message}", Toast.LENGTH_SHORT).show()
+                }
+            })
         }
 
         // Listener untuk teks masuk

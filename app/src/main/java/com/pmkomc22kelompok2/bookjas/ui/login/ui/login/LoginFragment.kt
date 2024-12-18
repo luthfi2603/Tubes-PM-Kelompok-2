@@ -40,39 +40,40 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        loginViewModel = ViewModelProvider(this, LoginViewModelFactory())
-            .get(LoginViewModel::class.java)
+        loginViewModel = ViewModelProvider(this, LoginViewModelFactory()).get(LoginViewModel::class.java)
 
         val emailEditText = binding.etEmail
         val passwordEditText = binding.etPassword
         val loginButton = binding.login
         val loadingProgressBar = binding.loading
 
-        loginViewModel.loginFormState.observe(viewLifecycleOwner,
-            Observer { loginFormState ->
-                if (loginFormState == null) {
-                    return@Observer
-                }
-                loginButton.isEnabled = loginFormState.isDataValid
-                loginFormState.usernameError?.let {
-                    emailEditText.error = getString(it)
-                }
-                loginFormState.passwordError?.let {
-                    passwordEditText.error = getString(it)
-                }
-            })
+        loginViewModel.loginFormState.observe(viewLifecycleOwner, Observer { loginFormState ->
+            if (loginFormState == null) {
+                return@Observer
+            }
+            loginButton.isEnabled = loginFormState.isDataValid
+            loginFormState.emailError?.let {
+                emailEditText.error = getString(it)
+            }
+            loginFormState.passwordError?.let {
+                passwordEditText.error = getString(it)
+            }
+        })
 
-        loginViewModel.loginResult.observe(viewLifecycleOwner,
-            Observer { loginResult ->
-                loginResult ?: return@Observer
-                loadingProgressBar.visibility = View.GONE
-                loginResult.error?.let {
-                    showLoginFailed(it)
-                }
-                loginResult.success?.let {
-                    updateUiWithUser(it)
-                }
-            })
+        loginViewModel.loginResult.observe(viewLifecycleOwner, Observer { loginResult ->
+            loginResult ?: return@Observer
+
+            loadingProgressBar.visibility = View.GONE
+            binding.vOverlay.visibility = View.GONE
+
+            loginResult.error?.let {
+                showLoginFailed(it)
+            }
+
+            loginResult.success?.let {
+                updateUiWithUser(it)
+            }
+        })
 
         val afterTextChangedListener = object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
@@ -104,18 +105,20 @@ class LoginFragment : Fragment() {
 
         loginButton.setOnClickListener {
             loadingProgressBar.visibility = View.VISIBLE
+            binding.vOverlay.visibility = View.VISIBLE
+
             loginViewModel.login(
                 emailEditText.text.toString(),
                 passwordEditText.text.toString()
             )
         }
 
+        // Listener untuk teks daftar
         binding.textDaftar.setOnClickListener {
             Navigation.findNavController(view).apply {
                 navigate(R.id.action_navigation_login_to_navigation_register)
             }
         }
-
 
         // logika untuk toggle show dan hide password
         binding.ivIcShowPassword.setOnClickListener {

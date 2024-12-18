@@ -1,6 +1,8 @@
 package com.pmkomc22kelompok2.bookjas.ui.login.data
 
-import com.pmkomc22kelompok2.bookjas.ui.login.data.model.LoggedInUser
+import com.pmkomc22kelompok2.bookjas.ui.login.data.model.UserLoginRequest
+import com.pmkomc22kelompok2.bookjas.ui.login.data.model.UserLoginResponse
+import com.pmkomc22kelompok2.bookjas.ui.login.data.model.UserLoginResponseData
 
 /**
  * Class that requests authentication and user information from the remote data source and
@@ -10,7 +12,7 @@ import com.pmkomc22kelompok2.bookjas.ui.login.data.model.LoggedInUser
 class LoginRepository(val dataSource: LoginDataSource) {
 
     // in-memory cache of the loggedInUser object
-    var user: LoggedInUser? = null
+    var user: UserLoginResponseData? = null
         private set
 
     val isLoggedIn: Boolean
@@ -27,18 +29,38 @@ class LoginRepository(val dataSource: LoginDataSource) {
         dataSource.logout()
     }
 
-    fun login(username: String, password: String): Result<LoggedInUser> {
+    // fun login(email: String, password: String): Result<UserLoginResponseData> {
         // handle login
-        val result = dataSource.login(username, password)
+        /*val result = dataSource.login(email, password)
 
         if (result is Result.Success) {
             setLoggedInUser(result.data)
         }
 
-        return result
+        return result*/
+
+        /*lateinit var item: Result<UserLoginResponseData>
+        dataSource.login(email, password) { result ->
+            if (result is Result.Success) {
+                setLoggedInUser(result.data)
+                item = result
+            }
+        }
+        return item
+    }*/
+
+    fun login(email: String, password: String, callback: (Result<UserLoginResponseData>) -> Unit) {
+        dataSource.login(email, password) { result ->
+            if (result is Result.Success) {
+                // Menyimpan data user setelah login berhasil
+                setLoggedInUser(result.data)
+            }
+            // Mengirimkan hasil login melalui callback
+            callback(result)
+        }
     }
 
-    private fun setLoggedInUser(loggedInUser: LoggedInUser) {
+    private fun setLoggedInUser(loggedInUser: UserLoginResponseData) {
         this.user = loggedInUser
         // If user credentials will be cached in local storage, it is recommended it be encrypted
         // @see https://developer.android.com/training/articles/keystore
