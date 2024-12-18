@@ -9,7 +9,11 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pmkomc22kelompok2.bookjas.R
+import com.pmkomc22kelompok2.bookjas.api.ApiClient
 import com.pmkomc22kelompok2.bookjas.databinding.FragmentDashboardBinding
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class DashboardFragment : Fragment() {
     private var _binding: FragmentDashboardBinding? = null
@@ -18,7 +22,7 @@ class DashboardFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
     private val list = ArrayList<Book>()
-    private val listKategori = ArrayList<Kategori>()
+    private val listKategori = ArrayList<KategoriData>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -45,7 +49,8 @@ class DashboardFragment : Fragment() {
         list.addAll(getListBooks())
 
         binding.rvKategoriBuku.setHasFixedSize(true)
-        listKategori.addAll(getListKategori())
+        // listKategori.addAll(getListKategori())
+        fetchKategori()
 
         showRecyclerList()
     }
@@ -69,12 +74,38 @@ class DashboardFragment : Fragment() {
         return listBook
     }
 
-    private fun getListKategori(): ArrayList<Kategori> {
+    private fun fetchKategori() {
+        ApiClient.apiService.getKategori().enqueue(object : Callback<ListKategoriResponse> {
+            override fun onResponse(call: Call<ListKategoriResponse>, response: Response<ListKategoriResponse>) {
+                if (response.isSuccessful) {
+                    val items = response.body()?.data
+                    val listItem = ArrayList<KategoriData>()
+
+                    items?.forEach { item ->
+                        val data = KategoriData(item.kategori)
+                        listItem.add(data)
+                    }
+
+                    listKategori.clear() // Bersihkan data lama jika ada
+                    listKategori.addAll(listItem)
+                    (binding.rvKategoriBuku.adapter as? ListKategoriAdapter)?.notifyDataSetChanged()
+                } else {
+                    // Tangani kesalahan jika perlu
+                }
+            }
+
+            override fun onFailure(call: Call<ListKategoriResponse>, t: Throwable) {
+                // Tangani kegagalan jaringan
+            }
+        })
+    }
+
+    private fun getListKategori(): ArrayList<KategoriData> {
         val kategori = resources.getStringArray(R.array.kategori)
-        val listItem = ArrayList<Kategori>()
+        val listItem = ArrayList<KategoriData>()
 
         for (i in kategori.indices) {
-            val item = Kategori(kategori[i])
+            val item = KategoriData(kategori[i])
             listItem.add(item)
         }
 

@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.pmkomc22kelompok2.bookjas.databinding.ItemKategoriBukuBinding
 
-class ListKategoriAdapter(private val list: ArrayList<Kategori>) : RecyclerView.Adapter<ListKategoriAdapter.ListViewHolder>() {
+class ListKategoriAdapter(private val list: ArrayList<KategoriData>) : RecyclerView.Adapter<ListKategoriAdapter.ListViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
         return ListViewHolder(ItemKategoriBukuBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     }
