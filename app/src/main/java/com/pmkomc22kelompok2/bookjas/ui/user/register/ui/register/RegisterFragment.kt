@@ -101,10 +101,10 @@ class RegisterFragment : Fragment() {
                 return@setOnClickListener
             }*/
 
-            if (password != confirmPassword) {
+            /*if (password != confirmPassword) {
                 Toast.makeText(context, "Konfirmasi password tidak sesuai", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
-            }
+            }*/
 
             loadingProgressBar.visibility = View.VISIBLE
             binding.vOverlay.visibility = View.VISIBLE

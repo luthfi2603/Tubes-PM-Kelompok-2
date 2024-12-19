@@ -109,6 +109,10 @@
         android:id="@+id/editPasswordFragment"
         android:name="com.pmkomc22kelompok2.bookjas.ui.user.edit.password.EditPasswordFragment"
         android:label="fragment_edit_password"
-        tools:layout="@layout/fragment_edit_password" />
+        tools:layout="@layout/fragment_edit_password" >
+        <action
+            android:id="@+id/action_editPasswordFragment_to_navigation_settings"
+            app:destination="@id/navigation_settings" />
+    </fragment>
 
 </navigation>

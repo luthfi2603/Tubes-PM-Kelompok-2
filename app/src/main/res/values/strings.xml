@@ -219,6 +219,7 @@
     <string name="invalid_konfirmasi_password_min_length">Konfirmasi password tidak boleh kurang dari 8 karakter</string>
     <string name="invalid_konfirmasi_password_max_length">Konfirmasi password tidak boleh lebih dari 255 karakter</string>
     <string name="peminjaman">Peminjaman</string>
+    <string name="password_tidak_sama">Konfirmasi password tidak sesuai</string>
 
     <!-- data dummy untuk rv -->
     <integer-array name="foto">

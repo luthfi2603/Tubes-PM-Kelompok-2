@@ -18,15 +18,17 @@ class RegisterViewModel() : ViewModel() {
         } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) { // Kalau emailnya tidak dalam bentuk example@gmail.com
             _registerForm.value = RegisterFormState(emailError = R.string.invalid_email)
         } else if (email.length > 255) {
-            _registerForm.value = RegisterFormState(passwordError = R.string.invalid_email_max_length)
+            _registerForm.value = RegisterFormState(emailError = R.string.invalid_email_max_length)
         } else if (password.length < 8) {
             _registerForm.value = RegisterFormState(passwordError = R.string.invalid_password_min_length)
         } else if (password.length > 255) {
             _registerForm.value = RegisterFormState(passwordError = R.string.invalid_password_max_length)
         } else if (konfirmasiPassword.length < 8) {
-            _registerForm.value = RegisterFormState(passwordError = R.string.invalid_konfirmasi_password_min_length)
+            _registerForm.value = RegisterFormState(konfirmasiPasswordError = R.string.invalid_konfirmasi_password_min_length)
         } else if (konfirmasiPassword.length > 255) {
-            _registerForm.value = RegisterFormState(passwordError = R.string.invalid_konfirmasi_password_max_length)
+            _registerForm.value = RegisterFormState(konfirmasiPasswordError = R.string.invalid_konfirmasi_password_max_length)
+        } else if (password != konfirmasiPassword) {
+            _registerForm.value = RegisterFormState(konfirmasiPasswordError = R.string.password_tidak_sama)
         } else {
             _registerForm.value = RegisterFormState(isDataValid = true)
         }

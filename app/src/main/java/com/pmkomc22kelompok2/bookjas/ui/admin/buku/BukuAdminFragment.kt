@@ -5,17 +5,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModel
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pmkomc22kelompok2.bookjas.R
 import com.pmkomc22kelompok2.bookjas.databinding.FragmentBukuAdminBinding
+import com.pmkomc22kelompok2.bookjas.ui.admin.kelolakategori.Kategori
+import com.pmkomc22kelompok2.bookjas.ui.admin.kelolakategori.viewmodel.KategoriViewModel
 import com.pmkomc22kelompok2.bookjas.ui.user.dashboard.KategoriData
 import com.pmkomc22kelompok2.bookjas.ui.user.dashboard.ListKategoriAdapter
 
 class BukuAdminFragment : Fragment() {
     private lateinit var binding: FragmentBukuAdminBinding
-    private val list = ArrayList<BukuAdmin>()
+    private var list: ArrayList<BukuAdminResponseData>? = ArrayList()
     private val listKategori = ArrayList<KategoriData>()
+    private val bukuAdminViewModel: BukuAdminViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,8 +35,23 @@ class BukuAdminFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.rvBooks.setHasFixedSize(true)
-        list.addAll(getList())
+        bukuAdminViewModel.isLoading.observe(requireActivity()) { isLoading ->
+            if (!isLoading) {
+                binding.rvBooks.setHasFixedSize(true)
+                bukuAdminViewModel.listBuku.observe(requireActivity()) { listBuku ->
+                    list = listBuku
+                }
+                showRecyclerList()
+            }
+        }
+
+        if (!bukuAdminViewModel.isLoading.value!!) {
+            binding.rvBooks.setHasFixedSize(true)
+            bukuAdminViewModel.listBuku.observe(requireActivity()) { listBuku ->
+                list = listBuku
+            }
+            showRecyclerList()
+        }
 
         binding.rvKategoriBuku.setHasFixedSize(true)
         listKategori.addAll(getListKategori())
@@ -92,7 +112,7 @@ class BukuAdminFragment : Fragment() {
 
     private fun showRecyclerList() {
         binding.rvBooks.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-        val listAdapter = ListBukuAdminAdapter(list) { item ->
+        val listAdapter = ListBukuAdminAdapter(list!!) { item ->
             Navigation.findNavController(binding.root).navigate(R.id.action_bukuAdminFragment_to_editBukuFragment)
         }
 
