@@ -8,6 +8,5 @@ data class UserData(
     val id: String,
     val nama: String,
     val email: String,
-    val foto_profil: String?, // Nullable karena `null` pada respons
-    val status: String
+    val status: String,
 )

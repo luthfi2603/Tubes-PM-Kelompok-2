@@ -8,10 +8,10 @@
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome!"</string>
+    <string name="welcome">"Selamat datang! "</string>
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password tidak valid</string>
-    <string name="login_failed">"Login failed"</string>
+    <string name="login_failed">"Login gagal"</string>
     <string name="text_login">Login</string>
     <string name="grafik_login">grafik login</string>
     <string name="ucapan_selamat_datang_di_login">Selamat datang di BookJas</string>
@@ -210,9 +210,16 @@
     <string name="tv_konfirmasi_password">Konfirmasi Password</string>
     <string name="btn_ubah_status_peminjaman">Selesaikan Peminjaman</string>
     <string name="tv_status">Dipinjam</string>
-    <string name="invalid_nama">Nama tidak valid</string>
+    <string name="invalid_nama">Nama tidak boleh lebih dari 255 karakter</string>
     <string name="invalid_email">Email tidak valid</string>
     <string name="invalid_konfirmasi_password">Konfirmasi password tidak valid</string>
+    <string name="invalid_email_max_length">Email tidak boleh lebih dari 255 karakter</string>
+    <string name="invalid_password_min_length">Password tidak boleh kurang dari 8 karakter</string>
+    <string name="invalid_password_max_length">Password tidak boleh lebih dari 255 karakter</string>
+    <string name="invalid_konfirmasi_password_min_length">Konfirmasi password tidak boleh kurang dari 8 karakter</string>
+    <string name="invalid_konfirmasi_password_max_length">Konfirmasi password tidak boleh lebih dari 255 karakter</string>
+    <string name="peminjaman">Peminjaman</string>
+    <string name="password_tidak_sama">Konfirmasi password tidak sesuai</string>
 
     <!-- data dummy untuk rv -->
     <integer-array name="foto">

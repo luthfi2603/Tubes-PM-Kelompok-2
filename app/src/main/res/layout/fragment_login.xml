@@ -9,8 +9,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="16dp">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/grafik_login"
@@ -19,7 +18,7 @@
             android:layout_marginTop="40dp"
             android:contentDescription="@string/grafik_login"
             android:src="@drawable/grafik_login"
-            app:layout_constraintBottom_toTopOf="@+id/text_login"
+            app:layout_constraintBottom_toTopOf="@id/text_login"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -36,7 +35,7 @@
             android:textSize="48sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/grafik_login" />
+            app:layout_constraintTop_toBottomOf="@id/grafik_login" />
 
         <TextView
             android:id="@+id/ucapan_selamat_datang_di_login"
@@ -45,7 +44,7 @@
             android:layout_marginStart="16dp"
             android:text="@string/ucapan_selamat_datang_di_login"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_login" />
+            app:layout_constraintTop_toBottomOf="@id/text_login" />
 
         <!-- Email -->
         <TextView
@@ -117,6 +116,7 @@
                 android:id="@+id/et_password"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_marginEnd="8dp"
                 android:layout_weight="1"
                 android:autofillHints=""
                 android:background="@android:color/transparent"
@@ -162,21 +162,26 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ll_password" />
 
+        <View
+            android:id="@+id/v_overlay"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/blur_background"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <ProgressBar
             android:id="@+id/loading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="64dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginBottom="64dp"
             android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/ll_password"
-            app:layout_constraintStart_toStartOf="@id/ll_password"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.3" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_email" />
 
         <TextView
             android:id="@+id/text_pengguna_baru"
@@ -197,9 +202,16 @@
             android:text="@string/text_daftar"
             android:textColor="@color/navy_blue"
             android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/v_pb"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/text_pengguna_baru"
             app:layout_constraintTop_toTopOf="@id/text_pengguna_baru" />
+
+        <View
+            android:id="@+id/v_pb"
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -156,7 +156,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/title_rekomendasi_buku" />
 
-        <Button
+        <!--<Button
             android:id="@+id/btn_to_dashboard_admin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -174,7 +174,7 @@
             android:text="@string/riwayat_peminjaman"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_to_dashboard_admin" />
+            app:layout_constraintTop_toBottomOf="@id/btn_to_dashboard_admin" />-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

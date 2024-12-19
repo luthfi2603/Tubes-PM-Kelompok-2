@@ -25,9 +25,7 @@ class StartFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.buttonStart.setOnClickListener {
-            Navigation.findNavController(view).apply {
-                navigate(R.id.action_navigation_start_to_navigation_home)
-            }
+            Navigation.findNavController(view).navigate(R.id.action_startFragment_to_loginFragment)
         }
     }
 }

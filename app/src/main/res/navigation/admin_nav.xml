@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/admin_nav"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.pmkomc22kelompok2.bookjas.ui.user.settings.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings">
+        <action
+            android:id="@+id/action_navigation_settings_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+        <action
+            android:id="@+id/action_navigation_settings_to_editPasswordFragment"
+            app:destination="@id/editPasswordFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/editFotoProfileFragment"
+        android:name="com.pmkomc22kelompok2.bookjas.ui.user.edit.fotoprofile.EditFotoProfileFragment"
+        android:label="fragment_edit_foto_profile"
+        tools:layout="@layout/fragment_edit_foto_profile" />
+
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.pmkomc22kelompok2.bookjas.ui.user.edit.profile.EditProfileFragment"
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_profile">
+        <action
+            android:id="@+id/action_editProfileFragment_to_editFotoProfileFragment"
+            app:destination="@id/editFotoProfileFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/editPasswordFragment"
+        android:name="com.pmkomc22kelompok2.bookjas.ui.user.edit.password.EditPasswordFragment"
+        android:label="fragment_edit_password"
+        tools:layout="@layout/fragment_edit_password" />
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.pmkomc22kelompok2.bookjas.ui.admin.dashboard.DashboardAdminFragment"
+        android:label="fragment_dashboard_admin"
+        tools:layout="@layout/fragment_dashboard_admin">
+        <action
+            android:id="@+id/action_dashboardAdminFragment_to_riwayatPeminjamanAdminFragment"
+            app:destination="@id/riwayatPeminjamanAdminFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/riwayatPeminjamanAdminFragment"
+        android:name="com.pmkomc22kelompok2.bookjas.ui.admin.riwayatpeminjaman.RiwayatPeminjamanAdminFragment"
+        android:label="fragment_riwayat_peminjaman_admin"
+        tools:layout="@layout/fragment_riwayat_peminjaman_admin">
+        <action
+            android:id="@+id/action_riwayatPeminjamanAdminFragment_to_tambahPeminjamanFragment"
+            app:destination="@id/tambahPeminjamanFragment" />
+        <action
+            android:id="@+id/action_riwayatPeminjamanAdminFragment_to_editPeminjamanFragment"
+            app:destination="@id/editPeminjamanFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_buku_admin"
+        android:name="com.pmkomc22kelompok2.bookjas.ui.admin.buku.BukuAdminFragment"
+        android:label="fragment_buku_admin"
+        tools:layout="@layout/fragment_buku_admin">
+        <action
+            android:id="@+id/action_bukuAdminFragment_to_tambahBukuFragment"
+            app:destination="@id/tambahBukuFragment" />
+        <action
+            android:id="@+id/action_bukuAdminFragment_to_editBukuFragment"
+            app:destination="@id/editBukuFragment" />
+        <action
+            android:id="@+id/action_bukuAdminFragment_to_kelolaKategoriFragment"
+            app:destination="@id/kelolaKategoriFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/tambahPeminjamanFragment"
+        android:name="com.pmkomc22kelompok2.bookjas.ui.admin.tambahpeminjaman.TambahPeminjamanFragment"
+        android:label="fragment_tambah_peminjaman"
+        tools:layout="@layout/fragment_tambah_peminjaman" />
+
+    <fragment
+        android:id="@+id/editPeminjamanFragment"
+        android:name="com.pmkomc22kelompok2.bookjas.ui.admin.editpeminjaman.EditPeminjamanFragment"
+        android:label="fragment_edit_peminjaman"
+        tools:layout="@layout/fragment_edit_peminjaman" />
+
+    <fragment
+        android:id="@+id/tambahBukuFragment"
+        android:name="com.pmkomc22kelompok2.bookjas.ui.admin.tambahbuku.TambahBukuFragment"
+        android:label="fragment_tambah_buku"
+        tools:layout="@layout/fragment_tambah_buku" />
+
+    <fragment
+        android:id="@+id/editBukuFragment"
+        android:name="com.pmkomc22kelompok2.bookjas.ui.admin.editbuku.EditBukuFragment"
+        android:label="fragment_edit_buku"
+        tools:layout="@layout/fragment_edit_buku" />
+
+    <fragment
+        android:id="@+id/kelolaKategoriFragment"
+        android:name="com.pmkomc22kelompok2.bookjas.ui.admin.kelolakategori.KelolaKategoriFragment"
+        android:label="fragment_kelola_kategori"
+        tools:layout="@layout/fragment_kelola_kategori">
+        <action
+            android:id="@+id/action_kelolaKategoriFragment_to_tambahKategoriFragment"
+            app:destination="@id/tambahKategoriFragment" />
+        <action
+            android:id="@+id/action_kelolaKategoriFragment_to_editKategoriFragment"
+            app:destination="@id/editKategoriFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/tambahKategoriFragment"
+        android:name="com.pmkomc22kelompok2.bookjas.ui.admin.tambahkategori.TambahKategoriFragment"
+        android:label="fragment_tambah_kategori"
+        tools:layout="@layout/fragment_tambah_kategori" />
+
+    <fragment
+        android:id="@+id/editKategoriFragment"
+        android:name="com.pmkomc22kelompok2.bookjas.ui.admin.editkategori.EditKategoriFragment"
+        android:label="fragment_edit_kategori"
+        tools:layout="@layout/fragment_edit_kategori" />
+
+</navigation>
