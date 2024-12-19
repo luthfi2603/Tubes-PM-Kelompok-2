@@ -9,8 +9,9 @@
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="0dp"
         android:background="@color/navy_blue"
+        app:layout_constraintBottom_toBottomOf="@id/profile_saya"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -19,16 +20,17 @@
         android:id="@+id/profile_saya"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginVertical="40dp"
         android:text="@string/profile_saya"
         android:textColor="@color/alabaster_white"
         android:textSize="24sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/view" />
 
-    <de.hdodenhof.circleimageview.CircleImageView
+    <!--<de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/foto_profile"
         android:layout_width="180dp"
         android:layout_height="180dp"
@@ -48,7 +50,7 @@
         android:contentDescription="@string/welcome"
         android:src="@drawable/edit_foto_profile"
         app:layout_constraintBottom_toBottomOf="@id/foto_profile"
-        app:layout_constraintEnd_toEndOf="@id/foto_profile" />
+        app:layout_constraintEnd_toEndOf="@id/foto_profile" />-->
 
     <!-- Nama Lengkap -->
     <TextView
@@ -56,12 +58,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="56dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="24dp"
         android:text="@string/tv_nama_lengkap"
         android:textColor="@color/navy_blue"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/foto_profile" />
+        app:layout_constraintTop_toBottomOf="@id/view" />
 
     <LinearLayout
         android:id="@+id/ll_nama_lengkap"

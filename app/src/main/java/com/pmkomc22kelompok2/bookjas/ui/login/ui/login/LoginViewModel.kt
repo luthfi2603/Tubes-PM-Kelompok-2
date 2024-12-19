@@ -34,8 +34,10 @@ class LoginViewModel(private val loginRepository: LoginRepository) : ViewModel()
         loginRepository.login(email, password) { result ->
             // Kirimkan hasil ke callback setelah login berhasil atau gagal
             if (result is Result.Success) {
+                val item = result.data
+
                 _loginResult.value =
-                    LoginResult(success = LoggedInUserView(result.data.nama))
+                    LoginResult(success = UserLoginResponseData(item.id, item.email, item.nama, item.token, item.status, item.password))
             } else {
                 _loginResult.value = LoginResult(error = R.string.login_failed)
             }

@@ -31,14 +31,14 @@ class DashboardAdminFragment : Fragment() {
         list.addAll(getList())
         showRecyclerList()
 
-        binding.btnToRiwayatPeminjaman.setOnClickListener {
+        /*binding.btnToRiwayatPeminjaman.setOnClickListener {
             Navigation.findNavController(view)
                 .navigate(R.id.action_dashboardAdminFragment_to_riwayatPeminjamanAdminFragment)
-        }
-        binding.btnToBukuAdmin.setOnClickListener {
+        }*/
+        /*binding.btnToBukuAdmin.setOnClickListener {
             Navigation.findNavController(view)
                 .navigate(R.id.action_dashboardAdminFragment_to_bukuAdminFragment)
-        }
+        }*/
     }
 
     private fun getList(): ArrayList<BukuBaruDitambah> {

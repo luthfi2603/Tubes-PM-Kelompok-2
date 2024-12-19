@@ -131,7 +131,7 @@ class RegisterFragment : Fragment() {
                             "Registrasi berhasil, selamat datang ${response.body()?.data?.nama}!",
                             Toast.LENGTH_SHORT
                         ).show()
-                        Navigation.findNavController(view).navigate(R.id.action_navigation_register_to_navigation_start)
+                        Navigation.findNavController(view).navigate(R.id.action_registerFragment_to_startFragment)
                     } else {
                         Toast.makeText(
                             context,
@@ -151,7 +151,7 @@ class RegisterFragment : Fragment() {
 
         // Listener untuk teks masuk
         binding.textMasuk.setOnClickListener {
-            Navigation.findNavController(view).navigate(R.id.action_navigation_register_to_navigation_login)
+            Navigation.findNavController(view).navigate(R.id.action_registerFragment_to_loginFragment)
         }
 
         // logika untuk toggle show dan hide password

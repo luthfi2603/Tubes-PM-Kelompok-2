@@ -8,6 +8,7 @@ import com.pmkomc22kelompok2.bookjas.ui.user.register.data.model.UserRegisterRes
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.Header
 import retrofit2.http.POST
 
 interface ApiService {
@@ -19,4 +20,7 @@ interface ApiService {
 
     @GET("/api/kategori")
     fun getKategori(): Call<ListKategoriResponse>
+
+    @POST("/api/logout")
+    fun logout(@Header ("Authorization") token: String?): Call<Void>
 }

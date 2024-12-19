@@ -7,14 +7,14 @@
         android:title="@string/title_home" />
 
     <item
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_buku_admin"
         android:icon="@drawable/baseline_book_24"
         android:title="@string/title_dashboard" />
 
-    <!--<item
-        android:id="@+id/navigation_login"
-        android:icon="@drawable/baseline_login_24"
-        android:title="@string/title_login_register" />-->
+    <item
+        android:id="@+id/riwayatPeminjamanAdminFragment"
+        android:icon="@drawable/ic_peminjaman"
+        android:title="@string/peminjaman" />
 
     <item
         android:id="@+id/navigation_settings"

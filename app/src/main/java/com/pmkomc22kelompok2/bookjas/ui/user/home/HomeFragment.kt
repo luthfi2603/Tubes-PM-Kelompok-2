@@ -49,11 +49,11 @@ class HomeFragment : Fragment() {
 
         showRecyclerList()
 
-        binding.btnToDashboardAdmin.setOnClickListener {
+        /*binding.btnToDashboardAdmin.setOnClickListener {
             Navigation.findNavController(view).apply {
                 navigate(R.id.action_navigation_home_to_dashboardAdminFragment)
             }
-        }
+        }*/
 
         binding.btnToRiwayatPeminjaman.setOnClickListener {
             Navigation.findNavController(view).navigate(R.id.action_navigation_home_to_riwayatPeminjamanFragment)

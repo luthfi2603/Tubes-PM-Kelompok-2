@@ -25,12 +25,12 @@ class EditProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.fotoProfile.setOnClickListener {
+        /*binding.fotoProfile.setOnClickListener {
             Navigation.findNavController(view).navigate(R.id.action_editProfileFragment_to_editFotoProfileFragment)
         }
 
         binding.editFotoProfile.setOnClickListener {
             Navigation.findNavController(view).navigate(R.id.action_editProfileFragment_to_editFotoProfileFragment)
-        }
+        }*/
     }
 }

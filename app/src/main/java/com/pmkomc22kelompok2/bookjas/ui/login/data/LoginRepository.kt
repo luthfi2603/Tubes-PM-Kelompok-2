@@ -1,7 +1,6 @@
 package com.pmkomc22kelompok2.bookjas.ui.login.data
 
-import com.pmkomc22kelompok2.bookjas.ui.login.data.model.UserLoginRequest
-import com.pmkomc22kelompok2.bookjas.ui.login.data.model.UserLoginResponse
+import com.pmkomc22kelompok2.bookjas.ui.login.data.LoginRepository.UserManager.user
 import com.pmkomc22kelompok2.bookjas.ui.login.data.model.UserLoginResponseData
 
 /**
@@ -12,8 +11,11 @@ import com.pmkomc22kelompok2.bookjas.ui.login.data.model.UserLoginResponseData
 class LoginRepository(val dataSource: LoginDataSource) {
 
     // in-memory cache of the loggedInUser object
-    var user: UserLoginResponseData? = null
-        private set
+    /*var user: UserLoginResponseData? = null
+        private set*/
+    object UserManager {
+        var user: UserLoginResponseData? = null
+    }
 
     val isLoggedIn: Boolean
         get() = user != null
@@ -61,7 +63,8 @@ class LoginRepository(val dataSource: LoginDataSource) {
     }
 
     private fun setLoggedInUser(loggedInUser: UserLoginResponseData) {
-        this.user = loggedInUser
+        // this.user = loggedInUser
+        user = loggedInUser
         // If user credentials will be cached in local storage, it is recommended it be encrypted
         // @see https://developer.android.com/training/articles/keystore
     }

@@ -8,6 +8,7 @@ data class UserLoginResponseData(
     val id: String?,
     val email: String?,
     val nama: String?,
-    val foto_profil: String?,
-    val token: String?
+    val token: String?,
+    val status: String?,
+    val password: String?,
 )

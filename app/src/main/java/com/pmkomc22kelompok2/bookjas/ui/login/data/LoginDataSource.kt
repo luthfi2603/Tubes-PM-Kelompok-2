@@ -65,8 +65,9 @@ class LoginDataSource {
                         item?.id,
                         item?.email,
                         item?.nama,
-                        item?.foto_profil,
-                        item?.token
+                        item?.token,
+                        item?.status,
+                        password
                     )
                     callback(Result.Success(user))
                 } else {
