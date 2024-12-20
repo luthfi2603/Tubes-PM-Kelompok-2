@@ -112,7 +112,16 @@ TBA
 
 ## Permission
 
-TBA
+- INTERNET
+  Deskripsi : Memberikan izin kepada aplikasi untuk mengakses jaringan internet. Izin ini penting jika aplikasi Anda ingin mengakses sumber daya online, seperti API, server, atau website.
+- ACCESS_NETWORK_STATE
+  Deskripsi : Memberikan izin kepada aplikasi untuk memeriksa status jaringan (misalnya, apakah perangkat terhubung ke Wi-Fi atau data seluler).
+- READ_EXTERNAL_STORAGE
+  Deskripsi : Untuk membaca file dari penyimpanan eksternal.
+- WRITE_EXTERNAL_STORAGE
+  Deskripsi : Untuk menulis file ke penyimpanan eksternal.
+- CLEARTEXT TRAFFIC
+  Deskripsi : Mengizinkan aplikasi untuk menggunakan protokol HTTP (bukan HTTPS) dalam berkomunikasi dengan server.
 
 ## Environment
 
