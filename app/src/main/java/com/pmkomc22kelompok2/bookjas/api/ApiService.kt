@@ -2,6 +2,7 @@ package com.pmkomc22kelompok2.bookjas.api
 
 import com.pmkomc22kelompok2.bookjas.data.OkResponse
 import com.pmkomc22kelompok2.bookjas.ui.admin.buku.BukuAdminResponse
+import com.pmkomc22kelompok2.bookjas.ui.admin.tambahkategori.TambahKategoriRequest
 import com.pmkomc22kelompok2.bookjas.ui.login.data.model.UserLoginRequest
 import com.pmkomc22kelompok2.bookjas.ui.login.data.model.UserLoginResponse
 import com.pmkomc22kelompok2.bookjas.ui.user.dashboard.ListKategoriResponse
@@ -40,4 +41,7 @@ interface ApiService {
 
     @PATCH("/api/update-profile")
     fun editProfile(@Body editProfileRequest: EditProfileRequest, @Header ("Authorization") token: String?): Call<OkResponse>
+
+    @POST("/api/kategori")
+    fun storeKategori(@Body tambahKategoriRequest: TambahKategoriRequest, @Header ("Authorization") token: String?): Call<OkResponse>
 }

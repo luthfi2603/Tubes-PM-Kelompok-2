@@ -127,7 +127,11 @@
         android:id="@+id/tambahKategoriFragment"
         android:name="com.pmkomc22kelompok2.bookjas.ui.admin.tambahkategori.TambahKategoriFragment"
         android:label="fragment_tambah_kategori"
-        tools:layout="@layout/fragment_tambah_kategori" />
+        tools:layout="@layout/fragment_tambah_kategori" >
+        <action
+            android:id="@+id/action_tambahKategoriFragment_to_kelolaKategoriFragment"
+            app:destination="@id/kelolaKategoriFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/editKategoriFragment"
