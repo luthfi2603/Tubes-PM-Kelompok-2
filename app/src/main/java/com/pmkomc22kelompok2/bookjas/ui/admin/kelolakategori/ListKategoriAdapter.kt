@@ -7,7 +7,8 @@ import com.pmkomc22kelompok2.bookjas.databinding.ItemKategoriBinding
 
 class ListKategoriAdapter(
     private val list: ArrayList<Kategori>,
-    private val onButtonClick: (Kategori) -> Unit
+    private val onEditClick: (Kategori) -> Unit,
+    private val onDeleteClick: (Kategori) -> Unit
 ) : RecyclerView.Adapter<ListKategoriAdapter.ListViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
         return ListViewHolder(ItemKategoriBinding.inflate(LayoutInflater.from(parent.context), parent, false))
@@ -21,7 +22,11 @@ class ListKategoriAdapter(
             tvKategori.text = item.kategori
 
             btnEdit.setOnClickListener {
-                onButtonClick(item)
+                onEditClick(item)
+            }
+
+            btnDelete.setOnClickListener {
+                onDeleteClick(item)
             }
         }
     }

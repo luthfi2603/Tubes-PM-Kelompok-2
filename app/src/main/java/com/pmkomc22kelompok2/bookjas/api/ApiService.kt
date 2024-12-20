@@ -2,6 +2,7 @@ package com.pmkomc22kelompok2.bookjas.api
 
 import com.pmkomc22kelompok2.bookjas.data.OkResponse
 import com.pmkomc22kelompok2.bookjas.ui.admin.buku.BukuAdminResponse
+import com.pmkomc22kelompok2.bookjas.ui.admin.kelolakategori.Kategori
 import com.pmkomc22kelompok2.bookjas.ui.admin.tambahkategori.TambahKategoriRequest
 import com.pmkomc22kelompok2.bookjas.ui.login.data.model.UserLoginRequest
 import com.pmkomc22kelompok2.bookjas.ui.login.data.model.UserLoginResponse
@@ -13,11 +14,13 @@ import com.pmkomc22kelompok2.bookjas.ui.user.register.data.model.UserRegisterRes
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.Body
+import retrofit2.http.DELETE
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.PATCH
 import retrofit2.http.POST
 import retrofit2.http.PUT
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface ApiService {
@@ -44,4 +47,10 @@ interface ApiService {
 
     @POST("/api/kategori")
     fun storeKategori(@Body tambahKategoriRequest: TambahKategoriRequest, @Header ("Authorization") token: String?): Call<OkResponse>
+
+    @DELETE("/api/kategori/{kategori}")
+    fun deleteKategori(@Path("kategori") kategori: String, @Header ("Authorization") token: String?): Call<OkResponse>
+
+    @PUT("/api/kategori/{kategori}")
+    fun updateKategori(@Path("kategori") kategori: String?, @Header ("Authorization") token: String?, @Body editKategoriRequest: Kategori): Call<OkResponse>
 }

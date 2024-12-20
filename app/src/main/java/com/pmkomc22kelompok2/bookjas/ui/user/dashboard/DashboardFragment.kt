@@ -110,7 +110,7 @@ class DashboardFragment : Fragment() {
         binding.rvBooks.layoutManager = GridLayoutManager(context, 3)
         val listBukuAdapter = ListBookAdapter(list!!) { item ->
             val bundle = Bundle().apply {
-                putParcelable("bukuData", item)
+                putParcelable("kategori", item)
             }
             Navigation.findNavController(binding.root).navigate(R.id.action_navigation_dashboard_to_detailBukuFragment, bundle)
         }

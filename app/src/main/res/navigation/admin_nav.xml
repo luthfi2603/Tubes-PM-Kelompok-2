@@ -137,6 +137,10 @@
         android:id="@+id/editKategoriFragment"
         android:name="com.pmkomc22kelompok2.bookjas.ui.admin.editkategori.EditKategoriFragment"
         android:label="fragment_edit_kategori"
-        tools:layout="@layout/fragment_edit_kategori" />
+        tools:layout="@layout/fragment_edit_kategori" >
+        <action
+            android:id="@+id/action_editKategoriFragment_to_kelolaKategoriFragment"
+            app:destination="@id/kelolaKategoriFragment" />
+    </fragment>
 
 </navigation>
