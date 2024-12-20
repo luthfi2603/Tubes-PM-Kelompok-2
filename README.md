@@ -108,11 +108,47 @@ Bookjas (Book Journal System) adalah  aplikasi berbasis mobile yang dirancang un
 
 ## Library
 
-TBA
+- SplashScreen
+  Kegunaan :
+  Library atau fitur ini digunakan untuk menampilkan layar pembuka (splash screen) saat aplikasi pertama kali dijalankan. Biasanya digunakan untuk memperkenalkan logo, nama aplikasi, atau melakukan inisialisasi data sebelum aplikasi siap digunakan.
+
+-	Retrofit
+  Kegunaan :
+  Retrofit adalah library dari Square yang digunakan untuk melakukan komunikasi HTTP/REST API secara efisien. Retrofit dapat mengirim dan menerima data dari API menggunakan objek Java atau Kotlin, membuat kode lebih bersih dan terstruktur.
+
+-	Retrofit-Gson
+  Kegunaan : 
+  Modul tambahan untuk Retrofit yang memungkinkan parsing data JSON menjadi objek Kotlin/Java secara otomatis menggunakan Gson. Ini mempermudah pengelolaan data yang diterima atau dikirim melalui API.
+
+-	Glide
+  Kegunaan :
+  Glide adalah library untuk pemrosesan gambar yang digunakan untuk memuat, menampilkan, dan meng-cache gambar dari internet atau penyimpanan lokal. Glide terkenal karena efisiensinya dalam mengelola memori dan performa aplikasi.
+
+-	Glide-Compiler
+  Kegunaan : 
+  Modul pendukung untuk Glide yang digunakan untuk menghasilkan kode tambahan selama proses build, seperti anotasi untuk optimasi. Ini berguna untuk meningkatkan efisiensi dalam menggunakan Glide, terutama jika menggunakan fitur khusus seperti integrasi dengan library lain.
+
+-	Kotlin Parcelize
+  Kegunaan : 
+  Plugin Kotlin yang mempermudah implementasi antarmuka Parcelable untuk objek data. Dengan anotasi @Parcelize, kita dapat menghindari boilerplate code saat mengirimkan objek data antar aktivitas atau fragmen.
+
+-	CircleImageView
+  Kegunaan : 
+  Library khusus untuk membuat tampilan gambar berbentuk lingkaran. Sangat populer untuk menampilkan gambar profil atau avatar dalam aplikasi, karena mempermudah pengelolaan UI tanpa perlu kode tambahan untuk memotong atau memformat gambar.
+
 
 ## Permission
 
-TBA
+- INTERNET
+  Deskripsi : Memberikan izin kepada aplikasi untuk mengakses jaringan internet. Izin ini penting jika aplikasi ingin mengakses sumber daya online, seperti API, server, atau website.
+- ACCESS_NETWORK_STATE
+  Deskripsi : Memberikan izin kepada aplikasi untuk memeriksa status jaringan (misalnya, apakah perangkat terhubung ke Wi-Fi atau data seluler).
+- READ_EXTERNAL_STORAGE
+  Deskripsi : Untuk membaca file dari penyimpanan eksternal.
+- WRITE_EXTERNAL_STORAGE
+  Deskripsi : Untuk menulis file ke penyimpanan eksternal.
+- CLEARTEXT TRAFFIC
+  Deskripsi : Mengizinkan aplikasi untuk menggunakan protokol HTTP (bukan HTTPS) dalam berkomunikasi dengan server.
 
 ## Environment
 
