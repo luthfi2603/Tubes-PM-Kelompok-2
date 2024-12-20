@@ -6,6 +6,7 @@ import com.pmkomc22kelompok2.bookjas.ui.login.data.model.UserLoginRequest
 import com.pmkomc22kelompok2.bookjas.ui.login.data.model.UserLoginResponse
 import com.pmkomc22kelompok2.bookjas.ui.user.dashboard.ListKategoriResponse
 import com.pmkomc22kelompok2.bookjas.ui.user.edit.password.EditPasswordRequest
+import com.pmkomc22kelompok2.bookjas.ui.user.edit.profile.EditProfileRequest
 import com.pmkomc22kelompok2.bookjas.ui.user.register.data.model.UserRegisterRequest
 import com.pmkomc22kelompok2.bookjas.ui.user.register.data.model.UserRegisterResponse
 import retrofit2.Call
@@ -36,4 +37,7 @@ interface ApiService {
 
     @GET("/api/books")
     fun getBooks(@Header ("Authorization") token: String?): Call<BukuAdminResponse>
+
+    @PATCH("/api/update-profile")
+    fun editProfile(@Body editProfileRequest: EditProfileRequest, @Header ("Authorization") token: String?): Call<OkResponse>
 }

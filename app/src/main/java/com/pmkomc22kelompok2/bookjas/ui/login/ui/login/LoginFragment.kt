@@ -50,6 +50,9 @@ class LoginFragment : Fragment() {
         val userPassword = sharedPref.getString("user_password", null)
 
         if (userEmail != null) {
+            binding.loading.visibility = View.VISIBLE
+            binding.vOverlay.visibility = View.VISIBLE
+
             loginViewModel.login(userEmail, userPassword!!)
         }
 
@@ -106,6 +109,9 @@ class LoginFragment : Fragment() {
         passwordEditText.addTextChangedListener(afterTextChangedListener)
         passwordEditText.setOnEditorActionListener { _, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_DONE) {
+                loadingProgressBar.visibility = View.VISIBLE
+                binding.vOverlay.visibility = View.VISIBLE
+
                 loginViewModel.login(
                     emailEditText.text.toString(),
                     passwordEditText.text.toString()

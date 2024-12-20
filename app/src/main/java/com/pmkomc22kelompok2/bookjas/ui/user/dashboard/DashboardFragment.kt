@@ -5,12 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pmkomc22kelompok2.bookjas.R
 import com.pmkomc22kelompok2.bookjas.api.ApiClient
 import com.pmkomc22kelompok2.bookjas.databinding.FragmentDashboardBinding
+import com.pmkomc22kelompok2.bookjas.ui.admin.buku.BukuAdminResponseData
+import com.pmkomc22kelompok2.bookjas.ui.admin.buku.BukuAdminViewModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -21,8 +24,9 @@ class DashboardFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
-    private val list = ArrayList<Book>()
+    private var list: ArrayList<BukuAdminResponseData>? = ArrayList()
     private val listKategori = ArrayList<KategoriData>()
+    private val bukuAdminViewModel: BukuAdminViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -45,33 +49,35 @@ class DashboardFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.rvBooks.setHasFixedSize(true)
-        list.addAll(getListBooks())
+        binding.loading.visibility = View.VISIBLE
+        binding.vOverlay.visibility = View.VISIBLE
+
+        bukuAdminViewModel.isLoading.observe(requireActivity()) { isLoading ->
+            if (!isLoading) {
+                binding.rvBooks.setHasFixedSize(true)
+                bukuAdminViewModel.listBuku.observe(requireActivity()) { listBuku ->
+                    list = listBuku
+                }
+                binding.loading.visibility = View.GONE
+                binding.vOverlay.visibility = View.GONE
+                showRecyclerList()
+            }
+        }
+
+        if (!bukuAdminViewModel.isLoading.value!!) {
+            binding.rvBooks.setHasFixedSize(true)
+            bukuAdminViewModel.listBuku.observe(requireActivity()) { listBuku ->
+                list = listBuku
+            }
+            binding.loading.visibility = View.GONE
+            binding.vOverlay.visibility = View.GONE
+            showRecyclerList()
+        }
 
         binding.rvKategoriBuku.setHasFixedSize(true)
-        // listKategori.addAll(getListKategori())
         fetchKategori()
 
         showRecyclerList()
-    }
-
-    private fun getListBooks(): ArrayList<Book> {
-        val foto = resources.obtainTypedArray(R.array.foto)
-        val jumlahBuku = resources.getIntArray(R.array.jumlah_buku)
-        val judulBuku = resources.getStringArray(R.array.judul_buku)
-        val author = resources.getStringArray(R.array.author)
-        val listBook = ArrayList<Book>()
-
-        try {
-            for (i in jumlahBuku.indices) {
-                val book = Book(foto.getResourceId(i, -1), jumlahBuku[i], judulBuku[i], author[i])
-                listBook.add(book)
-            }
-        } finally {
-            foto.recycle()
-        }
-
-        return listBook
     }
 
     private fun fetchKategori() {
@@ -100,22 +106,13 @@ class DashboardFragment : Fragment() {
         })
     }
 
-    private fun getListKategori(): ArrayList<KategoriData> {
-        val kategori = resources.getStringArray(R.array.kategori)
-        val listItem = ArrayList<KategoriData>()
-
-        for (i in kategori.indices) {
-            val item = KategoriData(kategori[i])
-            listItem.add(item)
-        }
-
-        return listItem
-    }
-
     private fun showRecyclerList() {
         binding.rvBooks.layoutManager = GridLayoutManager(context, 3)
-        val listBukuAdapter = ListBookAdapter(list) { item ->
-            Navigation.findNavController(binding.root).navigate(R.id.action_navigation_dashboard_to_detailBukuFragment)
+        val listBukuAdapter = ListBookAdapter(list!!) { item ->
+            val bundle = Bundle().apply {
+                putParcelable("bukuData", item)
+            }
+            Navigation.findNavController(binding.root).navigate(R.id.action_navigation_dashboard_to_detailBukuFragment, bundle)
         }
         binding.rvBooks.adapter = listBukuAdapter
 
