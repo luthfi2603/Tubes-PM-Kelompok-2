@@ -167,11 +167,11 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="-8dp"
-            android:text="@string/peminjam_bulan_ini"
+            android:text="@string/peminjaman_bulan_ini"
             android:textColor="@color/alabaster_white"
             android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="@id/v_data_2"
             app:layout_constraintStart_toStartOf="@id/v_data_2"
+            app:layout_constraintEnd_toEndOf="@id/v_data_2"
             app:layout_constraintTop_toBottomOf="@id/tv_peminjam_nilai" />
 
         <View
@@ -324,6 +324,28 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_to_riwayat_peminjaman" />-->
+
+        <View
+            android:id="@+id/v_overlay"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/blur_background"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/v_data_4"
+            app:layout_constraintEnd_toEndOf="@id/v_data_4"
+            app:layout_constraintStart_toStartOf="@id/v_data"
+            app:layout_constraintTop_toTopOf="@id/v_data" />
+
+        <ProgressBar
+            android:id="@+id/loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/v_data_4"
+            app:layout_constraintEnd_toEndOf="@id/v_data_4"
+            app:layout_constraintStart_toStartOf="@id/v_data"
+            app:layout_constraintTop_toTopOf="@id/v_data" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

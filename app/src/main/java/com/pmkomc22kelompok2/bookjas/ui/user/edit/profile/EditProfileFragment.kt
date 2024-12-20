@@ -72,7 +72,7 @@ class EditProfileFragment : Fragment() {
             }
 
             override fun afterTextChanged(s: Editable) {
-                editProfileViewModel.registerDataChanged(
+                editProfileViewModel.editProfileDataChanged(
                     etNamaLengkap.text.toString(),
                     etEmail.text.toString(),
                 )
@@ -130,13 +130,13 @@ class EditProfileFragment : Fragment() {
                                 val errorResponse = Gson().fromJson(it, EditProfileErrorResponse::class.java)
 
                                 // Periksa apakah field tertentu memiliki error
-                                val namaError = errorResponse.errors.nama
-                                val emailError = errorResponse.errors.email
+                                val namaError = errorResponse.errors.nama?.get(0)
+                                val emailError = errorResponse.errors.email?.get(0)
 
                                 // Bangun pesan error berdasarkan response
                                 val errorMessages = mutableListOf<String>()
-                                if (namaError.isNotEmpty()) errorMessages.add("Nama: $namaError")
-                                if (emailError.isNotEmpty()) errorMessages.add("Email: $emailError")
+                                if (namaError?.isNotEmpty() == true) errorMessages.add("Nama: $namaError")
+                                if (emailError?.isNotEmpty() == true) errorMessages.add("Email: $emailError")
 
                                 // Gabungkan pesan error
                                 errorMessages.joinToString("\n")

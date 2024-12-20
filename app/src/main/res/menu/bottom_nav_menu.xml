@@ -14,7 +14,7 @@
     <item
         android:id="@+id/riwayatPeminjamanFragment"
         android:icon="@drawable/ic_peminjaman"
-        android:title="@string/title_login_register" />
+        android:title="@string/peminjaman" />
 
     <item
         android:id="@+id/navigation_settings"
