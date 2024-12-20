@@ -5,6 +5,6 @@ data class EditProfileErrorResponse(
 )
 
 data class EditProfileErrorResponseData(
-    val nama: String,
-    val email: String,
+    val nama: List<String>?,
+    val email: List<String>?,
 )

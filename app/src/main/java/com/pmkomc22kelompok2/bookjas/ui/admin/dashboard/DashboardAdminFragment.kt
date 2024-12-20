@@ -5,11 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pmkomc22kelompok2.bookjas.R
+import com.pmkomc22kelompok2.bookjas.api.ApiClient
 import com.pmkomc22kelompok2.bookjas.databinding.FragmentDashboardAdminBinding
 import com.pmkomc22kelompok2.bookjas.ui.login.data.LoginRepository.UserManager.user
+import com.pmkomc22kelompok2.bookjas.ui.user.dashboard.KategoriData
+import com.pmkomc22kelompok2.bookjas.ui.user.dashboard.ListKategoriAdapter
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class DashboardAdminFragment : Fragment() {
     private lateinit var binding: FragmentDashboardAdminBinding
@@ -42,6 +47,26 @@ class DashboardAdminFragment : Fragment() {
             Navigation.findNavController(view)
                 .navigate(R.id.action_dashboardAdminFragment_to_bukuAdminFragment)
         }*/
+
+        ApiClient.apiService.getDataDashboard(user?.token).enqueue(object : Callback<DashboardAdminResponse> {
+            override fun onResponse(call: Call<DashboardAdminResponse>, response: Response<DashboardAdminResponse>) {
+                if (response.isSuccessful) {
+                    val items = response.body()
+                    val listItem = ArrayList<KategoriData>()
+
+                    binding.tvJumlahBukuNilai.text = items?.jumlah_buku.toString()
+                    binding.tvPeminjamNilai.text = items?.jumlah_peminjaman.toString()
+                    binding.tvPembacaNilai.text = items?.jumlah_pembaca.toString()
+                    binding.tvPustakawanNilai.text = items?.jumlah_pustakawan.toString()
+                } else {
+                    // Tangani kesalahan jika perlu
+                }
+            }
+
+            override fun onFailure(call: Call<DashboardAdminResponse>, t: Throwable) {
+                // Tangani kegagalan jaringan
+            }
+        })
     }
 
     private fun getList(): ArrayList<BukuBaruDitambah> {

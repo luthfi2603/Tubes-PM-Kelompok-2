@@ -10,7 +10,7 @@ class EditProfileViewModel  : ViewModel() {
     private val _editProfileForm = MutableLiveData<EditProfileFormState>()
     val editProfileFormState: LiveData<EditProfileFormState> = _editProfileForm
 
-    fun registerDataChanged(nama: String, email: String) {
+    fun editProfileDataChanged(nama: String, email: String) {
         if (nama.length > 255) {
             _editProfileForm.value = EditProfileFormState(namaError = R.string.invalid_nama)
         } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) { // Kalau emailnya tidak dalam bentuk example@gmail.com
