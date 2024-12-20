@@ -5,13 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.pmkomc22kelompok2.bookjas.R
 import com.pmkomc22kelompok2.bookjas.databinding.FragmentRiwayatPeminjamanBinding
+import com.pmkomc22kelompok2.bookjas.ui.login.data.LoginRepository.UserManager.user
+import java.util.Locale
 
 class RiwayatPeminjamanFragment : Fragment() {
     private lateinit var binding: FragmentRiwayatPeminjamanBinding
-    private val list = ArrayList<RiwayatPeminjaman>()
+    private var list = ArrayList<RiwayatPeminjamanResponseData>()
+    private val peminjamanViewModel: RiwayatPeminjamanViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -26,41 +29,43 @@ class RiwayatPeminjamanFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.rvRiwayatPeminjaman.setHasFixedSize(true)
-        list.addAll(getList())
-        showRecyclerList()
-    }
+        binding.tvNama.text = user?.nama
 
-    private fun getList(): ArrayList<RiwayatPeminjaman> {
-        val listItem = ArrayList<RiwayatPeminjaman>()
+        binding.loading.visibility = View.VISIBLE
+        binding.vOverlay.visibility = View.VISIBLE
 
-        val foto = resources.obtainTypedArray(R.array.foto)
-        val judulBuku = resources.getStringArray(R.array.judul_buku)
-        val author = resources.getStringArray(R.array.author)
-        val tanggalPeminjaman = resources.getStringArray(R.array.tanggal_peminjaman)
-        val tanggalPengembalian = resources.getStringArray(R.array.tanggal_pengembalian)
-
-        try {
-            for (i in judulBuku.indices) {
-                val item = RiwayatPeminjaman(
-                    foto.getResourceId(i, -1),
-                    judulBuku[i],
-                    author[i],
-                    tanggalPeminjaman[i],
-                    tanggalPengembalian[i]
-                )
-                listItem.add(item)
+        peminjamanViewModel.isLoading.observe(requireActivity()) { isLoading ->
+            if (!isLoading) {
+                binding.rvRiwayatPeminjaman.setHasFixedSize(true)
+                peminjamanViewModel.listPeminjaman.observe(requireActivity()) { listPeminjaman ->
+                    list = listPeminjaman
+                }
+                binding.loading.visibility = View.GONE
+                binding.vOverlay.visibility = View.GONE
+                showRecyclerList()
             }
-        } finally {
-            foto.recycle()
         }
 
-        return listItem
+        if (!peminjamanViewModel.isLoading.value!!) {
+            binding.rvRiwayatPeminjaman.setHasFixedSize(true)
+            peminjamanViewModel.listPeminjaman.observe(requireActivity()) { listPeminjaman ->
+                list = listPeminjaman
+            }
+            binding.loading.visibility = View.GONE
+            binding.vOverlay.visibility = View.GONE
+            showRecyclerList()
+        }
     }
 
     private fun showRecyclerList() {
         binding.rvRiwayatPeminjaman.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         val listAdapter = ListRiwayatPeminjamanAdapter(list)
+        if (peminjamanViewModel.listPeminjaman.value.isNullOrEmpty()) {
+            binding.rvRiwayatPeminjaman.visibility = View.GONE
+            binding.tvPeminjamanKosong.visibility = View.VISIBLE
+        }
         binding.rvRiwayatPeminjaman.adapter = listAdapter
+
+        binding.jumlah.text = String.format(Locale.getDefault(), "%d buku", list.size)
     }
 }

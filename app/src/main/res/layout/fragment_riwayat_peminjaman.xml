@@ -121,4 +121,40 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_ic_buku" />
 
+    <TextView
+        android:id="@+id/tv_peminjaman_kosong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_peminjaman_kosong"
+        android:visibility="gone"
+        android:textColor="@color/navy_blue"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/rv_riwayat_peminjaman"
+        app:layout_constraintEnd_toEndOf="@id/rv_riwayat_peminjaman"
+        app:layout_constraintStart_toStartOf="@id/rv_riwayat_peminjaman"
+        app:layout_constraintTop_toTopOf="@id/rv_riwayat_peminjaman" />
+
+    <View
+        android:id="@+id/v_overlay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/blur_background"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

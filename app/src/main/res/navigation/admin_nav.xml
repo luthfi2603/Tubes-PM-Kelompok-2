@@ -90,7 +90,11 @@
         android:id="@+id/tambahPeminjamanFragment"
         android:name="com.pmkomc22kelompok2.bookjas.ui.admin.tambahpeminjaman.TambahPeminjamanFragment"
         android:label="fragment_tambah_peminjaman"
-        tools:layout="@layout/fragment_tambah_peminjaman" />
+        tools:layout="@layout/fragment_tambah_peminjaman" >
+        <action
+            android:id="@+id/action_tambahPeminjamanFragment_to_riwayatPeminjamanAdminFragment"
+            app:destination="@id/riwayatPeminjamanAdminFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/editPeminjamanFragment"

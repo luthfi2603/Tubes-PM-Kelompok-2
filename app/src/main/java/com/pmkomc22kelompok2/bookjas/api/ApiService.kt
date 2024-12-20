@@ -2,8 +2,10 @@ package com.pmkomc22kelompok2.bookjas.api
 
 import com.pmkomc22kelompok2.bookjas.data.OkResponse
 import com.pmkomc22kelompok2.bookjas.ui.admin.buku.BukuAdminResponse
+import com.pmkomc22kelompok2.bookjas.ui.admin.dashboard.DashboardAdminResponse
 import com.pmkomc22kelompok2.bookjas.ui.admin.kelolakategori.Kategori
 import com.pmkomc22kelompok2.bookjas.ui.admin.tambahkategori.TambahKategoriRequest
+import com.pmkomc22kelompok2.bookjas.ui.admin.tambahpeminjaman.TambahPeminjamanRequest
 import com.pmkomc22kelompok2.bookjas.ui.login.data.model.UserLoginRequest
 import com.pmkomc22kelompok2.bookjas.ui.login.data.model.UserLoginResponse
 import com.pmkomc22kelompok2.bookjas.ui.user.dashboard.ListKategoriResponse
@@ -11,6 +13,7 @@ import com.pmkomc22kelompok2.bookjas.ui.user.edit.password.EditPasswordRequest
 import com.pmkomc22kelompok2.bookjas.ui.user.edit.profile.EditProfileRequest
 import com.pmkomc22kelompok2.bookjas.ui.user.register.data.model.UserRegisterRequest
 import com.pmkomc22kelompok2.bookjas.ui.user.register.data.model.UserRegisterResponse
+import com.pmkomc22kelompok2.bookjas.ui.user.riwayatpeminjaman.RiwayatPeminjamanResponse
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.Body
@@ -53,4 +56,19 @@ interface ApiService {
 
     @PUT("/api/kategori/{kategori}")
     fun updateKategori(@Path("kategori") kategori: String?, @Header ("Authorization") token: String?, @Body editKategoriRequest: Kategori): Call<OkResponse>
+
+    @GET("/api/peminjaman/user/{user_id}")
+    fun getPeminjamanByUser(@Path("user_id") userId: String?, @Header ("Authorization") token: String?): Call<RiwayatPeminjamanResponse>
+
+    @POST("/api/peminjaman")
+    fun storePeminjaman(@Body storePeminjaman: TambahPeminjamanRequest, @Header ("Authorization") token: String?): Call<OkResponse>
+
+    @GET("/api/peminjaman")
+    fun getPeminjaman(@Header ("Authorization") token: String?): Call<RiwayatPeminjamanResponse>
+
+    @PUT("/api/peminjaman/user/{user_id}/isbn/{isbn}")
+    fun updatePeminjaman(@Path("user_id") userId: String?, @Path("isbn") isbn: String?, @Header ("Authorization") token: String?): Call<OkResponse>
+
+    @GET("/api/data-dashboard")
+    fun getDataDashboard(@Header ("Authorization") token: String?): Call<DashboardAdminResponse>
 }

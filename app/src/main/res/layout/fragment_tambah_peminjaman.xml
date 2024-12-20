@@ -61,7 +61,7 @@
             app:layout_constraintTop_toBottomOf="@+id/v" />-->
 
         <!-- Tanggal Peminjaman -->
-        <TextView
+        <!--<TextView
             android:id="@+id/tv_tanggal_peminjaman"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -107,7 +107,7 @@
                 android:src="@drawable/ic_calendar"
                 app:tint="@color/navy_blue" />
 
-        </LinearLayout>
+        </LinearLayout>-->
 
         <!-- Judul Buku -->
         <TextView
@@ -116,11 +116,11 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginTop="16dp"
-            android:text="@string/tv_judul_buku"
+            android:text="@string/tv_isbn"
             android:textColor="@color/navy_blue"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ll_tanggal_peminjaman" />
+            app:layout_constraintTop_toBottomOf="@id/v" />
 
         <LinearLayout
             android:id="@+id/ll_nama_buku"
@@ -143,7 +143,7 @@
                 android:layout_weight="1"
                 android:autofillHints="name"
                 android:background="@android:color/transparent"
-                android:hint="@string/et_judul_buku"
+                android:hint="@string/et_isbn"
                 android:inputType="text"
                 android:textSize="16sp" />
 
@@ -199,6 +199,28 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ll_email_peminjam" />
+
+        <View
+            android:id="@+id/v_overlay"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/blur_background"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

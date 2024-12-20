@@ -156,6 +156,50 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/title_rekomendasi_buku" />
 
+        <View
+            android:id="@+id/v_overlay_buku"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/blur_background"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/rv_rekomendasi_buku"
+            app:layout_constraintEnd_toEndOf="@id/rv_rekomendasi_buku"
+            app:layout_constraintStart_toStartOf="@id/rv_rekomendasi_buku"
+            app:layout_constraintTop_toTopOf="@id/rv_rekomendasi_buku" />
+
+        <ProgressBar
+            android:id="@+id/loading_buku"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/rv_rekomendasi_buku"
+            app:layout_constraintEnd_toEndOf="@id/rv_rekomendasi_buku"
+            app:layout_constraintStart_toStartOf="@id/rv_rekomendasi_buku"
+            app:layout_constraintTop_toTopOf="@id/rv_rekomendasi_buku" />
+
+        <View
+            android:id="@+id/v_overlay_dipinjam"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/blur_background"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/rv_buku_yang_baru_dipinjam"
+            app:layout_constraintEnd_toEndOf="@id/rv_buku_yang_baru_dipinjam"
+            app:layout_constraintStart_toStartOf="@id/rv_buku_yang_baru_dipinjam"
+            app:layout_constraintTop_toTopOf="@id/rv_buku_yang_baru_dipinjam" />
+
+        <ProgressBar
+            android:id="@+id/loading_dipinjam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/rv_buku_yang_baru_dipinjam"
+            app:layout_constraintEnd_toEndOf="@id/rv_buku_yang_baru_dipinjam"
+            app:layout_constraintStart_toStartOf="@id/rv_buku_yang_baru_dipinjam"
+            app:layout_constraintTop_toTopOf="@id/rv_buku_yang_baru_dipinjam" />
+
         <!--<Button
             android:id="@+id/btn_to_dashboard_admin"
             android:layout_width="match_parent"
@@ -175,6 +219,21 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_to_dashboard_admin" />-->
+
+        <TextView
+            android:id="@+id/tv_peminjaman_kosong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="16dp"
+            android:text="@string/tv_peminjaman_kosong"
+            android:textColor="@color/navy_blue"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/rv_buku_yang_baru_dipinjam"
+            app:layout_constraintEnd_toEndOf="@id/rv_buku_yang_baru_dipinjam"
+            app:layout_constraintStart_toStartOf="@id/rv_buku_yang_baru_dipinjam"
+            app:layout_constraintTop_toTopOf="@id/rv_buku_yang_baru_dipinjam" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
