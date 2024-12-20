@@ -10,6 +10,7 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pmkomc22kelompok2.bookjas.R
 import com.pmkomc22kelompok2.bookjas.databinding.FragmentHomeBinding
+import com.pmkomc22kelompok2.bookjas.ui.login.data.LoginRepository.UserManager.user
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
@@ -40,6 +41,8 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.nama.text = user?.nama
 
         binding.rvBukuYangBaruDipinjam.setHasFixedSize(true)
         listBukuBaruDipinjam.addAll(getListBukuBaruDipinjam())

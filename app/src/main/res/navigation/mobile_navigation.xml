@@ -103,6 +103,9 @@
         <action
             android:id="@+id/action_editProfileFragment_to_editFotoProfileFragment"
             app:destination="@id/editFotoProfileFragment" />
+        <action
+            android:id="@+id/action_editProfileFragment_to_navigation_settings"
+            app:destination="@id/navigation_settings" />
     </fragment>
 
     <fragment

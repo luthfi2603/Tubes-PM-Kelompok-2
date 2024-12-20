@@ -1,5 +1,6 @@
 package com.pmkomc22kelompok2.bookjas.ui.user.edit.password
 
+import android.content.Context
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -13,12 +14,13 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import com.google.gson.Gson
-import com.google.gson.JsonObject
 import com.pmkomc22kelompok2.bookjas.R
 import com.pmkomc22kelompok2.bookjas.api.ApiClient
+import com.pmkomc22kelompok2.bookjas.data.ErrorResponse
 import com.pmkomc22kelompok2.bookjas.data.OkResponse
 import com.pmkomc22kelompok2.bookjas.databinding.FragmentEditPasswordBinding
 import com.pmkomc22kelompok2.bookjas.ui.login.data.LoginRepository
+import com.pmkomc22kelompok2.bookjas.ui.login.data.LoginRepository.UserManager.user
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -39,6 +41,10 @@ class EditPasswordFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.nama.text = user?.nama
+        binding.tvEmail.text = user?.email
+
         editPasswordViewModel = ViewModelProvider(this).get(EditPasswordViewModel::class.java)
 
         val etPasswordSaatIni = binding.etPasswordSaatIni
@@ -110,19 +116,26 @@ class EditPasswordFragment : Fragment() {
                     loadingProgressBar.visibility = View.GONE
                     binding.vOverlay.visibility = View.GONE
                     if (response.isSuccessful) {
-                        println(response)
+                        val sharedPref = context?.getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
+
+                        with(sharedPref?.edit()) {
+                            this?.putString("user_password", passwordBaru)
+                            this?.apply()
+                        }
+
+                        Navigation.findNavController(view).navigate(R.id.action_editPasswordFragment_to_navigation_settings)
+
                         Toast.makeText(
                             context,
                             response.body()?.message,
                             Toast.LENGTH_SHORT
                         ).show()
-                        Navigation.findNavController(view).navigate(R.id.action_editPasswordFragment_to_navigation_settings)
                     } else {
                         val errorBody = response.errorBody()?.string()
                         val errorMessage = errorBody?.let {
                             try {
-                                val errorResponse = Gson().fromJson(it, EditPasswordResponseError::class.java)
-                                errorResponse.errors ?: "Unknown error"
+                                val errorResponse = Gson().fromJson(it, ErrorResponse::class.java)
+                                errorResponse.errors
                             } catch (e: Exception) {
                                 Log.e("POST", "Failed to parse error message", e)
                                 "Failed to parse error message"

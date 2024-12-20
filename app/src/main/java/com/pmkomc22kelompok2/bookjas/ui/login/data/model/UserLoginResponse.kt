@@ -5,10 +5,10 @@ data class UserLoginResponse(
 )
 
 data class UserLoginResponseData(
-    val id: String?,
-    val email: String?,
-    val nama: String?,
-    val token: String?,
-    val status: String?,
-    val password: String?,
+    var id: String?,
+    var email: String?,
+    var nama: String?,
+    var token: String?,
+    var status: String?,
+    var password: String?,
 )

@@ -9,6 +9,7 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pmkomc22kelompok2.bookjas.R
 import com.pmkomc22kelompok2.bookjas.databinding.FragmentDashboardAdminBinding
+import com.pmkomc22kelompok2.bookjas.ui.login.data.LoginRepository.UserManager.user
 
 class DashboardAdminFragment : Fragment() {
     private lateinit var binding: FragmentDashboardAdminBinding
@@ -26,6 +27,8 @@ class DashboardAdminFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.tvNama.text = user?.nama
 
         binding.rvBukuBaruDitambah.setHasFixedSize(true)
         list.addAll(getList())

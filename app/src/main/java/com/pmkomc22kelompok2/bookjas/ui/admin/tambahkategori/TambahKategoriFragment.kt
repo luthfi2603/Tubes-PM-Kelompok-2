@@ -1,11 +1,22 @@
 package com.pmkomc22kelompok2.bookjas.ui.admin.tambahkategori
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
+import com.google.gson.Gson
+import com.pmkomc22kelompok2.bookjas.R
+import com.pmkomc22kelompok2.bookjas.api.ApiClient
+import com.pmkomc22kelompok2.bookjas.data.OkResponse
 import com.pmkomc22kelompok2.bookjas.databinding.FragmentTambahKategoriBinding
+import com.pmkomc22kelompok2.bookjas.ui.login.data.LoginRepository.UserManager.user
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class TambahKategoriFragment : Fragment() {
     private lateinit var binding: FragmentTambahKategoriBinding
@@ -22,5 +33,54 @@ class TambahKategoriFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.btnTambahKategori.setOnClickListener {
+            val kategori = binding.etKategoriBuku.text.toString()
+
+            binding.loading.visibility = View.VISIBLE
+            binding.vOverlay.visibility = View.VISIBLE
+
+            // Buat data permintaan untuk API
+            val request = TambahKategoriRequest(
+                kategori = kategori
+            )
+
+            // Panggil API melalui ApiClient
+            ApiClient.apiService.storeKategori(request, user?.token).enqueue(object : Callback<OkResponse> {
+                override fun onResponse(
+                    call: Call<OkResponse>,
+                    response: Response<OkResponse>
+                ) {
+                    binding.loading.visibility = View.GONE
+                    binding.vOverlay.visibility = View.GONE
+                    if (response.isSuccessful) {
+                        Toast.makeText(
+                            context,
+                            response.body()?.message,
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        Navigation.findNavController(view).navigate(R.id.action_tambahKategoriFragment_to_kelolaKategoriFragment)
+                    } else {
+                        val errorBody = response.errorBody()?.string()
+                        val errorMessage = errorBody?.let {
+                            try {
+                                val errorResponse = Gson().fromJson(it, TambahKategoriResponseError::class.java)
+                                errorResponse.errors.kategori[0]
+                            } catch (e: Exception) {
+                                Log.e("POST", "Failed to parse error message", e)
+                                "Failed to parse error message"
+                            }
+                        } ?: "Unknown error occurred"
+                        Toast.makeText(context, errorMessage, Toast.LENGTH_SHORT).show()
+                    }
+                }
+
+                override fun onFailure(call: Call<OkResponse>, t: Throwable) {
+                    binding.loading.visibility = View.GONE
+                    binding.vOverlay.visibility = View.GONE
+                    Toast.makeText(context, "Error: ${t.message}", Toast.LENGTH_SHORT).show()
+                }
+            })
+        }
     }
 }

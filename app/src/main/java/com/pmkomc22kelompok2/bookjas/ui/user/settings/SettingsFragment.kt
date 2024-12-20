@@ -11,7 +11,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.pmkomc22kelompok2.bookjas.MainActivity
 import com.pmkomc22kelompok2.bookjas.R
-import com.pmkomc22kelompok2.bookjas.UserActivity
 import com.pmkomc22kelompok2.bookjas.api.ApiClient
 import com.pmkomc22kelompok2.bookjas.databinding.FragmentSettingsBinding
 import com.pmkomc22kelompok2.bookjas.ui.login.data.LoginDataSource
@@ -36,6 +35,9 @@ class SettingsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.nama.text = user?.nama
+        binding.email.text = user?.email
 
         binding.btnUbahProfile.setOnClickListener {
             Navigation.findNavController(view).navigate(R.id.action_navigation_settings_to_editProfileFragment)

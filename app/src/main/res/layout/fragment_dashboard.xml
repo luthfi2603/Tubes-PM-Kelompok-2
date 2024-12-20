@@ -75,4 +75,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ll_search" />
 
+    <View
+        android:id="@+id/v_overlay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/blur_background"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/rv_books"
+        app:layout_constraintEnd_toEndOf="@id/rv_books"
+        app:layout_constraintStart_toStartOf="@id/rv_books"
+        app:layout_constraintTop_toTopOf="@id/rv_books" />
+
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/rv_books"
+        app:layout_constraintEnd_toEndOf="@id/rv_books"
+        app:layout_constraintStart_toStartOf="@id/rv_books"
+        app:layout_constraintTop_toTopOf="@id/rv_books" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

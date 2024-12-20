@@ -48,7 +48,7 @@
             app:layout_constraintStart_toStartOf="@+id/v_hero"
             app:layout_constraintTop_toTopOf="@+id/v_hero" />
 
-        <de.hdodenhof.circleimageview.CircleImageView
+        <!--<de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imageView2"
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -57,7 +57,7 @@
             android:src="@drawable/x_chan"
             app:layout_constraintBottom_toBottomOf="@+id/v_hero"
             app:layout_constraintEnd_toEndOf="@+id/v_hero"
-            app:layout_constraintTop_toTopOf="@+id/v_hero" />
+            app:layout_constraintTop_toTopOf="@+id/v_hero" />-->
 
         <TextView
             android:id="@+id/tv_pustakawan"
