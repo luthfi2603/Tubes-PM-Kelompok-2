@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiClient {
     object UserManager {
-        const val BASE_URL = "http://192.168.150.210:8000" // ganti sesuai ip computer kita yang terhubung ke internet
+        const val BASE_URL = "http://192.102.245.15:8000" // ganti sesuai ip computer kita yang terhubung ke internet
     }
 
     val apiService: ApiService by lazy {
