@@ -6,17 +6,17 @@ Nama aplikasi: Bookjas
 Tim pengembang: Kelompok 2
 
 - Ruth Grace Arlyana Manurung - 221402015  
-  Front-End *()*
+  Front-End 
 - Rifqi Jabrah Rhae - 221402031  
-  Back-End *()*
+  Back-End 
 - Muhammad Luthfi - 221402050  
-  Back-End *()*
+  Back-End & Front-End 
 - Andy Septiawan Saragih - 221402053  
-  UI/UX Design *()*
+  UI/UX Design 
 - Ceycylia Dear Amizafatel - 221402059  
-  Documentation, Front-End *()*
+  Documentation, Front-End 
 - Serafim Edgar Pandamei SItorus - 221402133 (Project Manager)  
-  Back-End *()*
+  Back-End 
 
 ## Desc
 
@@ -165,13 +165,14 @@ Beberapa syarat environment untuk menjalankan aplikasi ini:
 - **Gradle**: Versi yang sesuai dengan Android Studio terbaru.
 
 ### Instalasi dan Setup
-
-1. **Install Android Studio**
+1. **Setup API**
+    - Untuk informasi lebih lanjut bisa dilihat di [BookjasAPI](https://github.com/SerafimSitorus/bookjas-backend-api)
+2. **Install Android Studio**
     - Download dan install Android Studio dari [Android Studio Official Website](https://developer.android.com/studio).
     - Pastikan Android SDK 31 atau lebih tinggi terinstal melalui SDK Manager.
-2. **Install JDK**
+3. **Install JDK**
     - Download dan install JDK versi 21 dari [Oracle JDK](https://www.oracle.com/java/technologies/javase/jdk21-archive-downloads.html).
-3. **Clone Repository**
+4. **Clone Repository**
     - Clone repository ini ke lokal komputer:
       ```
       git clone https://github.com/luthfi2603/Tubes-PM-Kelompok-2.git
